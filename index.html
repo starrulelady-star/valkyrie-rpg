@@ -701,7 +701,7 @@ function hsChkBreak(){(HS.foes||[E]).forEach(f=>{if(f.charging&&f.chg&&f.chg.brk
 const DSTAR={max:10,m:.35,h:.04,cap:.24};
 /*SUMMERFORK*/const DOS={cost:50,max:100,floor:.5,drain:1,mode:'shot',full:100,fullT:4,carry:1};const SKY={dodge:.7,n:2,hitB:5,svcN:2};function hsOSCC(){return HS.osFull?1:Math.max(DOS.floor,Math.min(1,(HS.crits||0)/100))}
 const NB={half:.5,dot:.05,cap:5,ls:.1};
-/*CRITKIT*/const SIGK={unl:'chg',unN:6,unR:.35,unT:5,vs:1.9,vsG:8,fa:1.05,hl:1.8,gl:2.1,ag:.7,agI:.9,agT:.4,agC:.2,agV:12,retM:1.75,retCap:.7,vj:4.5,gj:4.0,ice:1.4,iceLS:.35,iceHP:.5,thaw:2};
+/*CRITKIT*/const SIGK={unl:'chg',unN:6,unR:.35,unT:5,vs:1.9,vsG:12,fa:1.15,hl:1.8,gl:2.1,ag:.75,agI:.9,agT:.4,agC:.2,agV:12,retM:2.0,retCap:.7,vj:5.0,gj:4.5,ice:1.55,iceLS:.40,iceHP:.5,thaw:1};
 const CRIT_KIT={dak:{cc:.05,cm:2.0,pierce:0,bl:1},han:{cc:.05,cm:2.0,pet:2}};
 function hsKitCrit(k,o){if(HS.id=='dak'&&k.bl&&o.slash&&E.bleed>0)E.bleed=Math.min(4,E.bleed+1);if(HS.id=='han'&&k.pet&&!o.echo&&!o.nopet)HS.g=Math.min(GMAX,HS.g+k.pet)}
 function hsMkFoe(t){return Object.assign({},t,{mhp:t.hp,hp:t.hp,charging:0,atkBuf:0,dr:0,bleed:0,burn:0,dburn:0,am:1})}
