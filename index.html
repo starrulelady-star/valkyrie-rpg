@@ -1500,11 +1500,11 @@ const IMG=window.ROSIMG||{};const ri=k=>IMG[k]||'';
 const C={armor:[['hray','💘 Cupid Ray',`${RK.rayN} holy rays ×${RK.ray}, ignore DEF · +${RK.rayG} Affection · +1 Heartmark · at 3 Heartmarks: consumes them for ×${RK.markMul} damage and heals ${RK.markHeal*100}%`],
  ['hseal','💗 Charm Seal',`${RK.sealN} holy hits ×${RK.seal}, ignore DEF · enemy damage ×${RK.charmAtk} (bosses ×${RK.bossCharm}) for ${RK.charmT} damaging actions · +${RK.sealG} Affection · +1 Heartmark`],
  ['hburst','💖 Heartburst',`heal ${RK.hbArmHeal*100}% HP · holy +${Math.round((RK.hbArmMag-1)*100)}% for next ${RK.hbN} attacks · +${RK.hbG} Affection · cooldown ${RK.hbCD} (shared, twice as fast at ≤40% HP)`],
- ['hward','🪽 Seraph Ward',`heal ${RK.wardHeal*100}% · next ${RK.wardN} enemy attacks ×${RK.wardTaken} · holy counter ×${RK.wardCtr} after the first · +${RK.wardG} Affection · cooldown ${RK.wardCD}`]],
+ ['hward','🪽 Seraph Ward',`⚡ free action (1 per turn) · heal ${RK.wardHeal*100}% · next ${RK.wardN} enemy attacks ×${RK.wardTaken} · holy counter ×${RK.wardCtr} after the first · +${RK.wardG} Affection · cooldown ${RK.wardCD}`]],
  summer:[['htide','💞 Hearttide Volley',`${RK.tideN} holy motes ×${RK.tide}, ignore DEF · heal ${RK.tideHeal*100}% · +${RK.tideG} Affection · +1 Heartmark · at 3 Heartmarks: ×${RK.markMul} and heals ${RK.markHeal*100}%`],
  ['hmis',"😘 Heart's Mischief",`${RK.misN} holy hits ×${RK.mis}, ignore DEF · enemy damage ×${RK.charmAtk} (bosses ×${RK.bossCharm}) and −${RK.misAcc*100}% accuracy for ${RK.charmT} damaging actions · +${RK.misG} Affection · +1 Heartmark`],
  ['hburst','💖 Heartburst',`heal ${RK.hbSwimHeal*100}% HP · holy +${Math.round((RK.hbSwimMag-1)*100)}% for next ${RK.hbN} attacks · +${RK.hbG} Affection · cooldown ${RK.hbCD} (shared)`],
- ['hbeach','🏖 Beach Blessing',`+${RK.beachG} Affection · +${RK.beachEv*100}% evasion and ${RK.beachRegen*100}% regen for next ${RK.beachN} enemy attacks · cooldown ${RK.beachCD}`]]};
+ ['hbeach','🏖 Beach Blessing',`⚡ free action (1 per turn) · +${RK.beachG} Affection · +${RK.beachEv*100}% evasion and ${RK.beachRegen*100}% regen for next ${RK.beachN} enemy attacks · cooldown ${RK.beachCD}`]]};
 HEROS.ros={n:'Roselia Amorette',t:'Keeper of Summer Hearts',buffImg:()=>null,img:()=>!HS||!HS.rs?ri('sum'):HS.rs.f=='armor'?ri('armor'):ri('sum'),face:()=>ri('face'),gauge:'Affection',crit:RK.crit,
  intro:[['Roselia Amorette',()=>ri('face'),"Roselia Amorette, keeper of festival hearts~ I signed the battle sheet thinking it was a matchmaking contest. …It is a matchmaking contest now. You, me, and that gloomy Dark Valkyrie."],
   ['Roselia Amorette',()=>ri('face'),"She wants everyone frightened and alone? How rude. I'll charm her, tease her, and if she still won't smile — love means standing my ground."]],
@@ -1517,10 +1517,10 @@ const heal=f=>{const s=s0(),h=Math.min(s.mhp-HS.hp,Math.round(s.mhp*f));if(h>0){
 const mul=()=>{const T=HS.rs;return RK.all*(dvk()?RK.dvMagic:1)*(T.hbB>0?T.hbM:1)};
 const mh=async(n,m,x)=>{const r=await hsMulti(n,m*mul()*(x||1),{pierce:1,holy:1,col:'#ff9ad0'},80);return r};
 const _st=hsStats;hsStats=function(){if(HS&&HS.id=='ros'){const L=HS.lvl;return {mhp:RK.hp0+RK.hpL*L,atk:RK.atk0+RK.atkL*L,def:Math.round(RK.def0+RK.defL*L),spd:14+L}}return _st.apply(this,arguments)};
-const _hb=hsBattle;hsBattle=function(){const r=_hb.apply(this,arguments);if(HS&&HS.id=='ros'){HS.g=0;HS.rs={f:'summer',mk:0,ch:0,chB:1,chAcc:0,cd:{hb:0,wd:0,bb:0},hbB:0,hbM:1,hbT:0,wd:0,wdC:0,bb:0,inv:0,ultU:0,sw:0,tgt:E,st:{ult:-1,sw:0,inv:0}};HS.rosA=0;hsUpd()}return r};
+const _hb=hsBattle;hsBattle=function(){const r=_hb.apply(this,arguments);if(HS&&HS.id=='ros'){HS.g=0;HS.rs={f:'summer',mk:0,ch:0,chB:1,chAcc:0,cd:{hb:0,wd:0,bb:0},hbB:0,hbM:1,hbT:0,wd:0,wdC:0,bb:0,inv:0,ultU:0,sw:0,fr:0,tgt:E,st:{ult:-1,sw:0,inv:0}};HS.rosA=0;hsUpd()}return r};
 window.rosOk=k=>{const T=HS.rs;if(!T||HS.busy||E.hp<=0||HS.hp<=0)return false;const A=T.f=='armor';
  if(['hray','hseal','hward'].includes(k)&&!A)return false;if(['htide','hmis','hbeach'].includes(k)&&A)return false;
- if(k=='hburst')return T.cd.hb<=0;if(k=='hward')return T.cd.wd<=0;if(k=='hbeach')return T.cd.bb<=0;if(k=='hswitch')return !T.sw;if(k=='ult')return !T.ultU&&HS.g>=100;return true};
+ if(k=='hburst')return T.cd.hb<=0;if(k=='hward')return T.cd.wd<=0&&!T.fr;if(k=='hbeach')return T.cd.bb<=0&&!T.fr;if(k=='hswitch')return !T.sw;if(k=='ult')return !T.ultU&&HS.g>=100;return true};
 async function rosAct(k){if(!HS||HS.busy||E.hp<=0||HS.hp<=0||!rosOk(k))return;HS.busy=1;const s=s0(),T=HS.rs;let msg='',dmg=0;HS.rosA++;const sp=(im,t,f)=>{try{adSplash(ri(im),t,f)}catch(e){}};
  if(T.tgt!==E){T.mk=0;T.tgt=E}
  const det=()=>{if(T.mk>=RK.markMax){T.mk=0;heal(RK.markHeal);return RK.markMul}return 1};
@@ -1529,14 +1529,15 @@ async function rosAct(k){if(!HS||HS.busy||E.hp<=0||HS.hp<=0||!rosOk(k))return;HS
  else if(k=='htide'){sp('tide','💞 HEARTTIDE VOLLEY');const x=det();const r=await mh(RK.tideN,RK.tide,x);heal(RK.tideHeal);gain(RK.tideG);T.mk=Math.min(RK.markMax,T.mk+1);dmg=1;msg=`💞 Hearttide Volley${x>1?' (Heartmarks ×'+x+')':''}: <b>${r.join(' + ')}</b> · 💗 ${T.mk}`}
  else if(k=='hseal'||k=='hmis'){const a=k=='hseal';sp(a?'seal':'mis',a?'💗 CHARM SEAL':"😘 HEART'S MISCHIEF");const r=await mh(a?RK.sealN:RK.misN,a?RK.seal:RK.mis);T.ch=RK.charmT;T.chB=E.boss?RK.bossCharm:RK.charmAtk;T.chAcc=a?0:RK.misAcc;gain(a?RK.sealG:RK.misG);T.mk=Math.min(RK.markMax,T.mk+1);dmg=1;msg=`${a?'💗 Charm Seal':"😘 Heart's Mischief"}: <b>${r.join(' + ')}</b> · charmed ×${T.chB}${T.chAcc?' · −20% accuracy':''}`}
  else if(k=='hburst'){const A=T.f=='armor';sp(A?'hbA':'hbS','💖 HEARTBURST');const h=heal(A?RK.hbArmHeal:RK.hbSwimHeal);T.hbB=RK.hbN;T.hbM=A?RK.hbArmMag:RK.hbSwimMag;T.hbT=3;T.cd.hb=RK.hbCD+1;gain(RK.hbG);msg=`💖 Heartburst — heals <b>${h}</b>, holy ×${T.hbM} for ${RK.hbN} attacks`}
- else if(k=='hward'){sp('ward','🪽 SERAPH WARD');const h=heal(RK.wardHeal);T.wd=RK.wardN;T.wdC=1;T.cd.wd=RK.wardCD+1;gain(RK.wardG);msg=`🪽 Seraph Ward — heals ${h}, next ${RK.wardN} attacks ×${RK.wardTaken}`}
- else if(k=='hbeach'){sp('beach','🏖 BEACH BLESSING');T.bb=RK.beachN;T.cd.bb=RK.beachCD+1;gain(RK.beachG);msg=`🏖 Beach Blessing — +${RK.beachEv*100}% evasion and regen for ${RK.beachN} attacks`}
+ else if(k=='hward'){sp('ward','🪽 SERAPH WARD');const h=heal(RK.wardHeal);T.wd=RK.wardN;T.wdC=1;T.cd.wd=RK.wardCD+1;gain(RK.wardG);msg=`🪽 Seraph Ward — heals ${h}, next ${RK.wardN} attacks ×${RK.wardTaken} (free)`}
+ else if(k=='hbeach'){sp('beach','🏖 BEACH BLESSING');T.bb=RK.beachN;T.cd.bb=RK.beachCD+1;gain(RK.beachG);msg=`🏖 Beach Blessing — +${RK.beachEv*100}% evasion and regen for ${RK.beachN} attacks (free)`}
  else if(k=='ult'){T.ultU=1;T.st.ult=HS.rosA;HS.g=Math.max(0,HS.g-100);sp(T.f=='armor'?'ultA':'ultS','💝 CELESTIAL HEART',1);await wait(500);const r=await mh(RK.ultN,RK.ult);const b=E.hp>0?hsHit(RK.ultFin*mul(),{pierce:1,holy:1,col:'#fff0f8'}):0;HS.hp=s.mhp;HS.weak=0;HS.stun=0;T.inv=1;dmg=1;msg=`💝 CELESTIAL HEART: rays <b>${sum(r)}</b> + heart-star <b>${b}</b> · fully healed · invulnerable!`;try{speak('Roselia Amorette',ri('face'),'Every heart on this beach — lend me your light!')}catch(e){}}
+ if(k=='hward'||k=='hbeach'){T.fr=1;T.st.fr=(T.st.fr||0)+1;hsLog(msg,'h');HS.busy=0;hsUpd();return}
  if(dmg&&T.hbB>0&&k!='ult'){T.hbB--}
  hsLog(msg,'h');hsUpd();await wait(450);await splashWait();hsFoeCheck();if(E.hp<=0)return hsWin();hsChkBreak();
  await wait(900);await hsEnemy(0);
  if(HS.hp<=0)return hsLose();hsFoeCheck();if(E.hp<=0)return hsWin();
- const low=HS.hp<=s0().mhp*RK.lowHp;T.cd.hb=Math.max(0,T.cd.hb-(low?2:1));T.cd.wd=Math.max(0,T.cd.wd-1);T.cd.bb=Math.max(0,T.cd.bb-1);if(T.hbT&&--T.hbT<=0)T.hbB=0;T.sw=0;
+ const low=HS.hp<=s0().mhp*RK.lowHp;T.cd.hb=Math.max(0,T.cd.hb-(low?2:1));T.cd.wd=Math.max(0,T.cd.wd-1);T.cd.bb=Math.max(0,T.cd.bb-1);if(T.hbT&&--T.hbT<=0)T.hbB=0;T.sw=0;T.fr=0;
  HS.busy=0;hsUpd()}
 window.rosAct=rosAct;
 const _act=hsAct;hsAct=function(k){if(HS&&HS.id=='ros')return rosAct(k);return _act.apply(this,arguments)};
