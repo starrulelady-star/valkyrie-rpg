@@ -364,7 +364,7 @@ const GAL=[
  {n:'Temporal Sever',img:()=>FETHSEV,el:'guard',r:'R',u:'Basic, no cooldown.',st:{Damage:'3 × ×1.35',Fracture:'+1 (max 3)',Sync:'+20'},ab:[['Time Fracture','+15% dmg dealt, −8% dmg taken per stack']]},
  {n:'Dead End Protocol',img:()=>FETHDE,el:'guard',r:'E',u:'Cooldown 3.',st:{Damage:'×2.10',Mark:'4 of his actions: +30% dmg, ignore DEF + shields',Sync:'+22'},ab:[['Priority target','Current foe only']]},
  {n:'Rewind Cut',img:()=>FETHRW,el:'guard',r:'E',u:'Cooldown 3 + passive.',st:{Damage:'×2.00 dash slash',Sync:'+16',Passive:'once: fatal blow undone → 40% HP + slash'},ab:[['Override','Active locked; passive still works']]},
- {n:'Phase Step',img:()=>FETHPH,el:'guard',r:'E',u:'Cooldown 3.',st:{Evasion:'+40% next enemy action',Sync:'+15'},ab:[['Override','Locked during Mission Override']]},
+ {n:'Phase Step',img:()=>FETHPH,el:'guard',r:'E',u:'Cooldown 3.',st:{Evasion:'100% — dodges everything',Duration:'next 2 enemy actions',Sync:'+15'},ab:[['Sure-hit','Undodgeable attacks miss too'],['Override','Locked during Mission Override']]},
  {n:'Mission Override',img:()=>FETHMO,el:'guard',r:'L',u:'Burst at 100 Sync, once.',st:{Damage:'×1.55',DEF:'50% ignored',Stagger:'immune',Duration:'rest of battle'},ab:[['No support','Phase Step, active Rewind Cut, heals locked'],['Sync','Not spent — Collapse can follow']]},
  {n:'Timeline Collapse',img:()=>FETHULT,el:'guard',r:'L',u:'Ultimate at 100 Sync, once.',st:{Damage:'5 × ×1.00 + aging cut ×2.80',Weaken:'foe dmg ×0.70, 3 actions',Sacrifice:'HP > 35%: −18% max HP for ×1.45'},ab:[['Fracture','Spends stacks: +15% each'],['Direct splash','No transformation']]}]],
  ['🎯 Ethan',[
@@ -1591,7 +1591,7 @@ const FK=window.FK=Object.assign({hp0:190,hpL:24,atk0:20,atkL:4,def0:6,defL:1.6,
  sevN:3,sev:1.35,sevG:20,tfMax:3,tfDmg:.15,tfWeak:.08,
  de:2.10,deBonus:.30,deT:4,deG:22,deCD:3,
  rw:2.00,rwG:16,rwCD:3,rwHeal:.40,
- phEv:.40,phG:15,phCD:3,
+ phN:2,phG:15,phCD:3,
  moDmg:1.55,moDef:.50,moTaken:1,
  ultN:5,ult:1.00,ultFin:2.80,ultSac:.18,ultSacMul:1.45,ultSacMin:.35,
  hitG:10,all:1.2},{});
@@ -1602,7 +1602,7 @@ HEROS.feth={n:'Future Ethan',t:'Temporal Operative',buffImg:()=>null,img:()=>fi(
  cmds:[['fts','⚔ Temporal Sever',`${FK.sevN} high-speed slashes ×${FK.sev} · cuts a short slice of time · +1 Time Fracture (max ${FK.tfMax}; +${Math.round(FK.tfDmg*100)}% damage and enemy damage −${Math.round(FK.tfWeak*100)}% per stack) · +${FK.sevG} Sync`],
   ['fde','🎯 Dead End Protocol',`×${FK.de} slash · mark the current target for ${FK.deT} of your actions: +${Math.round(FK.deBonus*100)}% damage and ignore DEF + shields · +${FK.deG} Sync · cooldown ${FK.deCD}`],
   ['frw','⏱ Rewind Cut',`dash slash ×${FK.rw} · +${FK.rwG} Sync · cooldown ${FK.rwCD} · passive: the first time you would fall, rewind to ${Math.round(FK.rwHeal*100)}% HP and cut once (once per fight; still works during Mission Override)`],
-  ['fph','🌪 Phase Step',`+${Math.round(FK.phEv*100)}% evasion against the next enemy action · +${FK.phG} Sync · cooldown ${FK.phCD} · locked during Mission Override`],
+  ['fph','🌪 Phase Step',`evade the next ${FK.phN} enemy actions · dodges everything, including undodgeable / sure-hit attacks · +${FK.phG} Sync · cooldown ${FK.phCD} · locked during Mission Override`],
   ['fmo','🔴 MISSION OVERRIDE',`Sync 100 to activate (does not spend Sync) · once per battle · remainder of the fight: damage ×${FK.moDmg}, ignore ${Math.round(FK.moDef*100)}% of DEF, cannot be stunned or staggered · cannot use Phase Step, Rewind Cut (active), or any heal/buff`],
   ['ult','⌛ TIMELINE COLLAPSE',`Sync 100 · once per battle · ${FK.ultN} wide slashes ×${FK.ult} + aging cut ×${FK.ultFin} · consumes Time Fracture for +${Math.round(FK.tfDmg*100)}% each · weakens the foe (damage ×0.70, 3 actions) · if HP > ${Math.round(FK.ultSacMin*100)}%, sacrifice ${Math.round(FK.ultSac*100)}% max HP for ×${FK.ultSacMul} power · direct splash, no transform frames`]]};
 CRIT_KIT.feth={cc:0,cm:2.0};
@@ -1625,7 +1625,7 @@ async function fethAct(k){if(!HS||HS.busy||E.hp<=0||HS.hp<=0||!fethOk(k))return;
  if(k=='fts'){sp('sev','⚔ TEMPORAL SEVER');const r=await feMulti(FK.sevN,FK.sev);T.tf=Math.min(FK.tfMax,T.tf+1);gain(FK.sevG);dmg=1;msg=`⚔ Temporal Sever: <b>${r.join(' + ')}</b> · ⏱ Fracture ${T.tf}/${FK.tfMax}`}
  else if(k=='fde'){sp('de','🎯 DEAD END PROTOCOL');T.cd.de=FK.deCD+1;T.mark=E;T.markT=FK.deT;const d=feHit(FK.de);gain(FK.deG);dmg=1;msg=`🎯 Dead End Protocol: <b>${d}</b> · target marked (ignore shields, +${Math.round(FK.deBonus*100)}%)`}
  else if(k=='frw'){sp('rw','⏱ REWIND CUT');T.cd.rw=FK.rwCD+1;const d=feHit(FK.rw);gain(FK.rwG);dmg=1;msg=`⏱ Rewind Cut: <b>${d}</b>`}
- else if(k=='fph'){sp('ph','🌪 PHASE STEP');T.cd.ph=FK.phCD+1;T.ph=1;gain(FK.phG);msg=`🌪 Phase Step — +${Math.round(FK.phEv*100)}% evasion this action`}
+ else if(k=='fph'){sp('ph','🌪 PHASE STEP');T.cd.ph=FK.phCD+1;T.ph=FK.phN;gain(FK.phG);msg=`🌪 Phase Step — every attack misses for the next ${FK.phN} enemy actions`}
  else if(k=='fmo'){T.mo=1;T.moU=1;T.st.mo=HS.fethA;HS.stun=0;HS.weak=0;HS.dakStag=0;sp('mo','🔴 MISSION OVERRIDE',1);msg=`🔴 MISSION OVERRIDE — damage ×${FK.moDmg}, ${Math.round(FK.moDef*100)}% DEF ignored, cannot be staggered. Healing and support locked. The mission is the only thing left.`;try{speak('Future Ethan',fi('face'),'Override accepted. Nothing else matters.')}catch(e){}}
  else if(k=='ult'){T.ultU=1;T.st.ult=HS.fethA;HS.g=Math.max(0,HS.g-100);const can=HS.hp>s.mhp*FK.ultSacMin;let sac=0,sm=1;if(can){sac=Math.min(HS.hp-1,Math.round(s.mhp*FK.ultSac));HS.hp-=sac;sm=FK.ultSacMul}const cons=T.tf;T.tf=0;const bonus=1+FK.tfDmg*cons;sp('ult','⌛ TIMELINE COLLAPSE',1);await wait(400);const r=await feMulti(FK.ultN,FK.ult*sm*bonus);const b=E.hp>0?feHit(FK.ultFin*sm*bonus):0;T.weakN=3;dmg=1;msg=`⌛ TIMELINE COLLAPSE${sac?` (sacrificed ${sac} HP)`:''}${cons?` · fractures ×${bonus.toFixed(2)}`:''}: slashes <b>${sum(r)}</b> + aging cut <b>${b}</b> · foe weakened`;try{speak('Future Ethan',fi('face'),'Your time is up.')}catch(e){}}
  if(dmg&&T.markT>0&&--T.markT<=0){T.mark=null}
@@ -1634,7 +1634,7 @@ async function fethAct(k){if(!HS||HS.busy||E.hp<=0||HS.hp<=0||!fethOk(k))return;
  if(HS.hp<=0)return hsLose();hsFoeCheck();if(E.hp<=0)return hsWin();
  if(T.mo){HS.stun=0;HS.weak=0;HS.dakStag=0}
  T.cd.de=Math.max(0,T.cd.de-1);T.cd.rw=Math.max(0,T.cd.rw-1);T.cd.ph=Math.max(0,T.cd.ph-1);
- if(T.weakN)T.weakN--;T.ph=0;
+ if(T.weakN)T.weakN--;if(T.ph>0)T.ph--;
  HS.busy=0;hsUpd()}
 window.fethAct=fethAct;
 const _act=hsAct;hsAct=function(k){if(HS&&HS.id=='feth')return fethAct(k);return _act.apply(this,arguments)};
@@ -1644,7 +1644,7 @@ const _core=hsEnemyCore;hsEnemyCore=async function(){if(!HS||HS.id!='feth')retur
  try{await _core.apply(this,arguments)}finally{hsLog=_l}
  const raw=Math.max(0,hp0+BIG-HS.hp);HS.hp=hp0;HS.g=g0;const atk=raw>0&&mv&&!mv.buff&&!mv.guard&&!mv.cover;
  if(raw>0){let d;
-  if(atk&&T.ph&&!mv.sure&&Math.random()<FK.phEv){d=0;hsPop('hsHero','MISS','#ff6a6a');hsLog(`🌪 Phase Step — ${mv.n} slips past him.`,'h')}
+  if(T.ph>0){d=0;hsPop('hsHero','MISS','#ff6a6a');hsLog(`🌪 Phase Step — ${mv&&mv.n?mv.n:'the attack'} slips past him${mv&&mv.sure?' (even a sure hit)':''}.`,'h')}
   else{const tfW=(T.tgt===E&&T.tf)?(1-FK.tfWeak*T.tf):1;const wk=T.weakN?0.70:1;const f=(T.mo?FK.moTaken:1)*tfW*wk;d=Math.max(1,Math.round(raw*f))}
   for(const [t,h] of dr){const nh=t=='d'?Math.round((d||0)/2):Math.round((d||0)*.15);E.hp=Math.max(1,E.hp-Math.max(0,h-nh))}
   if(d>0&&d>=HS.hp&&!T.rwU){T.rwU=1;T.st.rw=1;const h=Math.max(1,Math.round(s.mhp*FK.rwHeal));HS.hp=Math.min(s.mhp,h);gain(FK.hitG);hsLog(`⏱ Rewind Cut — the fatal moment is undone. HP ${HS.hp}.`,'h');if(E.hp>0){const c=feHit(FK.rw);hsLog(`⏱ Rewind slash: <b>${c}</b>`,'h')}}
@@ -1653,7 +1653,7 @@ const _core=hsEnemyCore;hsEnemyCore=async function(){if(!HS||HS.id!='feth')retur
  hsUpd()};
 const _u=hsUpd;hsUpd=function(){const r=_u.apply(this,arguments);if(HS&&HS.id=='feth'&&HS.fe){const T=HS.fe;
  document.querySelectorAll('#hsCmds [data-hs]').forEach(b=>{b.disabled=!fethOk(b.dataset.hs)});
- const st=document.getElementById('hsSt');if(st)st.textContent=['⏱ Sync '+HS.g+'/100',T.tf?`Fracture ${T.tf}/${FK.tfMax}`:'',T.mark===E?`🎯 Dead End ${T.markT}`:'',T.mo?'🔴 MISSION OVERRIDE':'',T.weakN?`⌛ Weakened ${T.weakN}`:'',T.ph?'🌪 Phase Step':'',T.rwU?'':'⏱ Rewind ready',T.ultU?'':'⌛ Collapse ready at 100',T.moU?'':'🔴 Override ready at 100'].filter(Boolean).join(' · ')}return r};
+ const st=document.getElementById('hsSt');if(st)st.textContent=['⏱ Sync '+HS.g+'/100',T.tf?`Fracture ${T.tf}/${FK.tfMax}`:'',T.mark===E?`🎯 Dead End ${T.markT}`:'',T.mo?'🔴 MISSION OVERRIDE':'',T.weakN?`⌛ Weakened ${T.weakN}`:'',T.ph>0?`🌪 Phase Step ${T.ph}`:'',T.rwU?'':'⏱ Rewind ready',T.ultU?'':'⌛ Collapse ready at 100',T.moU?'':'🔴 Override ready at 100'].filter(Boolean).join(' · ')}return r};
 })();
 
 /* Future Ethan: select, passives, status */
@@ -1664,7 +1664,7 @@ PASS.feth={play:"Mission-first swordsman from another timeline. Stack Time Fract
 (function(){const _pc=pasCard;pasCard=function(id){_pc.apply(this,arguments);if(id=='feth'){const el=$('hsModeInfo');if(el)el.innerHTML=el.innerHTML.replace('How she plays','How he plays')}};
 const _sr=stHeroRaw;stHeroRaw=function(id){if(id!='feth')return _sr.apply(this,arguments);const D=HEROS.feth,live=HS&&HS.id=='feth'&&STCTX=='hsolo',L=live?HS.lvl:3,mh=FK.hp0+FK.hpL*L,at=FK.atk0+FK.atkL*L,df=Math.round(FK.def0+FK.defL*L),T=live?HS.fe:null;
  return `<div class="stTop"><img src="${live?D.img():D.face()}"><div class="stId"><b style="font-size:16px">${D.n}</b><br><small>${D.t} · Ethan Vance from another timeline</small><br>Lv <b>${L}</b>${live?` · Fight ${HS.stage+1}/${hsF().length}`:' (start)'}<br>HP ${live?HS.hp:mh}/${mh}${stBar(live?HS.hp:mh,mh,'linear-gradient(90deg,#e33,#f96)')}Sync ${live?HS.g:0} / 100${stBar(live?HS.g:0,100,'#ff6a6a')}Time Fracture ${T?T.tf:0}/${FK.tfMax}</div></div>
-<div class="stSec"><h4>📈 Stats${live?' (live)':''}</h4><table><tr><th>HP</th><td>${FK.hp0} + ${FK.hpL}/Lv</td></tr><tr><th>ATK</th><td>${at} (${FK.atk0} + ${FK.atkL}/Lv)</td></tr><tr><th>DEF</th><td>${df}</td></tr><tr><th>Crit</th><td>${Math.round(FK.crit*100)}% (×2)</td></tr><tr><th>Passive</th><td>${PASS.feth.p.map(x=>x.n+': '+x.t).join('<br>')}</td></tr><tr><th>Sync</th><td>+${FK.sevG} Temporal Sever, +${FK.deG} Dead End, +${FK.rwG} Rewind Cut, +${FK.phG} Phase Step, +${FK.hitG} when hit · 100 → Mission Override (keeps Sync) / Timeline Collapse (spends it)</td></tr>${T?`<tr><th>Now</th><td>${[T.mo?'🔴 Mission Override':'',T.mark===E?`🎯 Dead End ${T.markT}`:'',T.weakN?`⌛ Foe weakened ${T.weakN}`:'',T.rwU?'Rewind spent':'⏪ Rewind ready'].filter(Boolean).join(' · ')}</td></tr>`:''}<tr><th>Story</th><td>Ethan Vance, from a timeline that is not this one. He stepped out of a silver-red tear over the festival water already armored, katana drawn, and asked only where the Dark Valkyrie was. Colder than the sergeant on this beach: short sentences, no jokes, no patience for anything that does not move the mission. He is not the Crimson Knight and not Dark Ethan — he came from a different road, as an ally, to cut the Valkyrie down before that future takes root here. Present Ethan's road is still open. "Don't become me. Don't become the other one either. Just stay useful."</td></tr></table></div>
+<div class="stSec"><h4>📈 Stats${live?' (live)':''}</h4><table><tr><th>HP</th><td>${FK.hp0} + ${FK.hpL}/Lv</td></tr><tr><th>ATK</th><td>${at} (${FK.atk0} + ${FK.atkL}/Lv)</td></tr><tr><th>DEF</th><td>${df}</td></tr><tr><th>Crit</th><td>${Math.round(FK.crit*100)}% (×2)</td></tr><tr><th>Passive</th><td>${PASS.feth.p.map(x=>x.n+': '+x.t).join('<br>')}</td></tr><tr><th>Sync</th><td>+${FK.sevG} Temporal Sever, +${FK.deG} Dead End, +${FK.rwG} Rewind Cut, +${FK.phG} Phase Step, +${FK.hitG} when hit · 100 → Mission Override (keeps Sync) / Timeline Collapse (spends it)</td></tr>${T?`<tr><th>Now</th><td>${[T.mo?'🔴 Mission Override':'',T.mark===E?`🎯 Dead End ${T.markT}`:'',T.weakN?`⌛ Foe weakened ${T.weakN}`:'',T.ph>0?`🌪 Phase Step ${T.ph}`:'',T.rwU?'Rewind spent':'⏪ Rewind ready'].filter(Boolean).join(' · ')}</td></tr>`:''}<tr><th>Story</th><td>Ethan Vance, from a timeline that is not this one. He stepped out of a silver-red tear over the festival water already armored, katana drawn, and asked only where the Dark Valkyrie was. Colder than the sergeant on this beach: short sentences, no jokes, no patience for anything that does not move the mission. He is not the Crimson Knight and not Dark Ethan — he came from a different road, as an ally, to cut the Valkyrie down before that future takes root here. Present Ethan's road is still open. "Don't become me. Don't become the other one either. Just stay useful."</td></tr></table></div>
 <div class="stSec"><h4>⚔ Moves</h4>${D.cmds.map(([k,n,d])=>`<div><b>${n}</b> — ${d}</div>`).join('')}</div>`};
 const _rs=renderStatus;renderStatus=function(){_rs.apply(this,arguments);if(STW=='her'&&!(HS&&STCTX=='hsolo')){$('stBody').insertAdjacentHTML('beforeend','<hr style="border-color:#2d3a66">'+stHero('feth'))}};
 const b=$('hpFeth');if(b)b.onclick=()=>hsModeOpen('feth')})();
