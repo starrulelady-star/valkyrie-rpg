@@ -2307,7 +2307,7 @@ window.nocOk=k=>{const T=HS&&HS.nc;if(!T||HS.busy||E.hp<=0||HS.hp<=0)return fals
  if(k=='nsw')return !T.swU;if(k=='nab')return !T.abU&&!T.ab&&HS.g>=K.abCost;if(k=='ult')return HS.g>=K.ultCost;return true};
 const cdVals=()=>{const T=HS.nc,cut=T.ab?K.abCD:0;return {cs:Math.max(1,K.sweepCD-cut),dc:Math.max(1,K.chargeCD-cut)}};
 const tickCD=()=>{const T=HS.nc;['cs','dc'].forEach(x=>{if(T.cd[x]>0)T.cd[x]--})};
-const tickAb=()=>{const T=HS.nc;if(T.ab&&--T.abT<=0){T.ab=0;hsLog('🩸 Crimson Awakening fades — the wings dim.','s');rebuildCmds();try{speak('Noctira','The wings fade. Still enough spear left.')}catch(e){}}};
+const tickAb=()=>{const T=HS.nc;if(T.ab&&--T.abT<=0){T.ab=0;hsLog('🩸 Crimson Awakening fades — the wings dim.','s');rebuildCmds();try{speak('Noctira',pose('face'),'The wings fade. Still enough spear left.')}catch(e){}}};
 const tickSurge=()=>{const T=HS.nc;if(T.surge&&--T.surge<=0){T.surge=0;hsLog('🩸 Crimson Surge fades.','s')}};
 const tickMark=()=>{foes().forEach(f=>{if((f.nmark||0)>0&&--f.nmark<=0){f.nmark=0;hsLog('🎯 Lance Mark fades.','s')}})};
 
@@ -2326,7 +2326,7 @@ async function nocAct(k){if(!HS||HS.busy||E.hp<=0||HS.hp<=0||!nocOk(k))return;HS
   HEROS.noc.crit=K.crit+K.abCrit;rebuildCmds();
   const left=cdVals();if(T.cd.cs>0)T.cd.cs=Math.max(0,T.cd.cs-1);if(T.cd.dc>0)T.cd.dc=Math.max(0,T.cd.dc-1);
   hsLog(`🩸 <b>CRIMSON AWAKENING</b> — ${T.abT} actions. Wings out. Leftover Crimson ${HS.g}.`,'h');
-  try{speak('Noctira','Wings out. This ends now.')}catch(e){}
+  try{speak('Noctira',pose('face'),'Wings out. This ends now.')}catch(e){}
   sp(pose('burstin'),'Crimson Awakening',1);
   await wait(450);try{await splashWait()}catch(e){}
   hsUpd();HS.busy=0;hsUpd();return;
