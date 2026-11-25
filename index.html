@@ -2953,4 +2953,155 @@ const b=$('hpStl');if(b)b.onclick=()=>hsModeOpen('stl');
 const bk=$('hpStlKit');if(bk)bk.onclick=()=>setStlKit(!SDAWN);
 try{stlAltUI()}catch(e){}})();
 
+
+/*VSFIX: VS opponents for later heroines (cae/ros/kvex/mna/noc/iso/stl)*/
+(function(){
+  if(typeof VS_IDS==='undefined'||typeof VS_FOE==='undefined')return;
+  const alt=k=>!!window[k];
+  const add=(id,foe,taunt)=>{
+    if(!VS_IDS.includes(id)){
+      const i=VS_IDS.indexOf('dk');
+      VS_IDS.splice(i>=0?i:VS_IDS.length,0,id);
+    }
+    VS_FOE[id]=foe;
+    if(taunt&&typeof VS_TAUNT==='object')VS_TAUNT[id]=taunt;
+  };
+  add('cae',{
+    n:'Caelia Solenne',k:'vcae',rv:'cae',
+    img:()=>CAEIDLE,img2:()=>CAEUNB,
+    hp:910,atk:57,def:9,boss:1,asc:.5,
+    ascN:'HEAVEN UNBOUND',ascE:'🪽',
+    ascS:'🪽 HEAVEN UNBOUND (×1.2, lifesteal)',
+    tip:'A festival-stranded goddess of wayward wishes. Jasmine Sanctuary cuts your damage; Wish Upon the Sun is a charged sunbloom — break it (15% of her HP). At ≤50% HP: HEAVEN UNBOUND.',
+    moves:[
+      {n:'Sunpetal Bolts',p:.55,hits:2,holy:1,w:5,im:()=>CAEBOLT,msg:'looses Sunpetal Bolts'},
+      {n:'Halo Prism',p:1.35,holy:1,w:3,im:()=>CAEPRISM,msg:'casts a Halo Prism'},
+      {n:'Jasmine Sanctuary',cover:.5,heal:.12,w:2,im:()=>CAESANCT},
+      {n:'Wish Upon the Sun',charge:1,p:2.5,holy:1,brk:.15,w:2,im:()=>CAEWISH,cmsg:'holds a wish to the sun — Wish Upon the Sun is coming!',msg:'casts WISH UPON THE SUN'}
+    ],
+    moves2:[
+      {n:'Sunpetal Bolts',p:.65,hits:2,holy:1,w:5,im:()=>CAEBOLT,msg:'looses Sunpetal Bolts under Heaven Unbound'},
+      {n:'Thousand-Wish Benediction',p:.45,hits:3,holy:1,w:3,im:()=>CAETHOU,msg:'unleashes a Thousand-Wish Benediction'},
+      {n:'Wish Upon the Sun',charge:1,p:2.7,holy:1,brk:.15,w:2,im:()=>CAEWISH,cmsg:'wings wide — Wish Upon the Sun is coming!',msg:'casts WISH UPON THE SUN'}
+    ]
+  },'A Dark Valkyrie spoiling the fun? Then I\'ll join on a whim.');
+  add('ros',{
+    n:'Roselia Amorette',k:'vros',rv:'ros',
+    img:()=>ROSSUM,img2:()=>ROSULTS,
+    hp:900,atk:56,def:9,boss:1,asc:.5,
+    ascN:'CELESTIAL HEART',ascE:'💝',
+    ascS:'💝 CELESTIAL HEART (×1.2, lifesteal)',
+    tip:'A matchmaking heart-angel. Seraph Ward cuts your damage; Celestial Heart is a charged holy storm — break it (15% of her HP). At ≤50% HP: CELESTIAL HEART.',
+    moves:[
+      {n:'Cupid Ray',p:.5,hits:3,holy:1,w:5,im:()=>ROSRAY,msg:'fires a Cupid Ray'},
+      {n:'Hearttide Volley',p:.55,hits:3,holy:1,w:3,im:()=>ROSTIDE,msg:'casts a Hearttide Volley'},
+      {n:'Seraph Ward',cover:.4,heal:.10,w:2,im:()=>ROSWARD},
+      {n:'Celestial Heart',charge:1,p:2.5,holy:1,brk:.15,w:2,im:()=>ROSULTS,cmsg:'her heart-star brightens — Celestial Heart is coming!',msg:'seals the CELESTIAL HEART'}
+    ],
+    moves2:[
+      {n:'Cupid Ray',p:.6,hits:3,holy:1,w:5,im:()=>ROSRAY,msg:'fires a Cupid Ray under Celestial Heart'},
+      {n:'Heartburst',p:1.4,holy:1,w:3,im:()=>ROSHBS,msg:'ignites a Heartburst'},
+      {n:'Celestial Heart',charge:1,p:2.7,holy:1,brk:.15,w:2,im:()=>ROSULTS,cmsg:'the heart-star blooms — Celestial Heart is coming!',msg:'seals the CELESTIAL HEART'}
+    ]
+  },'Signed up thinking it was a matchmaking contest. My heart is not a joke.');
+  add('kvex',{
+    n:'Kaelyn Vex',k:'vkvx',rv:'kvex',
+    img:()=>KVEXIDLE,img2:()=>KVEXPHX,
+    hp:935,atk:63,def:8,boss:1,asc:.5,
+    ascN:'PHOENIX BURST',ascE:'🔥🪽',
+    ascS:'🔥🪽 PHOENIX BURST (×1.2, lifesteal)',
+    tip:'An ash-timeline duelist whose fire still remembers a world that fell. Heat Dash slips your hits; Timeline Burn is a charged inferno — break it (15% of her HP). At ≤50% HP: PHOENIX BURST.',
+    moves:[
+      {n:'Solaris Edge',p:1.15,w:5,im:()=>KVEXSE,msg:'cuts a Solaris Edge'},
+      {n:'Heat Dash',p:1.35,w:3,im:()=>KVEXHD,msg:'vanishes into a Heat Dash'},
+      {n:'Plasma Burst',p:1.5,w:2,im:()=>KVEXPB,msg:'detonates a Plasma Burst'},
+      {n:'Timeline Burn',charge:1,p:2.5,brk:.15,w:2,im:()=>KVEXULT,cmsg:'the timeline sparks — Timeline Burn is coming!',msg:'unleashes TIMELINE BURN'}
+    ],
+    moves2:[
+      {n:'Phoenix Edge',p:1.25,w:5,im:()=>KVEXPHXE,msg:'cuts a Phoenix Edge under the wings'},
+      {n:'Plasma Burst',p:1.6,w:3,im:()=>KVEXPB,msg:'detonates a Plasma Burst under Phoenix Burst'},
+      {n:'Rebirth Inferno',charge:1,p:2.7,brk:.15,drain:1,w:2,im:()=>KVEXPHXU,cmsg:'gold fire folds into wings — Rebirth Inferno is coming!',msg:'unleashes REBIRTH INFERNO'}
+    ]
+  },'I lived in what you were. Tier does not matter. You fall.');
+  add('mna',{
+    n:'Mana the Arcane',k:'vmna',rv:'mna',
+    img:()=>alt('MALT')?MNASIDLE:MNAIDLE,
+    img2:()=>alt('MALT')?MNASULT:MNAULT,
+    hp:920,atk:61,def:9,boss:1,asc:.5,
+    ascN:'ARCANE BURST',ascE:'💎',
+    ascS:'💎 ARCANE BURST (×1.2, lifesteal)',
+    tip:'Magical artillery in emerald and gemlight. Arcane Feathers cut and heal her; Cataclysm Spell is a charged working — break it (15% of her HP). At ≤50% HP: ARCANE BURST.',
+    moves:[
+      {n:'Emerald Bolt',p:1.1,w:5,im:()=>alt('MALT')?MNASATK:MNAATK,msg:'looses an Emerald Bolt'},
+      {n:'Emerald Lance',p:1.45,w:3,im:()=>alt('MALT')?MNASCAST:MNACAST,msg:'hurls an Emerald Lance'},
+      {n:'Arcane Feathers',p:.55,hits:2,w:2,im:()=>alt('MALT')?MNASCAST:MNACAST,msg:'scatters Arcane Feathers'},
+      {n:'Cataclysm Spell',charge:1,p:2.5,brk:.15,w:2,im:()=>alt('MALT')?MNASULT:MNAULT,cmsg:'the circle widens — Cataclysm Spell is coming!',msg:'casts CATACLYSM SPELL'}
+    ],
+    moves2:[
+      {n:'Emerald Bolt',p:1.2,w:5,im:()=>alt('MALT')?MNASATK:MNAATK,msg:'looses an Emerald Bolt under Arcane Burst'},
+      {n:'Emerald Lance',p:1.55,w:3,im:()=>alt('MALT')?MNASCAST:MNACAST,msg:'hurls an Emerald Lance under Arcane Burst'},
+      {n:'Cataclysm Spell',charge:1,p:2.7,brk:.15,drain:1,w:2,im:()=>alt('MALT')?MNASULT:MNAULT,cmsg:'the gems sing — Cataclysm Spell is coming!',msg:'casts CATACLYSM SPELL'}
+    ]
+  },"Then I'll just draw a bigger one. Cataclysm it is.");
+  add('noc',{
+    n:'Noctira',k:'vnoc',rv:'noc',
+    img:()=>alt('NALT')?NOCSUM:NOCIDLE,
+    img2:()=>alt('NALT')?NOCSBURST:NOCBURST,
+    hp:940,atk:63,def:8,boss:1,asc:.5,
+    ascN:'CRIMSON AWAKENING',ascE:'🩸',
+    ascS:'🩸 CRIMSON AWAKENING (×1.2, lifesteal)',
+    tip:'A crimson spear that breaks charges. Cape of the Fallen cuts your damage; Crimson Burst is a charged storm — break it (15% of her HP). At ≤50% HP: CRIMSON AWAKENING.',
+    moves:[
+      {n:'Spear Thrust',p:1.15,w:5,im:()=>alt('NALT')?NOCSTHRUST:NOCTHRUST,msg:'drives a Spear Thrust'},
+      {n:'Crimson Sweep',p:.55,hits:2,w:3,im:()=>alt('NALT')?NOCSSWEEP:NOCSWEEP,msg:'cuts a Crimson Sweep'},
+      {n:'Cape of the Fallen',cover:.4,heal:.06,w:2,im:()=>alt('NALT')?NOCSUM:NOCIDLE},
+      {n:'Crimson Burst',charge:1,p:2.5,brk:.15,w:2,im:()=>alt('NALT')?NOCSULT:NOCULT,cmsg:'plants the spear — Crimson Burst is coming!',msg:'unleashes CRIMSON BURST'}
+    ],
+    moves2:[
+      {n:'Spear Thrust',p:1.25,w:5,im:()=>NOCBTHRUST,msg:'drives a Spear Thrust under Awakening'},
+      {n:'Crimson Sweep',p:.6,hits:2,w:3,im:()=>NOCBSWEEP,msg:'cuts a Crimson Sweep under Awakening'},
+      {n:'Crimson Burst',charge:1,p:2.7,brk:.15,drain:1,w:2,im:()=>NOCBULT,cmsg:'wings flare — Crimson Burst is coming!',msg:'unleashes CRIMSON BURST'}
+    ]
+  },"I break charges. I don't break. Come on then.");
+  add('iso',{
+    n:'Isolde Clairenne',k:'viso',rv:'iso',
+    img:()=>alt('IALT')?ISOSUM:ISOIDLE,
+    img2:()=>alt('IALT')?ISOSBURST:ISOBURST,
+    hp:960,atk:58,def:11,boss:1,asc:.5,
+    ascN:'CORONATION OF THE DAWN',ascE:'🔷',
+    ascS:'🔷 CORONATION OF THE DAWN (×1.2, lifesteal)',
+    tip:'A royal greatsword and a banner. Crownplate cuts your damage; Sovereign Arc is a charged crown-cut — break it (15% of her HP). At ≤50% HP: CORONATION OF THE DAWN.',
+    moves:[
+      {n:'Azure Stroke',p:1.15,w:5,im:()=>alt('IALT')?ISOSSLASH:ISOSLASH,msg:'cuts an Azure Stroke'},
+      {n:'Banner Sweep',p:.55,hits:2,w:3,im:()=>alt('IALT')?ISOSBANNER:ISOBANNER,msg:'flies a Banner Sweep'},
+      {n:'Crownplate',cover:.45,heal:.06,w:2,im:()=>ISOPLATE},
+      {n:'Sovereign Arc',charge:1,p:2.5,brk:.15,w:2,im:()=>alt('IALT')?ISOSULT:ISOULT,cmsg:'raises the blue-crystal sword — Sovereign Arc is coming!',msg:'brings down SOVEREIGN ARC'}
+    ],
+    moves2:[
+      {n:'Azure Stroke',p:1.25,w:5,im:()=>ISOBSLASH,msg:'cuts an Azure Stroke under Coronation'},
+      {n:'Banner Sweep',p:.6,hits:2,w:3,im:()=>ISOBANNER,msg:'flies a Banner Sweep under Coronation'},
+      {n:'Sovereign Arc',charge:1,p:2.7,brk:.15,w:2,im:()=>ISOBULT,cmsg:'dawn-blue banners lift — Sovereign Arc is coming!',msg:'brings down SOVEREIGN ARC'}
+    ]
+  },'By the crown: behind me. I came to stand the line, not to yield it.');
+  add('stl',{
+    n:'Stellara',k:'vstl',rv:'stl',
+    img:()=>alt('SALT')?STLSUM:(alt('SDAWN')?STLDAWN:STLIDLE),
+    img2:()=>alt('SALT')?STLSBURST:STLBURST,
+    hp:930,atk:62,def:9,boss:1,asc:.5,
+    ascN:'STARFORGED ECLIPSE',ascE:'⭐',
+    ascS:'⭐ STARFORGED ECLIPSE (×1.2, lifesteal)',
+    tip:'A star-forged sword that plants seals. Onyx Kit cuts your damage; Starfall is a charged constellation — break it (15% of her HP). At ≤50% HP: STARFORGED ECLIPSE.',
+    moves:[
+      {n:'Star Slash',p:1.15,w:5,im:()=>alt('SALT')?STLSSLASH:STLSLASH,msg:'cuts a Star Slash'},
+      {n:'Starflare Cut',p:1.35,w:3,im:()=>alt('SALT')?STLSFLARE:STLFLARE,msg:'ignites a Starflare Cut'},
+      {n:'Onyx Guard',cover:.4,heal:.06,w:2,im:()=>STLIDLE},
+      {n:'Starfall',charge:1,p:2.5,brk:.15,w:2,im:()=>alt('SALT')?STLSULT:STLULT,cmsg:'the constellations gather — Starfall is coming!',msg:'brings down STARFALL'}
+    ],
+    moves2:[
+      {n:'Star Slash',p:1.25,w:5,im:()=>STLBSLASH,msg:'cuts a Star Slash under Eclipse'},
+      {n:'Astra Rend',p:1.45,w:3,im:()=>STLREND,msg:'spends the seals in an Astra Rend'},
+      {n:'Starfall',charge:1,p:2.7,brk:.15,drain:1,w:2,im:()=>STLBULT,cmsg:'gold wings open — Starfall is coming!',msg:'brings down STARFALL'}
+    ]
+  },"A dark sky still has stars. I'll put them in you.");
+})();
 </script></body></html>
