@@ -3481,7 +3481,7 @@ try{ebnAltUI()}catch(e){}
 })();
 
 /*NYXARA (The Last Butterfly / Dual-Sword Rift Duelist). Code id is 'nyx'. Gauge is Veinlight. Does not alter any other heroine or the Fractured Timeline Violet Sovereign boss.*/
-const NYXFACE="img/nyx_face.jpg?v=e375e329",NYXIDLE="img/nyx_idle.jpg?v=2ec9ba14",NYXSLASH="img/nyx_slash.jpg?v=a8455d8d",NYXRIFT="img/nyx_rift.jpg?v=6e3eee7b",NYXCROSS="img/nyx_cross.jpg?v=c90df675",NYXULT="img/nyx_ult.jpg?v=fc69f24b",NYXBURST="img/nyx_burst.jpg?v=6ba9de76",NYXBURSTIN="img/nyx_burstin.jpg?v=b08023b8",NYXBSLASH="img/nyx_bslash.jpg?v=09d5774a",NYXBRIFT="img/nyx_brift.jpg?v=90200f7c",NYXBULT="img/nyx_bult.jpg?v=3d4997a3",NYXWIN="img/nyx_win.jpg?v=373b7f67",NYXHAT="img/nyx_hat.jpg?v=12073eba",NYXLEAP="img/nyx_leap.jpg?v=add33f5c";
+const NYXFACE="img/nyx_face.jpg?v=e375e329",NYXIDLE="img/nyx_idle.jpg?v=2ec9ba14",NYXSLASH="img/nyx_slash.jpg?v=a8455d8d",NYXRIFT="img/nyx_rift.jpg?v=6e3eee7b",NYXCROSS="img/nyx_cross.jpg?v=14d01ff5",NYXULT="img/nyx_ult.jpg?v=fc69f24b",NYXBURST="img/nyx_burst.jpg?v=6ba9de76",NYXBURSTIN="img/nyx_burstin.jpg?v=b08023b8",NYXBSLASH="img/nyx_bslash.jpg?v=09d5774a",NYXBRIFT="img/nyx_brift.jpg?v=90200f7c",NYXBULT="img/nyx_bult.jpg?v=3d4997a3",NYXWIN="img/nyx_win.jpg?v=373b7f67",NYXHAT="img/nyx_hat.jpg?v=12073eba",NYXLEAP="img/nyx_leap.jpg?v=add33f5c";
 window.NYXIMG={face:NYXFACE,idle:NYXIDLE,slash:NYXSLASH,rift:NYXRIFT,cross:NYXCROSS,ult:NYXULT,burst:NYXBURST,burstin:NYXBURSTIN,bslash:NYXBSLASH,brift:NYXBRIFT,bult:NYXBULT,win:NYXWIN,hat:NYXHAT,leap:NYXLEAP};
 GEL.veinlight=GEL.veinlight||['#e02040','#1a0508','🦋 Veinlight'];
 (function(){
@@ -3530,7 +3530,7 @@ const CMDS=()=>{
   const riftCost=AB()?0:K.riftCost;
   return [
     ['nsd','Scarlet Duet',`2 sword hits ×${K.duet}${AB()?` (×${K.abDmg} in Burst)`:''} · plants 1 🦋 Trace · +${K.basicG} Veinlight · no CD`],
-    ['nrs','Rift Step',`portal teleport, pierce ×${K.rift} or backstab pierce ×${K.riftBack} if a Trace is spent · grants Afterimage (next hit evaded) · +${K.riftG} Veinlight · ${riftCost?riftCost+' Veinlight':'FREE in Burst'} · CD ${rCD}`],
+    ['nrs','Rift Step',`portal teleport, pierce ×${K.rift} or backstab pierce ×${K.riftBack} if a Trace is spent · grants Afterimage (next attack evaded completely — even unblockable, multi-hit, or true damage) · +${K.riftG} Veinlight · ${riftCost?riftCost+' Veinlight':'FREE in Burst'} · CD ${rCD}`],
     ['nxx','Crimson Cross',`pierce ×${K.cross}${AB()?` (×${K.abDmg} in Burst)`:''} · if Afterimage is up, also a backstab (+×${K.crossBack}) and the dodge is spent · plants 1 🦋 Trace · +${K.crossG} Veinlight · CD ${xCD}`],
     ['nxb','Crimson Chrysalis',`FREE Burst: spend ${K.abCost} Veinlight, leftover kept, once per fight. 3 actions +1 per extra 100%. Dmg ×${K.abDmg}, taken ×${K.abTaken}, +${Math.round(K.abCrit*100)}% crit, +${K.abSpd} SPD, CDs −${K.abCD}, Veinlight ×${K.abG}, plants ${K.abFet} Traces. Rift Step is free.`],
     ['ult',"Kingdom's Wake",`4× ×${K.ult} + piercing finale ×${K.ultFin} (+×${K.ultFinTr}/Trace spent)${AB()?' · Burst amp':''} · Charge Break at 3 Traces or in Burst · Afterimage makes the finale a backstab (×${K.ultBack}) · ${K.ultCost} Veinlight`]
@@ -3660,16 +3660,24 @@ window.nyxAct=nyxAct;
 
 const _act=hsAct;hsAct=function(k){if(HS&&HS.id=='nyx')return nyxAct(k);return _act.apply(this,arguments)};
 
+const _he=hsEnemy;hsEnemy=async function(){if(!HS||HS.id!='nyx'||!HS.nyx||!HS.nyx.veil)return _he.apply(this,arguments);
+ const saved=(HS.foes||[]).map(f=>({f,venD:f.venD}));
+ (HS.foes||[]).forEach(f=>{if(f&&f.ven>0)f.venD=0});
+ try{return await _he.apply(this,arguments)}
+ finally{saved.forEach(s=>{if(s.f)s.f.venD=s.venD})}};
+
 const _core=hsEnemyCore;hsEnemyCore=async function(){if(!HS||HS.id!='nyx')return _core.apply(this,arguments);
- const T=HS.nyx,hp0=HS.hp,g0=HS.g,BIG=1e6;
+ const T=HS.nyx,hp0=HS.hp,g0=HS.g,sh0=HS.sh||0,BIG=1e6;
+ const eHp0=E&&E.hp,eVen0=E&&E.ven,eVenD0=E&&E.venD;
  HS.hp=hp0+BIG;let mv=null,dr=[];
  const L=[...(E.moves||[]),...(E.moves2||[])];const _l=hsLog;
  hsLog=function(t,c){const x=String(t);let m=x.match(/^⚔ .+? (?:attacks with|uses) (.+)!$/);if(m)mv=L.find(z=>z.n==m[1])||mv;if((m=x.match(/^It drains (\d+) HP\./)))dr.push(['d',+m[1]]);if((m=x.match(/^🪽 .+ drains (\d+) HP\./)))dr.push(['l',+m[1]]);return _l.apply(this,arguments)};
  try{await _core.apply(this,arguments)}finally{hsLog=_l}
  const raw=Math.max(0,hp0+BIG-HS.hp);HS.hp=hp0;HS.g=g0;
- if(raw>0&&T.veil){
-  T.veil=0;
-  for(const [t,h] of dr){E.hp=Math.max(1,E.hp+h)}
+ const off=mv&&!mv.buff&&!mv.guard&&!mv.cover&&!mv.link;
+ if(T.veil&&(raw>0||off)){
+  T.veil=0;HS.sh=sh0;
+  if(E){if(eHp0!=null)E.hp=eHp0;E.ven=eVen0;E.venD=eVenD0}
   hsLog('🦋 Afterimage — the rift takes the blow. She is already gone.','h');
   hsUpd();return;
  }
@@ -3697,7 +3705,7 @@ const _w=hsWin;hsWin=function(){if(HS&&HS.id=='nyx'&&HS.nyx)HS.nyx.won=1;return 
 
 PASS.nyx={play:"Scarlet Duet is her no-CD basic and plants 🦋 Traces. Rift Step spends a Trace (if she has one) to backstab and leaves an Afterimage that evades the next hit. Crimson Cross is a heavy crossed cut — and a backstab if she rifts first. Bank 100 Veinlight for Kingdom's Wake or spend it on a free Crimson Chrysalis (once per fight, leftover kept).",
  p:[{i:"🦋",n:"Vein Traces",k:"on",t:`Sword hits plant 🦋 Traces on the current foe (max ${K.maxTr}, +${Math.round(K.trCrit*100)}% crit each). Traces fall when the foe does. Rift Step spends 1 Trace to upgrade the cut into a backstab. When she is hit: +${K.hitG} Veinlight.`},
-    {i:"🦋",n:"Afterimage",k:"cond",t:`After Rift Step, the next enemy attack is evaded (0 damage, no on-hit). If she uses Crimson Cross or Kingdom's Wake first, the Afterimage is spent as a backstab instead.`,off:()=>!(HS&&HS.nyx&&HS.nyx.veil)},
+    {i:"🦋",n:"Afterimage",k:"cond",t:`After Rift Step, the next enemy attack is evaded completely (0 damage): unblockable and sure hits, true/piercing damage, every hit of a multi-hit, AoE, boss specials, and any DoT that attack would apply. Existing venom ticks on that enemy turn also deal 0. If she uses Crimson Cross or Kingdom's Wake first, the Afterimage is spent as a backstab instead.`,off:()=>!(HS&&HS.nyx&&HS.nyx.veil)},
     {i:"🦋",n:"Crimson Chrysalis",k:"once",t:`Spend ${K.abCost} Veinlight to enter Crimson Chrysalis once per fight (leftover gauge is kept): damage ×${K.abDmg}, taken ×${K.abTaken}, Veinlight gain ×${K.abG}, +${Math.round(K.abCrit*100)}% crit, +${K.abSpd} SPD, CDs −${K.abCD}, plants ${K.abFet} Traces, and Rift Step costs 0 Veinlight. Lasts 3 actions +1 per extra 100% banked. Free action — the enemy does not get a turn. No auto-revive.`,used:()=>HS&&HS.nyx&&HS.nyx.abU}],
  off:[]};
 CLEARS.nyx=()=>[['Nyxara',()=>pose('win'),"One world survived this time. I will not apologize for making sure of it."],['Narrator',()=>pose('win'),"🏆 Nyxara of the Butterfly Kingdom Clan stands in the afterimage of a fight she refused to lose twice."]];
@@ -3736,7 +3744,7 @@ const b=$('hpNyx');if(b)b.onclick=()=>hsModeOpen('nyx');
     hp:940,atk:60,def:9,boss:1,asc:.5,
     ascN:'CRIMSON CHRYSALIS',ascE:'🦋',
     ascS:'🦋 CRIMSON CHRYSALIS (×1.2, rift afterimage)',
-    tip:'The last sword of the Butterfly Kingdom Clan. Rift Step leaves an Afterimage that can evade a hit; Kingdom\'s Wake is a charged rift-ring — break it (15% of her HP). At ≤50% HP: CRIMSON CHRYSALIS.',
+    tip:'The last sword of the Butterfly Kingdom Clan. Rift Step leaves an Afterimage that evades the next attack completely (even unblockable or multi-hit); Kingdom\'s Wake is a charged rift-ring — break it (15% of her HP). At ≤50% HP: CRIMSON CHRYSALIS.',
     moves:[
       {n:'Scarlet Duet',p:.90,hits:2,w:5,im:()=>NYXSLASH,msg:'cuts a Scarlet Duet'},
       {n:'Rift Step',p:1.70,w:3,im:()=>NYXRIFT,msg:'tears a Rift Step and cuts from behind'},
