@@ -92,7 +92,7 @@ button:hover:not(:disabled){background:linear-gradient(#3b56a0,#1d2a55);transfor
 <div class="screen on" id="title"><button id="tStat" style="position:absolute;top:8px;right:8px;z-index:5;padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:rgba(27,36,64,.92);color:#ffe08a;font-size:14px">📊 Status</button><h1>Valkyrie of the Frozen Dawn</h1><img class="art" src="img/title.jpg" alt="Valkyrie"><p style="max-width:520px">Sigrún, crimson-haired Valkyrie of the north, must cut through four foes to stop the Ember Dragon from melting the world.</p><div id="leadSel" style="display:none"><button id="lsS" class="kon"></button><button id="lsE"></button></div><button class="big" id="startBtn">⚔ Normal Mode</button><small style="display:block;max-width:360px;margin:-4px auto 8px;color:#bcd;font-size:12px">All transformations.</small><button class="big" id="hardBtn" style="border-color:#f55;background:linear-gradient(#5a1a24,#24080e)">💀 Hard Mode</button><small style="display:block;max-width:360px;margin:-4px auto 8px;color:#f99;font-size:12px">Hard: enemies +30% HP, +20% ATK (you start with 5 potions, 3 ethers). Forms: Guardian → Winged Guardian, Ascend (sword or bow stance), Dark Mode, and a locked VSM.</small><button class="big" id="hsBtn" style="border-color:#ffd27a;background:linear-gradient(#4a3010,#1a0f04)">⚔ Heroines</button><button class="big" id="evBtn" style="border-color:#f9c;background:linear-gradient(#4a2040,#1a0818)">🌹 Event Battles</button><button class="big" id="galBtn" style="border-color:#9ef;background:linear-gradient(#1a3050,#0a1424)">🖼 Gallery</button><small>Keys: 1 Attack · 2 Guard · 3 Magic · 4 Bow · 5 Items · 6 Transform (R/B/A/V · bows H/S/C · defense G/D) · Enter = continue</small></div>
 <div class="screen" id="story"><img id="stImg" alt=""><div id="stChap"></div><div class="sbox"><span id="stWho"></span><div id="stTxt"></div><button id="stNext">Next ▶</button><div style="clear:both;margin-top:6px;display:flex;gap:6px"><button id="btlSpdBtn2" style="padding:4px 8px;border-radius:8px;border:1px solid #c9a24a;background:#1b2440;color:#7fe0ff;font-size:12px">▶1x</button><button id="btlSkipBtn2" style="padding:4px 8px;border-radius:8px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:12px;opacity:.75">Skip FX</button></div></div></div>
 <div class="screen" id="events"><h1 style="font-size:30px">⚔ Event Battles</h1><small>Special duels, playable any time (Sigrún at Lv 6, solo).</small><button id="evLookBtn" class="big" style="font-size:16px;padding:8px">📊 Status — Katana Looks</button><div class="panel" id="evLooks" style="display:none;width:100%;max-width:520px"></div><div id="katSel"><div class="kr"><span>Fighter:</span><button id="kfN" class="kon">🛡 Sigrún</button><button id="kfK">⚔⚔ Dual Katana</button></div><img id="katPrev" style="display:none"><small id="katInfo" style="display:none">Event-only form. No shield: Parry instead of Guard (takes ¾ damage, counters normal attacks with a holy cut). Twin Strike (2 fast hits), Holy Twin Slash builds combo, Thousand Petals spends it. Faster but −30% defense. Outfits are cosmetic.</small></div><div id="evList"></div><button id="evBack">◀ Back</button></div>
-<div class="screen" id="allysel"><h1 style="font-size:28px">Choose 1 or 2 Allies</h1><small>Everyone you leave behind fall to the shadow — you will face them on the road to the Ember Dragon.</small><div id="agrid"></div><button class="big" id="aconf" disabled>Pick 2 allies</button></div>
+<div class="screen" id="allysel"><h1 style="font-size:28px">Choose 1 or 2 Allies</h1><small>Everyone you leave behind falls to the shadow — you will face them on the road to the Ember Dragon.</small><div id="agrid"></div><button class="big" id="aconf" disabled>Pick 2 allies</button></div>
 <div class="screen" id="battle"><button id="stBtnB">📊 Status</button>
 <div id="hdr"><span id="stage"></span><span id="lvl"></span></div>
 <div id="field">
@@ -110,7 +110,7 @@ button:hover:not(:disabled){background:linear-gradient(#3b56a0,#1d2a55);transfor
 <div class="screen" id="gallery"><div class="ghead"><button id="galBack">◀ Back</button><h1>🖼 Gallery</h1><span></span></div><small>Main Game ⇄ Summer Event · tap a card to enlarge</small><div id="galBody" style="width:100%;display:flex;flex-direction:column;align-items:center"></div></div><div id="galZoom"></div><div class="screen" id="camp"><h1 style="font-size:30px">⛺ Camp</h1><div class="panel"><b>💞 Bond with Ethan: <span id="bondT"></span></b><div id="bondM"><div id="bondB"></div></div><small id="bondP"></small></div><div class="campB"><button class="big" id="cTalk">💬 Talk to Ethan</button><button class="big" id="cStat">📊 Status</button><button class="big" id="cGal">🖼 Gallery</button><button class="big" id="cGo">▶ Continue</button></div><div class="panel" id="campP" style="display:none"></div></div><div class="screen" id="inter"><h1 id="iTitle">Victory!</h1><img class="art" id="iArt" src="img/alt.jpg" style="max-height:38vh"><div class="panel" id="iText"></div><button class="big" id="nextBtn">⛺ To Camp ▶</button></div>
 <div class="screen" id="win"><h1 id="winH">The Dawn is Saved!</h1><img class="art" src="img/bow.jpg"><div class="panel"><span id="winP">Her dark mirror shatters into starlight. Sigrún's frost-light spreads across the land.</span><div id="winStats"></div></div><button class="big" id="again1">↻ Play Again</button></div>
 <div class="screen" id="over"><h1 style="color:#f66">Defeated...</h1><div class="panel">Sigrún's light flickers out... but Valkyries always rise again.</div><button class="big" id="again2">↻ Try Again</button></div>
-<div id="stScr"><div class="sth"><b>📊 Status</b><button class="stTab" data-st="sig">🛡 Sigrún</button><button class="stTab" data-st="eth">🎯 Ethan</button><button class="stTab" data-st="her">⚔ Heroines</button><button id="stClose">✕</button></div><div id="stBody"></div></div><div class="screen" id="hpick"><h1 style="font-size:28px;margin-top:30px">⚔ Heroines</h1><small id="hpIntro">Pick a heroine first. <b style="color:#7fe0ff">🏖 Summer Event</b> is the main path — or take the short Ember Dragon road.</small><div id="hsMode" style="display:none;width:100%;max-width:420px;margin:6px 0;padding:10px;border-radius:14px;border:2px solid #4ac0e0;background:#0a1f33;box-sizing:border-box"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><img id="hsModeImg" style="width:72px;height:72px;border-radius:10px;object-fit:cover;object-position:50% 20%;border:2px solid #c9a24a"><div><b id="hsModeName" style="color:#ffe08a;font-size:17px"></b><br><small id="hsModeSub" style="color:#bcd">Choose a path</small></div></div><div id="hsModeInfo"></div><div id="hsModePick" style="display:flex;flex-direction:column;gap:8px"><button id="hsModeSum" style="padding:12px;border-radius:12px;border:2px solid #4ac0e0;background:#0e2a3a;color:#dff;font-size:16px;text-align:left">🏖 Summer Event<small style="display:block;color:#9de;font-size:12px;margin-top:2px">Main path · beach festival → Dark Valkyrie · continues from your progress</small></button><button id="hsModeShort" style="padding:12px;border-radius:12px;border:1px solid #2d3a66;background:#121a33;color:#bcd;font-size:15px;text-align:left">🐉 Short road<small style="display:block;color:#89a;font-size:12px;margin-top:2px">Frost Wolf → … → Ember Dragon (4 fights)</small></button><button id="hsModeVs" style="padding:12px;border-radius:12px;border:2px solid #c98a4a;background:#2a1a0e;color:#ffe0b0;font-size:16px;text-align:left">⚔ VS Heroine<small style="display:block;color:#dcb;font-size:12px;margin-top:2px">1v1 exhibition · full kit · no festival progress</small></button><button id="hsModeBack" class="big">◀ Back to heroines</button></div><div id="hsModeVsPanel" style="display:none"><b style="color:#ffc070">⚔ VS — pick opponent</b><div id="vsRow" style="display:flex;flex-direction:column;gap:6px;width:100%;margin-top:6px"></div><div style="margin:8px 0;display:flex;gap:6px;flex-wrap:wrap;align-items:center"><small style="color:#bcd">Lv</small><button data-vslv="7" class="vsLv">7</button><button data-vslv="8" class="vsLv">8</button><button data-vslv="9" class="vsLv">9</button><button data-vslv="10" class="vsLv kon">10</button></div><small id="vsHint" style="color:#9ab"></small><button id="hsModeVsGo" class="big" style="margin-top:8px" disabled>▶ Fight</button><button id="hsModeVsBack" class="big">◀ Back</button></div><div id="hsModeSumStages" style="display:none"><b style="color:#7fe0ff">🏖 Summer — pick chapter</b><div id="sumRow"></div><small id="sumHint"></small><button id="hsModeGo" class="big" style="margin-top:8px" disabled>▶ Start Summer</button><button id="hsModeSumReset" style="margin-top:6px;padding:8px;border-radius:12px;border:1px solid #a44;background:#2a1218;color:#fca;font-size:13px;width:100%">↺ Reset this girl's Summer progress</button><button id="hsModeBack2" class="big">◀ Back</button></div></div><div id="hpList" class="hpc"><button id="hpDak"><img src="img/dakota.jpg"><b>🤠 Dakota Silverspur</b><small>Twin-Blade Gunslinger · Ammo, crits, Outlaw Star burst form</small></button><button id="hpNoi"><img src="img/noire.jpg"><b>🗡 Noire Ashblade</b><small>Twin-Katana Berserker · stronger as HP falls, lifesteal ultimate</small></button><button id="hpSky"><img src="img/skye.jpg"><b>⚡ Skye Vantor</b><small>Summer Speedster · Boost gauge, double actions, Sonic Valkyrie burst form</small></button><button id="hpSer"><img src="img/ser.jpg"><b>✨ Seraphine Vale</b><small>Holy Brawler · gold gauntlets, Faith gauge, Saint of the Tides burst form</small></button><button id="hpSig"><img src="img/sum_sigrun_select.jpg"><b>🪽 Sigrún</b><small>Valkyrie of Sword &amp; Shield · Aegis Guard &amp; ⚜ Retribution, Valor gauge, Ice Form burst</small></button><button id="hpHan"><img src="img/hana.jpg"><b>🌸 Hana Shirasagi</b><small>Sakura Swordswoman · iaido crits, Petals gauge, White Heron Bloom burst form</small></button><button id="hpMor"><img src="img/sum_morgana.jpg"><b>🌊 Morgana Tide</b><small>Tide Caller / Leviathan Binder · Depth gauge, Riptide, Leviathan Ascendant burst</small></button><button id="hpAur"><img src="img/sum_aurelia_select.jpg"><b>👑 Aurelia Crownsteel</b><small>Summer King of Knights · Mana / Pledge / Avalon · EXCALIBUR · King of Knights burst</small></button><button id="hpElo"><img src="img/sum_elowen_select.jpg"><b>🕊 Elowen Brightveil</b><small>Bridal-knight · Vow / Lace Barrier / Veil Waltz · Bridal Oath · White Procession burst</small></button><button id="hpCae"><img src="img/cae_idle.jpg"><b>☀ Caelia Solenne</b><small>Festival-stranded goddess · holy spells, Grace / Bloom, Jasmine Sanctuary · Heaven Unbound burst</small></button><button id="hpRos"><img src="img/ros_sum.jpg"><b>💗 Roselia Amorette</b><small>Matchmaking heart angel · holy spells, Heartmarks, swimsuit ⇄ armor · Celestial Heart burst</small></button><button id="hpFeth"><img src="img/feth_idle.jpg"><b>⏳ Future Ethan</b><small>Guest fighter · Temporal Operative · Time Fracture / Sync · Mission Override · Timeline Collapse</small></button><button id="hpKvex"><img src="img/kvex_idle.jpg"><b>🔥 Kaelyn Vex</b><small>Ash-Timeline Duelist · fire blade, Solar Burn / Ember · Suit ⇄ Swimsuit · Timeline Burn</small></button><button id="hpMna"><img src="img/mana_idle.jpg"><b>✨ Mana the Arcane</b><small>Magical Artillery / Hybrid Support · Emerald Resonance · Arcane Burst · Cataclysm Spell · Armor ⇄ Swimsuit</small></button><button id="hpNoc"><img src="img/noc_idle.jpg"><b>🩸 Noctira</b><small>Crimson Lance · High-ATK Physical Spear DPS / Hybrid Breaker · Cape of the Fallen · Crimson Awakening · Armor ⇄ Swimsuit</small></button><button id="hpIso"><img src="img/iso_idle.jpg"><b>🔷 Isolde Clairenne</b><small>Knight of the Sapphire Crown · Royal Greatsword / Stance Knight · Three Oaths · Coronation of the Dawn · Armor ⇄ Swimsuit</small></button><button id="hpStl"><img src="img/stl_idle.jpg"><b>⭐ Stellara</b><small>Starforged Blade · Star-Seal Sword DPS · Onyx ⇄ Dawnlight · Starforged Eclipse · Armor ⇄ Swimsuit</small></button><button id="hpEth"><img src="img/eth_portrait.jpg"><b>🎯 Ethan Vance</b><small>Guest fighter · White Horizon rifle knight · Resolve / barrier / counters · Survival Mode burst</small></button></div><button id="hpDakAlt" onclick="setDakAlt(!DALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a2030;color:#ffe08a;font-size:15px">🎨 Dakota outfit ⇄</button><button id="hpEloAlt" onclick="eloNextAlt()" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e8c0ff;background:#22182e;color:#ffe8f0;font-size:15px">🎨 Elowen outfit ⇄</button><button id="hpAurAlt" onclick="setAurAlt(!AALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a1830;color:#ffe08a;font-size:15px">🎨 Aurelia outfit ⇄</button><button id="hpNoiAlt" onclick="setNoAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">🎨 Noire outfit ⇄</button><button id="hpNoiSer" onclick="setNoSer(!NSER)" style="margin:0 0 6px;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">💢 Serious Mode ⇄</button><button id="hpMnaAlt" onclick="setMnaAlt(!MALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #5eecc0;background:#102820;color:#c8ffe8;font-size:15px">🎨 Mana outfit: Armor ⇄</button><button id="hpNocAlt" onclick="setNocAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e23b4a;background:#2a1018;color:#ffd0d6;font-size:15px">🎨 Noctira outfit: Armor ⇄</button><button id="hpIsoAlt" onclick="setIsoAlt(!IALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #3c7ee0;background:#102038;color:#d4e6ff;font-size:15px">🎨 Isolde outfit: Armor ⇄</button><button id="hpStlKit" onclick="setStlKit(!SDAWN)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">⚔ Stellara kit: Onyx ⇄</button><button id="hpStlAlt" onclick="setStlAlt(!SALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">🎨 Stellara outfit: Armor ⇄</button><button class="big" id="hpBack">◀ Back</button></div><div class="screen" id="hsolo"><div class="esTop" style="display:flex;justify-content:space-between;width:100%;align-items:center;gap:4px;flex-wrap:wrap"><button id="hsQuit" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">◀ Title</button><div style="display:flex;gap:4px;align-items:center"><button id="btlSpdBtn" title="Battle speed" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#7fe0ff;font-size:13px">▶1x</button><button id="btlSkipBtn" title="Skip cut-in FX" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:12px;opacity:.75">Skip FX</button></div><button id="hsStatB" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">📊 Status</button></div><div id="hsFoes"></div><div id="hsPicWrap"><div id="hsPic"></div><div id="hsBqBadge" title="Bouquet Drain">💐</div></div><div class="name" id="hsName"></div><div style="width:100%"><div style="display:flex;justify-content:space-between;font-size:13px"><span>HP</span><span id="hsEhpT"></span></div><div class="esb"><i id="hsEhpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div id="hsEst"></div></div><div id="hsHero"><img id="hsImg"><div class="esI"><b></b> <span id="hsLv"></span><div class="lbl"><span>HP</span><span id="hsHpT"></span></div><div class="esb"><i id="hsHpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div class="lbl"><span>Ammo</span><span id="hsAmL" style="color:#ffb347"></span></div><div class="lbl"><span id="hsGN"></span><span id="hsGT"></span></div><div class="esb gseg"><i id="hsGB" style="background:#ffd27a"></i></div><div id="hsSt"></div></div></div><div id="hsPasW"><div id="hsPas" class="pasBar"></div><div id="hsPasTip"></div></div><button id="hsOSF" style="display:none"></button><div id="hsCmds"></div><div id="hsLog"></div></div><script>
+<div id="stScr"><div class="sth"><b>📊 Status</b><button class="stTab" data-st="sig">🛡 Sigrún</button><button class="stTab" data-st="eth">🎯 Ethan</button><button class="stTab" data-st="her">⚔ Heroines</button><button id="stClose">✕</button></div><div id="stBody"></div></div><div class="screen" id="hpick"><h1 style="font-size:28px;margin-top:30px">⚔ Heroines</h1><small id="hpIntro">Pick a heroine first. <b style="color:#7fe0ff">🏖 Summer Event</b> is the main path — or take the short Ember Dragon road.</small><div id="hsMode" style="display:none;width:100%;max-width:420px;margin:6px 0;padding:10px;border-radius:14px;border:2px solid #4ac0e0;background:#0a1f33;box-sizing:border-box"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><img id="hsModeImg" style="width:72px;height:72px;border-radius:10px;object-fit:cover;object-position:50% 20%;border:2px solid #c9a24a"><div><b id="hsModeName" style="color:#ffe08a;font-size:17px"></b><br><small id="hsModeSub" style="color:#bcd">Choose a path</small></div></div><div id="hsModeInfo"></div><div id="hsModePick" style="display:flex;flex-direction:column;gap:8px"><button id="hsModeSum" style="padding:12px;border-radius:12px;border:2px solid #4ac0e0;background:#0e2a3a;color:#dff;font-size:16px;text-align:left">🏖 Summer Event<small style="display:block;color:#9de;font-size:12px;margin-top:2px">Main path · beach festival → Dark Valkyrie · continues from your progress</small></button><button id="hsModeShort" style="padding:12px;border-radius:12px;border:1px solid #2d3a66;background:#121a33;color:#bcd;font-size:15px;text-align:left">🐉 Short road<small style="display:block;color:#89a;font-size:12px;margin-top:2px">Frost Wolf → … → Ember Dragon (4 fights)</small></button><button id="hsModeVs" style="padding:12px;border-radius:12px;border:2px solid #c98a4a;background:#2a1a0e;color:#ffe0b0;font-size:16px;text-align:left">⚔ VS Heroine<small style="display:block;color:#dcb;font-size:12px;margin-top:2px">1v1 exhibition · full kit · no festival progress</small></button><button id="hsModeBack" class="big">◀ Back to heroines</button></div><div id="hsModeVsPanel" style="display:none"><b style="color:#ffc070">⚔ VS — pick opponent</b><div id="vsRow" style="display:flex;flex-direction:column;gap:6px;width:100%;margin-top:6px"></div><div style="margin:8px 0;display:flex;gap:6px;flex-wrap:wrap;align-items:center"><small style="color:#bcd">Lv</small><button data-vslv="7" class="vsLv">7</button><button data-vslv="8" class="vsLv">8</button><button data-vslv="9" class="vsLv">9</button><button data-vslv="10" class="vsLv kon">10</button></div><small id="vsHint" style="color:#9ab"></small><button id="hsModeVsGo" class="big" style="margin-top:8px" disabled>▶ Fight</button><button id="hsModeVsBack" class="big">◀ Back</button></div><div id="hsModeSumStages" style="display:none"><b style="color:#7fe0ff">🏖 Summer — pick chapter</b><div id="sumRow"></div><small id="sumHint"></small><button id="hsModeGo" class="big" style="margin-top:8px" disabled>▶ Start Summer</button><button id="hsModeSumReset" style="margin-top:6px;padding:8px;border-radius:12px;border:1px solid #a44;background:#2a1218;color:#fca;font-size:13px;width:100%">↺ Reset this girl's Summer progress</button><button id="hsModeBack2" class="big">◀ Back</button></div></div><div id="hpList" class="hpc"><button id="hpDak"><img src="img/dakota.jpg"><b>🤠 Dakota Silverspur</b><small>Twin-Blade Gunslinger · Ammo, crits, Outlaw Star burst form</small></button><button id="hpNoi"><img src="img/noire.jpg"><b>🗡 Noire Ashblade</b><small>Twin-Katana Berserker · stronger as HP falls, lifesteal ultimate</small></button><button id="hpSky"><img src="img/skye.jpg"><b>⚡ Skye Vantor</b><small>Summer Speedster · Boost gauge, double actions, Sonic Valkyrie burst form</small></button><button id="hpSer"><img src="img/ser.jpg"><b>✨ Seraphine Vale</b><small>Holy Brawler · gold gauntlets, Faith gauge, Saint of the Tides burst form</small></button><button id="hpSig"><img src="img/sum_sigrun_select.jpg"><b>🪽 Sigrún</b><small>Valkyrie of Sword &amp; Shield · Aegis Guard &amp; ⚜ Retribution, Valor gauge, Ice Form burst</small></button><button id="hpHan"><img src="img/hana.jpg"><b>🌸 Hana Shirasagi</b><small>Sakura Swordswoman · iaido crits, Petals gauge, White Heron Bloom burst form</small></button><button id="hpMor"><img src="img/sum_morgana.jpg"><b>🌊 Morgana Tide</b><small>Tide Caller / Leviathan Binder · Depth gauge, Riptide, Leviathan Ascendant burst</small></button><button id="hpAur"><img src="img/sum_aurelia_select.jpg"><b>👑 Aurelia Crownsteel</b><small>Summer King of Knights · Mana / Pledge / Avalon · EXCALIBUR · King of Knights burst</small></button><button id="hpElo"><img src="img/sum_elowen_select.jpg"><b>🕊 Elowen Brightveil</b><small>Bridal-knight · Vow / Lace Barrier / Veil Waltz · Bridal Oath · White Procession burst</small></button><button id="hpCae"><img src="img/cae_idle.jpg"><b>☀ Caelia Solenne</b><small>Festival-stranded goddess · holy spells, Grace / Bloom, Jasmine Sanctuary · Heaven Unbound burst</small></button><button id="hpRos"><img src="img/ros_sum.jpg"><b>💗 Roselia Amorette</b><small>Matchmaking heart angel · holy spells, Heartmarks, swimsuit ⇄ armor · Celestial Heart burst</small></button><button id="hpFeth"><img src="img/feth_idle.jpg"><b>⏳ Future Ethan</b><small>Guest fighter · Temporal Operative · Time Fracture / Sync · Mission Override · Timeline Collapse</small></button><button id="hpKvex"><img src="img/kvex_idle.jpg"><b>🔥 Kaelyn Vex</b><small>Ash-Timeline Duelist · fire blade, Solar Burn / Ember · Suit ⇄ Swimsuit · Timeline Burn</small></button><button id="hpMna"><img src="img/mana_idle.jpg"><b>✨ Mana the Arcane</b><small>Magical Artillery / Hybrid Support · Emerald Resonance · Arcane Burst · Cataclysm Spell · Armor ⇄ Swimsuit</small></button><button id="hpNoc"><img src="img/noc_idle.jpg"><b>🩸 Noctira</b><small>Crimson Lance · High-ATK Physical Spear DPS / Hybrid Breaker · Cape of the Fallen · Crimson Awakening · Armor ⇄ Swimsuit</small></button><button id="hpIso"><img src="img/iso_idle.jpg"><b>🔷 Isolde Clairenne</b><small>Knight of the Sapphire Crown · Royal Greatsword / Stance Knight · Three Oaths · Coronation of the Dawn · Armor ⇄ Swimsuit</small></button><button id="hpStl"><img src="img/stl_idle.jpg"><b>⭐ Stellara</b><small>Starforged Blade · Star-Seal Sword DPS · Onyx ⇄ Dawnlight · Starforged Eclipse · Armor ⇄ Swimsuit</small></button><button id="hpEbn"><img src="img/ebn_idle.jpg"><b>⛓ Ebonwing</b><small>The Self-Crowned · Chain-Whip Anti-Hero · Rage ⇄ Sovereign · Crimson Mandate · Armor ⇄ Swimsuit</small></button><button id="hpEth"><img src="img/eth_portrait.jpg"><b>🎯 Ethan Vance</b><small>Guest fighter · White Horizon rifle knight · Resolve / barrier / counters · Survival Mode burst</small></button></div><button id="hpDakAlt" onclick="setDakAlt(!DALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a2030;color:#ffe08a;font-size:15px">🎨 Dakota outfit ⇄</button><button id="hpEloAlt" onclick="eloNextAlt()" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e8c0ff;background:#22182e;color:#ffe8f0;font-size:15px">🎨 Elowen outfit ⇄</button><button id="hpAurAlt" onclick="setAurAlt(!AALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a1830;color:#ffe08a;font-size:15px">🎨 Aurelia outfit ⇄</button><button id="hpNoiAlt" onclick="setNoAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">🎨 Noire outfit ⇄</button><button id="hpNoiSer" onclick="setNoSer(!NSER)" style="margin:0 0 6px;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">💢 Serious Mode ⇄</button><button id="hpMnaAlt" onclick="setMnaAlt(!MALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #5eecc0;background:#102820;color:#c8ffe8;font-size:15px">🎨 Mana outfit: Armor ⇄</button><button id="hpNocAlt" onclick="setNocAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e23b4a;background:#2a1018;color:#ffd0d6;font-size:15px">🎨 Noctira outfit: Armor ⇄</button><button id="hpIsoAlt" onclick="setIsoAlt(!IALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #3c7ee0;background:#102038;color:#d4e6ff;font-size:15px">🎨 Isolde outfit: Armor ⇄</button><button id="hpStlKit" onclick="setStlKit(!SDAWN)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">⚔ Stellara kit: Onyx ⇄</button><button id="hpStlAlt" onclick="setStlAlt(!SALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">🎨 Stellara outfit: Armor ⇄</button><button id="hpEbnEdict" onclick="setEbnEdict(({'base':'rage','rage':'sov','sov':'base'})[EDICT]||'rage')" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c41e3a;background:#1a0a0c;color:#ffd0a8;font-size:15px">⛓ Ebonwing edict: Base Edict ⇄</button><button id="hpEbnAlt" onclick="setEbnAlt(!EALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c41e3a;background:#1a0a0c;color:#ffd0a8;font-size:15px">🎨 Ebonwing outfit: Armor ⇄</button><button class="big" id="hpBack">◀ Back</button></div><div class="screen" id="hsolo"><div class="esTop" style="display:flex;justify-content:space-between;width:100%;align-items:center;gap:4px;flex-wrap:wrap"><button id="hsQuit" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">◀ Title</button><div style="display:flex;gap:4px;align-items:center"><button id="btlSpdBtn" title="Battle speed" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#7fe0ff;font-size:13px">▶1x</button><button id="btlSkipBtn" title="Skip cut-in FX" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:12px;opacity:.75">Skip FX</button></div><button id="hsStatB" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">📊 Status</button></div><div id="hsFoes"></div><div id="hsPicWrap"><div id="hsPic"></div><div id="hsBqBadge" title="Bouquet Drain">💐</div></div><div class="name" id="hsName"></div><div style="width:100%"><div style="display:flex;justify-content:space-between;font-size:13px"><span>HP</span><span id="hsEhpT"></span></div><div class="esb"><i id="hsEhpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div id="hsEst"></div></div><div id="hsHero"><img id="hsImg"><div class="esI"><b></b> <span id="hsLv"></span><div class="lbl"><span>HP</span><span id="hsHpT"></span></div><div class="esb"><i id="hsHpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div class="lbl"><span>Ammo</span><span id="hsAmL" style="color:#ffb347"></span></div><div class="lbl"><span id="hsGN"></span><span id="hsGT"></span></div><div class="esb gseg"><i id="hsGB" style="background:#ffd27a"></i></div><div id="hsSt"></div></div></div><div id="hsPasW"><div id="hsPas" class="pasBar"></div><div id="hsPasTip"></div></div><button id="hsOSF" style="display:none"></button><div id="hsCmds"></div><div id="hsLog"></div></div><script>
 try{document.querySelector('.jsw').style.display='none'}catch(e){}
 // touch: fire click on touchend (no 300ms delay / works in webviews); preventDefault avoids double click
 document.addEventListener('touchend',e=>{const b=e.target.closest&&e.target.closest('button,.acard,.ev');if(b&&!b.disabled&&e.cancelable){e.preventDefault();b.click()}},{passive:false});
@@ -470,6 +470,26 @@ const GAL=[
  {n:'Summer Starflare / Rend',img:()=>STLSFLARE,el:'starlight',r:'E',u:'Starflare Cut and Astra Rend in the festival swimsuit, including during Summer Eclipse.',st:{Starflare:'×2.00 + ×0.25/seal',Rend:'×1.55 + ×0.70/seal spent'},ab:[['Beach constellation','The seals still land']]},
  {n:'Summer Starfall',img:()=>STLSULT,el:'starlight',r:'L',u:'Starfall in the festival swimsuit, including during Summer Eclipse.',st:{Damage:'3 × ×1.15 + piercing finale ×2.90 + seal nova'},ab:[['Night shoreline','Golden meteors over the water']]},
  {n:'Summer Burst Mode',img:()=>STLSBURST,el:'starlight',r:'L',u:'Starforged Eclipse entry and idle in the festival swimsuit — the bikini stays visible, with gold-black starlight wings and a constellation halo.',st:{Duration:'3 actions +1 per extra 100% banked',Damage:'×1.55',Taken:'×0.55'},ab:[['Summer Eclipse','Bikini, starlight wings, and a gold halo — the festival look never leaves her']]}]],
+ ['⛓ Ebonwing',[
+ {n:'Ebonwing',img:()=>EBNIDLE,el:'dominion',r:'L',u:'Title → ⚔ Heroines → ⛓ Ebonwing.',st:{HP:'310 + 38/Lv',ATK:'24 + 4.3/Lv',DEF:'10 + 1.8/Lv',Crit:'13% (×2) +3%/Fetter',Gauge:'Dominion (500)'},ab:[['The Self-Crowned','White hair with red streaks, red eyes, black-and-red horns tipped in gold, white wings with red tips, and a chain whip in her left hand'],['Fetter Law','Base ⇄ Rage ⇄ Sovereign mid-fight: bank binds, spend them in fury, or keep them as a control aura']]},
+ {n:'Ebonwing — Portrait',img:()=>EBNFACE,el:'dominion',r:'R',u:'Battle portrait — used for status, introductions, and Burst speech.',st:{Role:'The Self-Crowned',Title:'Chain-Whip Anti-Hero'},ab:[['Battle portrait','Red eyes, crimson-streaked white hair, and gold-tipped horns']]},
+ {n:'Rage Edict',img:()=>EBNRAGE,el:'dominion',r:'L',u:'Mid-fight edict. Deeper crimson hair, blazing eyes, animated chains — damage amp and aggression.',st:{Taken:'×0.95','Skills':'×1.22',Fetters:'Twin Cleave spends ALL stacks',Lifesteal:'15% of bonus'},ab:[['Rage Edict','No more patience.']]},
+ {n:'Sovereign Edict',img:()=>EBNSOV,el:'dominion',r:'L',u:'Mid-fight edict. Crown-like horns, a jeweled crown, and extra gold — buffs and a control aura.',st:{Taken:'×0.72','Aura':'foe damage ×0.82 while Fetters remain',Hook:'80% stun, Charge Break at 3+ Fetters'},ab:[['Sovereign Edict','Kneel or break. Those are the terms.']]},
+ {n:'Whip Lash',img:()=>EBNLASH,el:'dominion',r:'R',u:'Basic, no cooldown. A single-target chain-whip crack from her left hand.',st:{Damage:'×1.85 physical',Fetters:'+1 (+2 in Sovereign)',Dominion:'+16'},ab:[['No cooldown','The whip starts every sentence']]},
+ {n:'Twin Cleave',img:()=>EBNCLAW,el:'dominion',r:'E',u:'Skill 1, cooldown 2 (1 in Burst). Dual claw gauntlets, then an Edict payoff.',st:{Damage:'2 × ×1.05',Base:'spends 1 Fetter for a third hit ×0.50',Rage:'spends ALL Fetters, +×0.45 each'},ab:[['Claw payoff','The whip binds. The claws collect.']]},
+ {n:'Hooked Verdict',img:()=>EBNHOOK,el:'dominion',r:'E',u:'Skill 2, cooldown 3 (2 in Burst). A whip crack that pulls and can stun.',st:{Damage:'×2.40 pierce',Fetters:'+2',Stun:'50% Base / 40% Rage / 80% Sovereign'},ab:[['Pull and bind','Not a primary charge-break — Sovereign only, and only at 3+ Fetters']]},
+ {n:'Helix Scourge',img:()=>EBNULT,el:'dominion',r:'L',u:'Ultimate at 100 Dominion. A multi-lash of living chain.',st:{Damage:'4 × ×1.00 + piercing finale ×2.85, plus Fetter bonus'},ab:[['Helix Scourge','The chains write the sentence']]},
+ {n:'Crimson Mandate',img:()=>EBNBURSTIN,el:'dominion',r:'L',u:'Crimson Mandate — a free action at 100 Dominion, once per fight. Leftover Dominion is kept.',st:{Duration:'3 actions +1 per extra 100% banked',Damage:'×1.65',Taken:'×0.55',Crit:'+12%',SPD:'+6',Fetters:'plants 3 immediately'},ab:[['Crimson Mandate','Wings, chains, all of it. This is mine. The enemy does not get a turn when she awakens']]},
+ {n:'Burst Mode Standing',img:()=>EBNBURST,el:'dominion',r:'L',u:'Battle portrait during Crimson Mandate — spiked horns, energy wings, glowing armor and chains.',st:{Portrait:'Awakened battle idle',Look:'Red/black energy wings, energy claws, energy whip'},ab:[['Crimson Mandate','The fire is hers. The agenda stays.']]},
+ {n:'Burst Weapons',img:()=>EBNBLASH,el:'dominion',r:'E',u:'Whip Lash, Twin Cleave, and Hooked Verdict while she is in Crimson Mandate.',st:{Basic:'×1.85 × 1.65',Skills:'also ×1.65 Burst (and ×1.22 if Rage is on)'},ab:[['Mandate weapons','Energy claws and an energy whip']]},
+ {n:'Burst Helix Scourge',img:()=>EBNBULT,el:'dominion',r:'L',u:'Helix Scourge while she is in Crimson Mandate.',st:{Finale:'×2.85 + Fetter bonus, then ×1.65 Burst'},ab:[['Mandate Scourge','Energy chains in a helix']]},
+ {n:'Victory',img:()=>EBNWIN,el:'dominion',r:'R',u:'Victory portrait — hand on hip, the fight already over.',st:{Portrait:'Victory',Look:'Base armor, unimpressed, already leaving'},ab:[['I got what I came for','Don\'t follow.']]}]],
+ ['🏖 Ebonwing — Summer',[
+ {n:'Ebonwing — Summer Portrait',img:()=>EBNSFACE,el:'dominion',r:'R',u:'Battle portrait — status and introductions in the festival swimsuit.',st:{Role:'The Self-Crowned',Title:'Chain-Whip Anti-Hero'},ab:[['Summer portrait','Hands at her face on the beach, horns and red-streaked hair still hers']]},
+ {n:'Ebonwing — Summer Swimsuit',img:()=>EBNSUM,el:'dominion',r:'L',u:'Character select and default swimsuit battle portrait. Toggle Armor ⇄ Swimsuit on the select screen or mid-fight (free, once per turn, same kit).',st:{HP:'310 + 38/Lv',ATK:'24 + 4.3/Lv',DEF:'10 + 1.8/Lv',Crit:'13% (×2) +3%/Fetter',Gauge:'Dominion (500)'},ab:[['Festival outfit','A beach swimsuit variant — the whip and the agenda stay'],['Same kit','The switch is only the picture — her numbers never change']]},
+ {n:'Summer Whip / Claws / Hook',img:()=>EBNSSLASH,el:'dominion',r:'R',u:'Whip Lash, Twin Cleave, and Hooked Verdict in the festival swimsuit, including during Summer Mandate.',st:{'Whip Lash':'×1.85 basic','Twin Cleave':'2 × ×1.05 + Edict payoff'},ab:[['Festival chains','Same kit; only the picture changes']]},
+ {n:'Summer Helix Scourge',img:()=>EBNSULT,el:'dominion',r:'L',u:'Helix Scourge in the festival swimsuit, including during Summer Mandate. Night-beach plate.',st:{Damage:'4 × ×0.90 + piercing finale ×2.60 + Fetter bonus'},ab:[['Night shoreline','Chains over dark water']]},
+ {n:'Summer Burst Mode',img:()=>EBNSBURST,el:'dominion',r:'L',u:'Crimson Mandate entry and idle in the festival look — a sheer dark gown by the water.',st:{Duration:'3 actions +1 per extra 100% banked',Damage:'×1.65',Taken:'×0.55'},ab:[['Summer Mandate','The festival look stays. The fire is still hers.']]}]],
  ['🎯 Ethan',[
  {n:'Ethan "Sureshot" Vance',img:()=>ETHI,el:'gun',r:'R',u:'Joins after the duel; leads in Ethan-led campaign mode, and is a playable heroine.',st:{HP:'110 + 22/Lv',ATK:'12 + 4/Lv (campaign ally)',DEF:'5 + 2/Lv',MP:'30 + 6/Lv (campaign ally)',Crit:'35% (×2)',Ammo:'5'},ab:[['Overwatch','Counter-shot ×1.2 when the enemy moves (1 ammo)'],['Cover','½ damage, 35% dodge for a turn'],['Reload','Refill 5 rounds, +6 MP']]},
  {n:'Ethan — White Horizon Armor',img:()=>ETHHZ,el:'guard',r:'L',u:'Title → ⚔ Heroines → 🎯 Ethan Vance (playable).',st:{HP:'200 + 24/Lv',ATK:'18 + 4/Lv',DEF:'8 + 1.6/Lv',Crit:'15% (×2)',Ammo:'5'},ab:[['Horizon Mend','All his hits heal 25% of damage dealt'],['White Barrier','Barrier up to 40% max HP']]},
@@ -2954,7 +2974,7 @@ const bk=$('hpStlKit');if(bk)bk.onclick=()=>setStlKit(!SDAWN);
 try{stlAltUI()}catch(e){}})();
 
 
-/*VSFIX: VS opponents for later heroines (cae/ros/kvex/mna/noc/iso/stl)*/
+/*VSFIX: VS opponents for later heroines (cae/ros/kvex/mna/noc/iso/stl/ebn — ebn also self-registers in her module)*/
 (function(){
   if(typeof VS_IDS==='undefined'||typeof VS_FOE==='undefined')return;
   const alt=k=>!!window[k];
@@ -3104,4 +3124,339 @@ try{stlAltUI()}catch(e){}})();
     ]
   },"A dark sky still has stars. I'll put them in you.");
 })();
+/*EBONWING (The Self-Crowned / Chain-Whip Anti-Hero). Code id is 'ebn'. Gauge is Dominion. Does not alter any other heroine.*/
+const EBNFACE="img/ebn_face.jpg",EBNIDLE="img/ebn_idle.jpg",EBNRAGE="img/ebn_rage.jpg",EBNSOV="img/ebn_sov.jpg",EBNLASH="img/ebn_lash.jpg",EBNCLAW="img/ebn_claw.jpg",EBNHOOK="img/ebn_hook.jpg",EBNULT="img/ebn_ult.jpg",EBNBURST="img/ebn_burst.jpg",EBNBURSTIN="img/ebn_burstin.jpg",EBNBLASH="img/ebn_blash.jpg",EBNBULT="img/ebn_bult.jpg",EBNWIN="img/ebn_win.jpg";
+const EBNSFACE="img/ebn_sface.jpg",EBNSUM="img/ebn_sum.jpg",EBNSSLASH="img/ebn_sslash.jpg",EBNSULT="img/ebn_sult.jpg",EBNSBURST="img/ebn_sburst.jpg";
+window.EBNIMG={face:EBNFACE,idle:EBNIDLE,rage:EBNRAGE,sov:EBNSOV,lash:EBNLASH,claw:EBNCLAW,hook:EBNHOOK,ult:EBNULT,burst:EBNBURST,burstin:EBNBURSTIN,blash:EBNBLASH,bult:EBNBULT,win:EBNWIN};
+window.EBNSIMG={face:EBNSFACE,idle:EBNSUM,slash:EBNSSLASH,ult:EBNSULT,burst:EBNSBURST,sum:EBNSUM};
+GEL.dominion=GEL.dominion||['#c41e3a','#1a0a0c','⛓ Dominion'];
+(function(){
+const K=window.EBNK=Object.assign({
+  hp0:310,hpL:38,atk0:24,atkL:4.3,def0:10,defL:1.8,crit:.13,spd0:14,
+  lash:1.85,basicG:20,fetBasic:1,fetSov:2,maxFet:5,fetCrit:.03,
+  cleave:1.05,cleaveHits:2,cleaveBonus:.55,rageSpend:.50,rageHeal:.22,sovPerFet:.12,cleaveCD:2,cleaveG:26,
+  hook:2.40,hookCD:3,hookG:26,hookFet:2,stunBase:.50,stunRage:.40,stunSov:.80,hookRageDmg:1.15,sovAtk:.80,sovAtkT:2,
+  ultN:4,ult:1.00,ultFin:2.85,ultFinFetRage:.35,ultFinFetSov:.22,ultFinFetBase:.32,ultBaseCap:2,ultCost:100,ultHeal:.16,
+  abDmg:1.65,abCrit:.12,abSpd:6,abCost:100,abCD:1,abTaken:.55,abG:1.6,abFet:3,
+  baseTaken:.85,rageTaken:.95,rageCrit:.08,rageSkill:1.22,rageG:1.25,rageLow:1.12,rageLowHp:.50,
+  sovTaken:.72,sovAura:.82,
+  hitG:12,barPer:.03,barCap:.16
+},window.EBNKOVR||{});
+const EDN={base:'Base Edict',rage:'Rage Edict',sov:'Sovereign Edict'};
+const EDC={base:'Claws + whip, balanced binds',rage:'Damage amp + aggression',sov:'Buffs / control aura'};
+let EALT=(()=>{try{return localStorage.getItem('vrpg_ebn_alt')=='1'}catch(e){return false}})();window.EALT=EALT;
+let EDICT=(()=>{try{const v=localStorage.getItem('vrpg_ebn_edict');return (v==='rage'||v==='sov'||v==='base')?v:'base'}catch(e){return 'base'}})();window.EDICT=EDICT;
+window.setEbnAlt=function(v){EALT=!!v;window.EALT=EALT;try{localStorage.setItem('vrpg_ebn_alt',EALT?'1':'0')}catch(e){}if(HS&&HS.id=='ebn'&&HS.ebn)HS.ebn.swim=EALT;ebnAltUI();if(HS)hsUpd();if($('stScr')&&$('stScr').classList.contains('on'))renderStatus()};
+window.setEbnEdict=function(v){if(!(v==='base'||v==='rage'||v==='sov'))v='base';EDICT=v;window.EDICT=EDICT;try{localStorage.setItem('vrpg_ebn_edict',EDICT)}catch(e){}if(HS&&HS.id=='ebn'&&HS.ebn)HS.ebn.edict=EDICT;ebnAltUI();if(HS)hsUpd();if($('stScr')&&$('stScr').classList.contains('on'))renderStatus()};
+function ebnFaceSrc(){return EALT?EBNSFACE:EBNFACE}
+function ebnSelectSrc(){if(EALT)return EBNSUM;return EDICT==='rage'?EBNRAGE:EDICT==='sov'?EBNSOV:EBNIDLE}
+function ebnAltUI(){const b=$('hpEbnAlt');if(b)b.textContent=`🎨 Ebonwing outfit: ${EALT?'Swimsuit':'Armor'} ⇄`;const k=$('hpEbnEdict');if(k)k.textContent=`⛓ Ebonwing edict: ${EDN[EDICT]||'Base Edict'} ⇄`;const im=document.querySelector('#hpEbn img');if(im)im.src=ebnSelectSrc();if(typeof HPPEND!=='undefined'&&HPPEND=='ebn'){const m=$('hsModeImg');if(m)m.src=ebnFaceSrc()}}
+window.ebnAltUI=ebnAltUI;
+
+function rebuildCmds(){
+  const D=HEROS.ebn; if(!D)return;
+  D.cmds=CMDS();
+  const box=$('hsCmds'); if(!box||!HS||HS.id!='ebn')return;
+  box.innerHTML=D.cmds.map(([k,n,d])=>`<button data-hs="${k}">${n}<small>${d}</small></button>`).join('');
+  box.querySelectorAll('[data-hs]').forEach(b=>b.onclick=()=>hsAct(b.dataset.hs));
+}
+const swimOn=()=>HS&&HS.id=='ebn'&&HS.ebn?!!HS.ebn.swim:!!EALT;
+const AB=()=>!!(HS&&HS.ebn&&HS.ebn.ab);
+const edict=()=>HS&&HS.ebn&&HS.ebn.edict?HS.ebn.edict:'base';
+function pose(kind){
+  const swim=swimOn(),ab=AB(),ed=edict();
+  // Face must ALWAYS resolve — Burst bubble uses speak(name, pose('face'), line).
+  if(swim&&ab){
+    if(kind=='face')return EBNSFACE;
+    if(kind=='idle'||kind=='burst'||kind=='burstin'||kind=='win'||kind=='rage'||kind=='sov')return EBNSBURST;
+    if(kind=='lash'||kind=='claw'||kind=='hook'||kind=='blash')return EBNSSLASH;
+    if(kind=='ult'||kind=='bult')return EBNSULT;
+  }
+  if(swim){
+    if(kind=='face')return EBNSFACE;
+    if(kind=='idle'||kind=='win'||kind=='rage'||kind=='sov')return EBNSUM;
+    if(kind=='lash'||kind=='claw'||kind=='hook'||kind=='blash')return EBNSSLASH;
+    if(kind=='ult'||kind=='bult')return EBNSULT;
+    if(kind=='burst'||kind=='burstin')return EBNSBURST;
+  }
+  if(ab){
+    if(kind=='face')return EBNFACE;
+    if(kind=='idle'||kind=='burst'||kind=='win'||kind=='rage'||kind=='sov')return EBNBURST;
+    if(kind=='burstin')return EBNBURSTIN;
+    if(kind=='lash'||kind=='claw'||kind=='hook'||kind=='blash')return EBNBLASH;
+    if(kind=='ult'||kind=='bult')return EBNBULT;
+  }
+  if(kind=='face')return EBNFACE;
+  if(kind=='idle')return ed==='rage'?EBNRAGE:ed==='sov'?EBNSOV:EBNIDLE;
+  if(kind=='rage')return EBNRAGE;
+  if(kind=='sov')return EBNSOV;
+  if(kind=='lash')return EBNLASH;
+  if(kind=='claw')return EBNCLAW;
+  if(kind=='hook')return EBNHOOK;
+  if(kind=='ult')return EBNULT;
+  if(kind=='win')return EBNWIN;
+  if(kind=='burst')return EBNBURST;
+  if(kind=='burstin')return EBNBURSTIN;
+  if(kind=='blash')return EBNBLASH;
+  if(kind=='bult')return EBNBULT;
+  return EBNIDLE;
+}
+window.ebnPose=pose;
+const CMDS=()=>{
+  const cut=AB()?K.abCD:0;
+  const ed=edict();
+  const cCD=Math.max(1,K.cleaveCD-cut),hCD=Math.max(1,K.hookCD-cut);
+  const stunPct=ed==='sov'?Math.round(K.stunSov*100):ed==='rage'?Math.round(K.stunRage*100):Math.round(K.stunBase*100);
+  return [
+    ['ewl','Whip Lash',`single-target physical ×${K.lash}${AB()?` (×${K.abDmg} in Burst)`:ed==='rage'?` (×${K.rageSkill} in Rage)`:''} · plants ${ed==='sov'?K.fetSov:K.fetBasic} ⛓ Fetter${ed==='sov'?'s':''} · +${K.basicG} Dominion · no CD`],
+    ['ecl','Twin Cleave',`2 claw hits ×${K.cleave}${ed==='base'?' · spends 1 Fetter for a third hit ×'+K.cleaveBonus:ed==='rage'?' · spends ALL Fetters, +×'+K.rageSpend+' each, heals 15% of bonus':' · keeps Fetters, +'+Math.round(K.sovPerFet*100)+'%/Fetter, plants +1'} · +${K.cleaveG} Dominion · CD ${cCD}`],
+    ['ehk','Hooked Verdict',`pierce ×${K.hook}${ed==='rage'?` ×${K.hookRageDmg}`:''} · plants ${K.hookFet} Fetters · ${stunPct}% stun${ed==='sov'?' · foe ATK ×0.80 · Charge Break at 3+ Fetters':''} · +${K.hookG} Dominion · CD ${hCD}`],
+    ['eab','Crimson Mandate',`FREE Burst: spend ${K.abCost} Dominion, leftover kept, once per fight. 3 actions +1 per extra 100%. Dmg ×${K.abDmg}, taken ×${K.abTaken}, +${Math.round(K.abCrit*100)}% crit, +${K.abSpd} SPD, CDs −${K.abCD}, Dominion ×${K.abG}, plants ${K.abFet} Fetters. Current Edict stays.`],
+    ['eed',`Edict: ${EDN[ed]} ⇄`,`Free, once per turn. Cycles Base → Rage → Sovereign → Base. Current: ${EDN[ed]} — ${EDC[ed]}`],
+    ['esw','Outfit: Armor ⇄ Swimsuit','Free cosmetic switch, once per turn. Same kit and numbers.'],
+    ['ult','Helix Scourge',`4× ×${K.ult} + piercing finale ×${K.ultFin}${ed==='rage'?' + ×'+K.ultFinFetRage+'/Fetter spent, heals 12%':ed==='sov'?' + ×'+K.ultFinFetSov+'/Fetter kept':' + ×'+K.ultFinFetBase+'/Fetter (up to 2 spent)'} · Charge Break at 4+ Fetters or in Burst · ${K.ultCost} Dominion`]
+  ];
+};
+HEROS.ebn={n:'Ebonwing',t:'The Self-Crowned',buffImg:()=>!HS||!HS.ebn?null:(HS.ebn.ab?pose('burst'):null),img:()=>HS&&HS.ebn&&HS.ebn.won?pose('win'):(HEROS.ebn.buffImg()||pose('idle')),face:()=>pose('face'),gauge:'Dominion',crit:K.crit,
+ intro:[['Ebonwing',()=>pose('face'),"Ebonwing. I don't wear anyone's colors. I wear mine."],
+  ['Ebonwing',()=>pose('face'),"The whip is in my left hand so the claws can finish what it starts. Keep up, or don't."]],
+ cmds:CMDS()};
+CRIT_KIT.ebn={cc:0,cm:2.0};
+const _st=hsStats;hsStats=function(){if(HS&&HS.id=='ebn'){const L=HS.lvl,T=HS.ebn;const spdB=T&&T.ab?K.abSpd:0;return {mhp:K.hp0+K.hpL*L,atk:Math.round(K.atk0+K.atkL*L),def:Math.round(K.def0+K.defL*L),spd:K.spd0+L+spdB}}return _st.apply(this,arguments)};
+const s0=()=>hsStats();
+const gain=n=>{const T=HS.ebn;const mul=T&&T.ab?K.abG:(T&&T.edict==='rage'?K.rageG:1);HS.g=Math.min(GMAX,HS.g+Math.round(n*mul))};
+function dmgMul(){const T=HS.ebn;let m=T&&T.ab?K.abDmg:1;if(T&&T.edict==='rage'){m*=K.rageSkill;if(HS.hp<=s0().mhp*K.rageLowHp)m*=K.rageLow}return m}
+function fetOf(f){return (f&&f.efet)||0}
+function plantFet(f,n){if(!f||f.hp<=0||!n)return 0;const was=fetOf(f);f.efet=Math.min(K.maxFet,was+n);const add=f.efet-was;if(add>0&&edict()==='base'){const cap=Math.round(s0().mhp*K.barCap);const give=Math.max(1,Math.round(s0().mhp*K.barPer*add));HS.ebn.bar=Math.min(cap,(HS.ebn.bar||0)+give)}return add}
+function spendFet(f,n){if(!f)return 0;const have=fetOf(f);const use=Math.min(have,n);f.efet=have-use;return use}
+function spendAll(f){return spendFet(f,fetOf(f))}
+function eHit(f,m,o){
+  if(!f||f.hp<=0)return 0;
+  const cur=E; if(f&&f!==E) E=f;
+  const r=hsHit(m,Object.assign({col:'#c41e3a'},o||{}));
+  if(f&&f!==cur) E=cur;
+  return r;
+}
+function foes(){return (HS.foes&&HS.foes.length)?HS.foes:[E]}
+function alive(){return foes().filter(f=>f.hp>0)}
+function retarget(){if(E&&E.hp>0)return E;const n=alive()[0];if(n)E=n;return E}
+window.ebnOk=k=>{const T=HS&&HS.ebn;if(!T||HS.busy||E.hp<=0||HS.hp<=0)return false;
+ if(k=='ecl')return T.cd.cl<=0;if(k=='ehk')return T.cd.hk<=0;
+ if(k=='esw')return !T.swU;if(k=='eed')return !T.edU;
+ if(k=='eab')return !T.abU&&!T.ab&&HS.g>=K.abCost;if(k=='ult')return HS.g>=K.ultCost;return true};
+const cdVals=()=>{const T=HS.ebn,cut=T.ab?K.abCD:0;return {cl:Math.max(1,K.cleaveCD-cut),hk:Math.max(1,K.hookCD-cut)}};
+const tickCD=()=>{const T=HS.ebn;['cl','hk'].forEach(x=>{if(T.cd[x]>0)T.cd[x]--})};
+const tickAb=()=>{const T=HS.ebn;if(T.ab&&--T.abT<=0){T.ab=0;HEROS.ebn.crit=K.crit+(T.edict==='rage'?K.rageCrit:0);hsLog('⛓ Crimson Mandate fades — the fire cools. The agenda doesn\'t.','s');rebuildCmds();try{speak('Ebonwing',pose('face'),'The fire cools. The agenda doesn\'t.')}catch(e){}}};
+const tickBind=()=>{const T=HS.ebn;if(T.foeAtk&&--T.foeAtk<=0){T.foeAtk=0;hsLog('⛓ Sovereign Bind fades.','s')}};
+const NEXTED={base:'rage',rage:'sov',sov:'base'};
+const EDLINE={base:'Balance. For now.',rage:'No more patience.',sov:'Kneel or break. Those are the terms.'};
+window.ebnSetEdict=function(want){
+  if(!HS||HS.id!='ebn'||!HS.ebn)return false;
+  const T=HS.ebn; if(T.edU||!want||T.edict===want)return false;
+  if(!(want==='base'||want==='rage'||want==='sov'))return false;
+  T.edict=want;T.edU=1;EDICT=want;window.EDICT=want;try{localStorage.setItem('vrpg_ebn_edict',want)}catch(e){}
+  hsLog(`⛓ Edict — <b>${EDN[want]}</b> (${EDC[want]}). ${EDLINE[want]}`,'s');
+  HEROS.ebn.crit=K.crit+(T.ab?K.abCrit:(T.edict==='rage'?K.rageCrit:0));
+  rebuildCmds();hsUpd();
+  try{speak('Ebonwing',pose('face'),EDLINE[want])}catch(e){}
+  return true;
+};
+window.ebnEdictName=EDN;
+
+async function ebnAct(k){if(!HS||HS.busy||E.hp<=0||HS.hp<=0||!ebnOk(k))return;HS.busy=1;const T=HS.ebn;let free=0;HS.ebnA++;
+ const sp=(im,t,f)=>{try{adSplash(im,t,f)}catch(e){}};
+ const mul=dmgMul();
+ const ed=T.edict||'base';
+ if(k=='esw'){
+  T.swim=!T.swim;EALT=T.swim;window.EALT=EALT;try{localStorage.setItem('vrpg_ebn_alt',EALT?'1':'0')}catch(e){}
+  ebnAltUI();T.swU=1;free=1;
+  hsLog(T.swim?'🏖 Ebonwing sheds the armor for the festival swimsuit. The whip stays in her left hand.':'🛡 Ebonwing buckles the black-and-gold armor back on.','s');
+  hsUpd();HS.busy=0;hsUpd();return;
+ }
+ if(k=='eed'){
+  const next=NEXTED[T.edict]||'rage';
+  T.edU=0;
+  ebnSetEdict(next);
+  free=1;hsUpd();HS.busy=0;hsUpd();return;
+ }
+ if(k=='eab'){
+  const extra=Math.max(0,Math.floor(HS.g/100)-1);
+  T.abT=3+extra;T.ab=1;T.abU=1;HS.g=Math.max(0,HS.g-K.abCost);
+  HEROS.ebn.crit=K.crit+K.abCrit;rebuildCmds();
+  if(T.cd.cl>0)T.cd.cl=Math.max(0,T.cd.cl-1);if(T.cd.hk>0)T.cd.hk=Math.max(0,T.cd.hk-1);
+  plantFet(E,K.abFet);
+  hsLog(`⛓ <b>CRIMSON MANDATE</b> — ${T.abT} actions. Wings, chains, all of it. Leftover Dominion ${HS.g}. ⛓ Fetters ${fetOf(E)}.`,'h');
+  try{speak('Ebonwing',pose('face'),'Wings, chains, all of it. This is mine.')}catch(e){}
+  sp(pose('burstin'),'Crimson Mandate',1);
+  await wait(450);try{await splashWait()}catch(e){}
+  hsUpd();HS.busy=0;hsUpd();return;
+ }
+ if(k=='ewl'){
+  sp(pose('lash'),'Whip Lash');
+  eHit(E,K.lash*mul,{name:'Whip Lash'});
+  const add=plantFet(E,ed==='sov'?K.fetSov:K.fetBasic);
+  gain(K.basicG);
+  hsLog(`Ebonwing cracks a Whip Lash${add?` — ⛓ Fetters ${fetOf(E)}`:''}.`,'h');
+ }
+ if(k=='ecl'){
+  sp(pose('claw'),'Twin Cleave');
+  const skillMul=mul*(ed==='sov'?(1+K.sovPerFet*fetOf(E)):1);
+  eHit(E,K.cleave*skillMul,{name:'Twin Cleave'});
+  if(E&&E.hp>0)eHit(E,K.cleave*skillMul,{name:'Twin Cleave'});
+  if(ed==='base'){
+    if(spendFet(E,1)>0&&E&&E.hp>0){eHit(E,K.cleaveBonus*mul,{name:'Fetter Payoff'});hsLog('⛓ A bound Fetter pays off — a third claw.','h')}
+  }else if(ed==='rage'){
+    const used=spendAll(E);
+    if(used>0&&E){
+      const before=(E.hp||0);
+      eHit(E,K.rageSpend*used*mul,{name:'Bloodfetter Rend'});
+      const dealt=Math.max(0,before-(E.hp||0));
+      if(K.rageHeal>0&&dealt>0){const h=Math.max(1,Math.round(dealt*K.rageHeal));HS.hp=Math.min(s0().mhp,HS.hp+h);hsLog(`⛓ Rage spends ${used} Fetters — +${h} HP`,'h')}
+      else hsLog(`⛓ Rage spends ${used} Fetters.`,'h');
+    }
+  }else{
+    plantFet(E,1);
+    hsLog(`⛓ Sovereign Cleave — Fetters held at ${fetOf(E)}.`,'h');
+  }
+  T.cd.cl=cdVals().cl+1;gain(K.cleaveG);
+  hsLog('Ebonwing cuts a Twin Cleave.','h');
+ }
+ if(k=='ehk'){
+  sp(pose('hook'),'Hooked Verdict');
+  const hm=K.hook*mul*(ed==='rage'?K.hookRageDmg:1)*(ed==='sov'?(1+K.sovPerFet*fetOf(E)):1);
+  eHit(E,hm,{name:'Hooked Verdict',pierce:1});
+  plantFet(E,K.hookFet+(ed==='sov'?1:0));
+  const chance=ed==='sov'?K.stunSov:ed==='rage'?K.stunRage:K.stunBase;
+  if(E&&E.hp>0&&!E.stun&&Math.random()<chance){E.stun=1;hsLog('⛓ Hooked Verdict — the foe is STUNNED!','h')}
+  if(ed==='sov'){T.foeAtk=K.sovAtkT;hsLog('⛓ Sovereign Bind — the foe\'s blows weaken.','h')}
+  if(ed==='sov'&&fetOf(E)>=3){try{hsBreak(E,'Hooked Verdict')}catch(e){}}
+  T.cd.hk=cdVals().hk+1;gain(K.hookG);
+  hsLog('Hooked Verdict — the chain pulls taut.','h');
+ }
+ if(k=='ult'){
+  HS.g=Math.max(0,HS.g-K.ultCost);
+  sp(pose('ult'),'Helix Scourge',1);
+  let e0=(HS.foes||[E]).reduce((a,f)=>a+(f.hp||0),0);
+  for(let i=0;i<K.ultN;i++){
+    if(E.hp<=0)retarget();
+    if(!E||E.hp<=0)break;
+    eHit(E,K.ult*mul,{name:'Helix Scourge'});
+    await wait(160);
+  }
+  alive().forEach(f=>{
+    let extra=0,kept=fetOf(f);
+    if(ed==='rage'){const used=spendAll(f);extra=K.ultFinFetRage*used}
+    else if(ed==='sov'){extra=K.ultFinFetSov*kept}
+    else{const used=spendFet(f,K.ultBaseCap);extra=K.ultFinFetBase*used}
+    eHit(f,(K.ultFin+extra)*mul,{name:'Helix Scourge Finale',pierce:1});
+    if(T.ab||kept>=4){try{hsBreak(f,'Helix Scourge')}catch(e){}}
+  });
+  const e1=(HS.foes||[E]).reduce((a,f)=>a+(f.hp||0),0);
+  const dealt=Math.max(0,e0-e1);
+  if(K.ultHeal>0&&dealt>0){const h=Math.max(1,Math.round(dealt*(ed==='rage'?K.ultHeal:K.ultHeal*0.75)));HS.hp=Math.min(s0().mhp,HS.hp+h);hsLog('⛓ Helix Scourge drinks '+h+' HP','h')}
+  hsLog('Helix Scourge — the chains write the sentence.','h');
+  retarget();
+ }
+ await wait(450);try{await splashWait()}catch(e){}
+ hsFoeCheck();if((HS.foes||[E]).every(f=>f.hp<=0))return hsWin();
+ if(E&&E.hp<=0){if(E)E.efet=0;retarget()}
+ hsChkBreak&&hsChkBreak();
+ if(free){HS.busy=0;hsUpd();return}
+ tickCD();tickBind();tickAb();
+ await wait(900);await hsEnemy(0);
+ if(HS.hp<=0)return hsLose();
+ hsFoeCheck();if((HS.foes||[E]).every(f=>f.hp<=0))return hsWin();
+ T.swU=0;T.edU=0;HS.busy=0;hsUpd()}
+window.ebnAct=ebnAct;
+const _act=hsAct;hsAct=function(k){if(HS&&HS.id=='ebn')return ebnAct(k);return _act.apply(this,arguments)};
+
+const _core=hsEnemyCore;hsEnemyCore=async function(){if(!HS||HS.id!='ebn')return _core.apply(this,arguments);
+ const T=HS.ebn,s=s0(),hp0=HS.hp,g0=HS.g,BIG=1e6;
+ HS.hp=hp0+BIG;let mv=null,dr=[];
+ const L=[...(E.moves||[]),...(E.moves2||[])];const _l=hsLog;
+ hsLog=function(t,c){const x=String(t);let m=x.match(/^⚔ .+? (?:attacks with|uses) (.+)!$/);if(m)mv=L.find(z=>z.n==m[1])||mv;if((m=x.match(/^It drains (\d+) HP\./)))dr.push(['d',+m[1]]);if((m=x.match(/^🪽 .+ drains (\d+) HP\./)))dr.push(['l',+m[1]]);return _l.apply(this,arguments)};
+ try{await _core.apply(this,arguments)}finally{hsLog=_l}
+ const raw=Math.max(0,hp0+BIG-HS.hp);HS.hp=hp0;HS.g=g0;
+ if(raw>0){
+  let f=T.ab?K.abTaken:(T.edict==='rage'?K.rageTaken:T.edict==='sov'?K.sovTaken:K.baseTaken);
+  if(T.edict==='sov'&&fetOf(E)>0)f*=K.sovAura;
+  if(T.foeAtk>0)f*=K.sovAtk;
+  let blocked=0;if((T.bar||0)>0){const absorb=Math.min(T.bar,raw);T.bar-=absorb;blocked=absorb;if(T.bar<=0)T.bar=0}
+  let d=Math.max(0,Math.round((raw-blocked)*f));
+  if(d===0&&raw>blocked)d=1;
+  for(const [t,h] of dr){const nh=t=='d'?Math.round(d/2):Math.round(d*.15);E.hp=Math.max(1,E.hp-Math.max(0,h-nh))}
+  HS.hp=Math.max(0,HS.hp-d);
+  gain(K.hitG);
+  if(d!=raw||blocked)hsLog(`⛓ Fetter Law (${EDN[T.edict]}${T.ab?' · Mandate':''}${blocked?` · barrier ${blocked}`:''}): ${raw} → <b>${d}</b>`,'h');
+ }
+ hsUpd()};
+
+const _u=hsUpd;hsUpd=function(){const r=_u.apply(this,arguments);if(HS&&HS.id=='ebn'&&HS.ebn&&E){const T=HS.ebn;HEROS.ebn.crit=K.crit+(T.ab?K.abCrit:(T.edict==='rage'?K.rageCrit:0))+(fetOf(E)*K.fetCrit);HEROS.ebn.cmds=CMDS();
+ document.querySelectorAll('#hsCmds [data-hs]').forEach(b=>{const k=b.dataset.hs;b.disabled=!ebnOk(k)});
+ const st=$('hsSt');if(st)st.textContent=[`⛓ Dominion ${HS.g}/${GMAX}`,`${T.edict==='rage'?'🔥':T.edict==='sov'?'👑':'⛓'} ${EDN[T.edict]}`,T.ab?`⛓ MANDATE ${T.abT}`:'',fetOf(E)?`⛓ Fetters ${fetOf(E)}`:'',T.bar?`🛡 Barrier ${T.bar}`:'',T.foeAtk?`Bind ${T.foeAtk}`:''].filter(Boolean).join(' · ');
+ const gt=$('hsGT');if(gt)gt.textContent=`${HS.g} / ${GMAX}`;
+ const gb=$('hsGB');if(gb){gb.style.width=Math.min(100,HS.g/(GMAX/100))+'%';gb.style.background='linear-gradient(90deg,#3a1018,#c41e3a 55%,#d4b15a)'}
+ const im=$('hsImg');if(im){const src=HEROS.ebn.img();if(im.src!==src)im.src=src}
+ }return r};
+
+const _hb=hsBattle;hsBattle=function(){const r=_hb.apply(this,arguments);if(HS&&HS.id=='ebn'){HS.g=0;HS.ebn={edict:EDICT||'base',ab:0,abU:0,abT:0,won:0,swim:!!HS.sum||!!EALT,swU:0,edU:0,bar:0,foeAtk:0,cd:{cl:0,hk:0},st:{}};HS.ebnA=0;(HS.foes||[E]).forEach(f=>{f.efet=0});HEROS.ebn.crit=K.crit+(HS.ebn.edict==='rage'?K.rageCrit:0);rebuildCmds();hsUpd()}return r};
+const _w=hsWin;hsWin=function(){if(HS&&HS.id=='ebn'&&HS.ebn)HS.ebn.won=1;return _w.apply(this,arguments)};
+
+PASS.ebn={play:"Switch Edicts once per turn for free: Base (balanced binds), Rage (spend every Fetter for damage and lifesteal), or Sovereign (keep Fetters, stun, control aura). Whip Lash is her no-CD basic and plants Fetters. Twin Cleave is the claw payoff. Hooked Verdict pulls and can stun. Bank 100 Dominion for Helix Scourge or spend it on a free Crimson Mandate (once per fight, leftover kept). The swimsuit is only a picture — the kit never changes.",
+ p:[{i:"⛓",n:"Fetter Law",k:"on",t:`Whip and hook attacks plant ⛓ Fetters (max ${K.maxFet}, +${Math.round(K.fetCrit*100)}% crit each). Once per turn she may change Edict for free: Base takes ×${K.baseTaken} and banks a small barrier; Rage takes ×${K.rageTaken}, skills ×${K.rageSkill}, spends all Fetters on Twin Cleave; Sovereign takes ×${K.sovTaken}, keeps Fetters, and cuts foe damage to ×${K.sovAura} while any Fetter remains.`},
+    {i:"⛓",n:"Crimson Mandate",k:"once",t:`Spend ${K.abCost} Dominion to enter Crimson Mandate once per fight (leftover gauge is kept): damage ×${K.abDmg}, taken ×${K.abTaken}, Dominion gain ×${K.abG}, +${Math.round(K.abCrit*100)}% crit, +${K.abSpd} SPD, CDs −${K.abCD}, plants ${K.abFet} Fetters. Lasts 3 actions +1 per extra 100% banked. Free action — the enemy does not get a turn. Her current Edict stays. No auto-revive.`,used:()=>HS&&HS.ebn&&HS.ebn.abU},
+    {i:"⛓",n:"Sovereign Bind",k:"cond",t:`Hooked Verdict in Sovereign applies foe ATK ×${K.sovAtk} for ${K.sovAtkT} actions and can Charge Break at 3+ Fetters.`,off:()=>!(HS&&HS.ebn&&HS.ebn.foeAtk>0)}],
+ off:[]};
+CLEARS.ebn=()=>[['Ebonwing',()=>pose('win'),"I got what I came for. Don't follow."],['Narrator',()=>pose('win'),"🏆 Summer Event complete — Ebonwing's festival."]];
+VS_TALK['ebn:dk']=(D,F)=>[['Narrator',F.img(),`⚔ VS — Ebonwing vs ${F.n}`],[F.n,F.img(),"A self-crowned horned thing. You brought chains to a grave."],['Ebonwing',()=>pose('face'),"You want a throne of ash. I want my own sky. We are not the same."],['Narrator',F.img(),`🖤 ${F.n} — ${VS_DK_TIER[VS_DK_T].n} tier. ${F.tip}`]];
+VS_TALK['ebn:sig']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Ebonwing vs Sigrún'],[F.n,F.img(),"An oath is not a chain, wanderer."],['Ebonwing',()=>pose('face'),"Your oath is a pretty chain. Mine actually holds."]];
+VS_TALK['ebn:iso']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Ebonwing vs Isolde Clairenne'],[F.n,F.img(),"A crown is a duty. Yours looks like a dare."],['Ebonwing',()=>pose('face'),"A princess who fights first. Cute. I don't fight for a crown — I am the crown."]];
+VS_TALK['ebn:stl']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Ebonwing vs Stellara'],[F.n,F.img(),"The star I carry was not stolen."],['Ebonwing',()=>pose('face'),"You borrowed a star. I bound mine."]];
+VS_TALK['ebn:noc']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Ebonwing vs Noctira'],[F.n,F.img(),"I don't kneel to horns or to a red spear."],['Ebonwing',()=>pose('face'),"A red spear in the dark. Fine. Let's see which of us bleeds last."]];
+VS_TALK['sig:ebn']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Sigrún vs Ebonwing'],['Ebonwing',F.img(),"Your oath is a pretty chain. Mine actually holds."],[D.n,()=>D.face(),"Then hold it. I'll still stand."]];
+VS_TALK['iso:ebn']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Isolde Clairenne vs Ebonwing'],['Ebonwing',F.img(),"I don't fight for a crown — I am the crown."],[D.n,()=>D.face(),"A crown without a people is just gold. Come on then."]];
+VS_TALK['stl:ebn']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Stellara vs Ebonwing'],['Ebonwing',F.img(),"You borrowed a star. I bound mine."],[D.n,()=>D.face(),"Then I'll cut the binds and keep the sky."]];
+VS_TALK['noc:ebn']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Noctira vs Ebonwing'],['Ebonwing',F.img(),"Let's see which of us bleeds last."],[D.n,()=>D.face(),"I already decided. It won't be me."]];
+
+const _sr=stHeroRaw;stHeroRaw=function(id){if(id!='ebn')return _sr.apply(this,arguments);const D=HEROS.ebn,live=HS&&HS.id=='ebn'&&STCTX=='hsolo',L=live?HS.lvl:3,mh=K.hp0+K.hpL*L,at=Math.round(K.atk0+K.atkL*L),df=Math.round(K.def0+K.defL*L),T=live?HS.ebn:null;
+ return `<div class="stTop"><img src="${live?D.img():D.face()}"><div class="stId"><b style="font-size:16px">${D.n}</b><br><small>${D.t}</small><br>Lv <b>${L}</b>${live?` · Fight ${HS.stage+1}/${hsF().length}`:' (start)'}<br>HP ${live?HS.hp:mh}/${mh}${stBar(live?HS.hp:mh,mh,'linear-gradient(90deg,#e33,#f96)')}Dominion ${live?HS.g:0} / 500${stBar(live?HS.g:0,500,'#c41e3a')}</div></div>
+<div class="stSec"><h4>📈 Stats${live?' (live)':''}</h4><table><tr><th>HP</th><td>${K.hp0} + ${K.hpL}/Lv</td></tr><tr><th>ATK</th><td>${at} (${K.atk0} + ${K.atkL}/Lv)</td></tr><tr><th>DEF</th><td>${df} (${K.def0} + ${K.defL}/Lv)</td></tr><tr><th>SPD</th><td>${K.spd0+L+(T&&T.ab?K.abSpd:0)} (${K.spd0}+Lv${T&&T.ab?` + ${K.abSpd} Mandate`:''})</td></tr><tr><th>Crit</th><td>${Math.round(K.crit*100)}% (×2)${T&&T.ab?` · +${Math.round(K.abCrit*100)}% in Mandate`:T&&T.edict==='rage'?` · +${Math.round(K.rageCrit*100)}% in Rage`:''} · +${Math.round(K.fetCrit*100)}%/Fetter</td></tr><tr><th>Passive</th><td>${PASS.ebn.p.map(x=>x.n+': '+x.t).join('<br>')}</td></tr><tr><th>Dominion</th><td>+${K.basicG} Whip Lash, +${K.cleaveG} Twin Cleave, +${K.hookG} Hooked Verdict, +${K.hitG} when hit${T&&T.edict==='rage'?' · Rage ×'+K.rageG:''} · 100 → Helix Scourge or Crimson Mandate</td></tr>${T?`<tr><th>Now</th><td>${[EDN[T.edict],T.ab?`⛓ MANDATE ${T.abT}`:'',T.abU?'':'⛓ Mandate ready',E&&fetOf(E)?`⛓ Fetters ${fetOf(E)}`:'',T.bar?`🛡 Barrier ${T.bar}`:'',T.foeAtk?`Bind ${T.foeAtk}`:''].filter(Boolean).join(' · ')||'—'}</td></tr>`:''}<tr><th>Story</th><td>Ebonwing is not a Valkyrie of the Frozen Dawn, and she will correct you if you call her one. White hair streaked with crimson, red eyes, black-and-red horns tipped in gold, and white wings that bleed to red at the tips. She fights with a chain whip in her left hand and claw gauntlets on both. She came north because the war is useful to her, not because she swore an oath. She respects power, not banners.</td></tr></table></div>
+<div class="stSec"><h4>⚔ Moves</h4>${D.cmds.map(([k,n,d])=>`<div><b>${n}</b> — ${d}</div>`).join('')}</div>`};
+const _rs=renderStatus;renderStatus=function(){_rs.apply(this,arguments);if(STW=='her'&&!(HS&&STCTX=='hsolo')){$('stBody').insertAdjacentHTML('beforeend','<hr style="border-color:#2d3a66">'+stHero('ebn'))}};
+const b=$('hpEbn');if(b)b.onclick=()=>hsModeOpen('ebn');
+const be=$('hpEbnEdict');if(be)be.onclick=()=>setEbnEdict(NEXTED[EDICT]||'rage');
+try{ebnAltUI()}catch(e){}
+
+// VS opponent — added here so every new girl ships as an opponent.
+(function(){
+  if(typeof VS_IDS==='undefined'||typeof VS_FOE==='undefined')return;
+  const alt=k=>!!window[k];
+  if(!VS_IDS.includes('ebn')){
+    const i=VS_IDS.indexOf('dk');
+    VS_IDS.splice(i>=0?i:VS_IDS.length,0,'ebn');
+  }
+  VS_FOE.ebn={
+    n:'Ebonwing',k:'vebn',rv:'ebn',
+    img:()=>alt('EALT')?EBNSUM:(alt('EDICT')&&EDICT==='rage'?EBNRAGE:EDICT==='sov'?EBNSOV:EBNIDLE),
+    img2:()=>alt('EALT')?EBNSBURST:EBNBURST,
+    hp:945,atk:61,def:9,boss:1,asc:.5,
+    ascN:'CRIMSON MANDATE',ascE:'⛓',
+    ascS:'⛓ CRIMSON MANDATE (×1.2, lifesteal)',
+    tip:'A self-crowned chain-whip anti-hero. Sovereign Edict cuts your damage; Helix Scourge is a charged chain storm — break it (15% of her HP). At ≤50% HP: CRIMSON MANDATE.',
+    moves:[
+      {n:'Whip Lash',p:1.15,w:5,im:()=>alt('EALT')?EBNSSLASH:EBNLASH,msg:'cracks a Whip Lash'},
+      {n:'Twin Cleave',p:.55,hits:2,w:3,im:()=>alt('EALT')?EBNSSLASH:EBNCLAW,msg:'cuts a Twin Cleave'},
+      {n:'Sovereign Edict',cover:.40,heal:.06,w:2,im:()=>EBNSOV},
+      {n:'Helix Scourge',charge:1,p:2.5,brk:.15,w:2,im:()=>alt('EALT')?EBNSULT:EBNULT,cmsg:'the chains tighten — Helix Scourge is coming!',msg:'unleashes HELIX SCOURGE'}
+    ],
+    moves2:[
+      {n:'Whip Lash',p:1.25,w:5,im:()=>EBNBLASH,msg:'cracks a Whip Lash under the Mandate'},
+      {n:'Twin Cleave',p:.60,hits:2,w:3,im:()=>EBNBLASH,msg:'cuts a Twin Cleave under the Mandate'},
+      {n:'Helix Scourge',charge:1,p:2.7,brk:.15,w:2,im:()=>EBNBULT,cmsg:'energy chains flare — Helix Scourge is coming!',msg:'unleashes HELIX SCOURGE'}
+    ]
+  };
+  if(typeof VS_TAUNT==='object')VS_TAUNT.ebn="I don't wear anyone's colors. I wear mine. Come prove you can hold a chain.";
+})();
+})();
+
 </script></body></html>
