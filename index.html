@@ -110,7 +110,7 @@ button:hover:not(:disabled){background:linear-gradient(#3b56a0,#1d2a55);transfor
 <div class="screen" id="gallery"><div class="ghead"><button id="galBack">◀ Back</button><h1>🖼 Gallery</h1><span></span></div><small>Main Game ⇄ Summer Event · tap a card to enlarge</small><div id="galBody" style="width:100%;display:flex;flex-direction:column;align-items:center"></div></div><div id="galZoom"></div><div class="screen" id="camp"><h1 style="font-size:30px">⛺ Camp</h1><div class="panel"><b>💞 Bond with Ethan: <span id="bondT"></span></b><div id="bondM"><div id="bondB"></div></div><small id="bondP"></small></div><div class="campB"><button class="big" id="cTalk">💬 Talk to Ethan</button><button class="big" id="cStat">📊 Status</button><button class="big" id="cGal">🖼 Gallery</button><button class="big" id="cGo">▶ Continue</button></div><div class="panel" id="campP" style="display:none"></div></div><div class="screen" id="inter"><h1 id="iTitle">Victory!</h1><img class="art" id="iArt" src="img/alt.jpg" style="max-height:38vh"><div class="panel" id="iText"></div><button class="big" id="nextBtn">⛺ To Camp ▶</button></div>
 <div class="screen" id="win"><h1 id="winH">The Dawn is Saved!</h1><img class="art" src="img/bow.jpg"><div class="panel"><span id="winP">Her dark mirror shatters into starlight. Sigrún's frost-light spreads across the land.</span><div id="winStats"></div></div><button class="big" id="again1">↻ Play Again</button></div>
 <div class="screen" id="over"><h1 style="color:#f66">Defeated...</h1><div class="panel">Sigrún's light flickers out... but Valkyries always rise again.</div><button class="big" id="again2">↻ Try Again</button></div>
-<div id="stScr"><div class="sth"><b>📊 Status</b><button class="stTab" data-st="sig">🛡 Sigrún</button><button class="stTab" data-st="eth">🎯 Ethan</button><button class="stTab" data-st="her">⚔ Heroines</button><button id="stClose">✕</button></div><div id="stBody"></div></div><div class="screen" id="hpick"><h1 style="font-size:28px;margin-top:30px">⚔ Heroines</h1><small id="hpIntro">Pick a heroine first. <b style="color:#7fe0ff">🏖 Summer Event</b> is the main path — or take the short Ember Dragon road.</small><div id="hsMode" style="display:none;width:100%;max-width:420px;margin:6px 0;padding:10px;border-radius:14px;border:2px solid #4ac0e0;background:#0a1f33;box-sizing:border-box"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><img id="hsModeImg" style="width:72px;height:72px;border-radius:10px;object-fit:cover;object-position:50% 20%;border:2px solid #c9a24a"><div><b id="hsModeName" style="color:#ffe08a;font-size:17px"></b><br><small id="hsModeSub" style="color:#bcd">Choose a path</small></div></div><div id="hsModeInfo"></div><div id="hsModePick" style="display:flex;flex-direction:column;gap:8px"><button id="hsModeSum" style="padding:12px;border-radius:12px;border:2px solid #4ac0e0;background:#0e2a3a;color:#dff;font-size:16px;text-align:left">🏖 Summer Event<small style="display:block;color:#9de;font-size:12px;margin-top:2px">Main path · beach festival → Dark Valkyrie · continues from your progress</small></button><button id="hsModeShort" style="padding:12px;border-radius:12px;border:1px solid #2d3a66;background:#121a33;color:#bcd;font-size:15px;text-align:left">🐉 Short road<small style="display:block;color:#89a;font-size:12px;margin-top:2px">Frost Wolf → … → Ember Dragon (4 fights)</small></button><button id="hsModeVs" style="padding:12px;border-radius:12px;border:2px solid #c98a4a;background:#2a1a0e;color:#ffe0b0;font-size:16px;text-align:left">⚔ VS Heroine<small style="display:block;color:#dcb;font-size:12px;margin-top:2px">1v1 exhibition · full kit · no festival progress</small></button><button id="hsModeBack" class="big">◀ Back to heroines</button></div><div id="hsModeVsPanel" style="display:none"><b style="color:#ffc070">⚔ VS — pick opponent</b><div id="vsRow" style="display:flex;flex-direction:column;gap:6px;width:100%;margin-top:6px"></div><div style="margin:8px 0;display:flex;gap:6px;flex-wrap:wrap;align-items:center"><small style="color:#bcd">Lv</small><button data-vslv="7" class="vsLv">7</button><button data-vslv="8" class="vsLv">8</button><button data-vslv="9" class="vsLv">9</button><button data-vslv="10" class="vsLv kon">10</button></div><small id="vsHint" style="color:#9ab"></small><button id="hsModeVsGo" class="big" style="margin-top:8px" disabled>▶ Fight</button><button id="hsModeVsBack" class="big">◀ Back</button></div><div id="hsModeSumStages" style="display:none"><b style="color:#7fe0ff">🏖 Summer — pick chapter</b><div id="sumRow"></div><small id="sumHint"></small><button id="hsModeGo" class="big" style="margin-top:8px" disabled>▶ Start Summer</button><button id="hsModeSumReset" style="margin-top:6px;padding:8px;border-radius:12px;border:1px solid #a44;background:#2a1218;color:#fca;font-size:13px;width:100%">↺ Reset this girl's Summer progress</button><button id="hsModeBack2" class="big">◀ Back</button></div></div><div id="hpList" class="hpc"><button id="hpDak"><img src="img/dakota.jpg"><b>🤠 Dakota Silverspur</b><small>Twin-Blade Gunslinger · Ammo, crits, Outlaw Star burst form</small></button><button id="hpNoi"><img src="img/noire.jpg"><b>🗡 Noire Ashblade</b><small>Twin-Katana Berserker · stronger as HP falls, lifesteal ultimate</small></button><button id="hpSky"><img src="img/skye.jpg"><b>⚡ Skye Vantor</b><small>Summer Speedster · Boost gauge, double actions, Sonic Valkyrie burst form</small></button><button id="hpSer"><img src="img/ser.jpg"><b>✨ Seraphine Vale</b><small>Holy Brawler · gold gauntlets, Faith gauge, Saint of the Tides burst form</small></button><button id="hpSig"><img src="img/sum_sigrun_select.jpg"><b>🪽 Sigrún</b><small>Valkyrie of Sword &amp; Shield · Aegis Guard &amp; ⚜ Retribution, Valor gauge, Ice Form burst</small></button><button id="hpHan"><img src="img/hana.jpg"><b>🌸 Hana Shirasagi</b><small>Sakura Swordswoman · iaido crits, Petals gauge, White Heron Bloom burst form</small></button><button id="hpMor"><img src="img/sum_morgana.jpg"><b>🌊 Morgana Tide</b><small>Tide Caller / Leviathan Binder · Depth gauge, Riptide, Leviathan Ascendant burst</small></button><button id="hpAur"><img src="img/sum_aurelia_select.jpg"><b>👑 Aurelia Crownsteel</b><small>Summer King of Knights · Mana / Pledge / Avalon · EXCALIBUR · King of Knights burst</small></button><button id="hpElo"><img src="img/sum_elowen_select.jpg"><b>🕊 Elowen Brightveil</b><small>Bridal-knight · Vow / Lace Barrier / Veil Waltz · Bridal Oath · White Procession burst</small></button><button id="hpCae"><img src="img/cae_idle.jpg"><b>☀ Caelia Solenne</b><small>Festival-stranded goddess · holy spells, Grace / Bloom, Jasmine Sanctuary · Heaven Unbound burst</small></button><button id="hpRos"><img src="img/ros_sum.jpg"><b>💗 Roselia Amorette</b><small>Matchmaking heart angel · holy spells, Heartmarks, swimsuit ⇄ armor · Celestial Heart burst</small></button><button id="hpFeth"><img src="img/feth_idle.jpg"><b>⏳ Future Ethan</b><small>Guest fighter · Temporal Operative · Time Fracture / Sync · Mission Override · Timeline Collapse</small></button><button id="hpKvex"><img src="img/kvex_idle.jpg"><b>🔥 Kaelyn Vex</b><small>Ash-Timeline Duelist · fire blade, Solar Burn / Ember · Suit ⇄ Swimsuit · Timeline Burn</small></button><button id="hpMna"><img src="img/mana_idle.jpg"><b>✨ Mana the Arcane</b><small>Magical Artillery / Hybrid Support · Emerald Resonance · Arcane Burst · Cataclysm Spell · Armor ⇄ Swimsuit</small></button><button id="hpNoc"><img src="img/noc_idle.jpg"><b>🩸 Noctira</b><small>Crimson Lance · High-ATK Physical Spear DPS / Hybrid Breaker · Cape of the Fallen · Crimson Awakening · Armor ⇄ Swimsuit</small></button><button id="hpIso"><img src="img/iso_idle.jpg"><b>🔷 Isolde Clairenne</b><small>Knight of the Sapphire Crown · Royal Greatsword / Stance Knight · Three Oaths · Coronation of the Dawn · Armor ⇄ Swimsuit</small></button><button id="hpStl"><img src="img/stl_idle.jpg"><b>⭐ Stellara</b><small>Starforged Blade · Star-Seal Sword DPS · Onyx ⇄ Dawnlight · Starforged Eclipse · Armor ⇄ Swimsuit</small></button><button id="hpEbn"><img src="img/ebn_idle.jpg?v=a0f22a69"><b>⛓ Ebonwing</b><small>The Self-Crowned · Chain-Whip Anti-Hero · Rage ⇄ Sovereign · Crimson Mandate · Armor ⇄ Swimsuit</small></button><button id="hpEth"><img src="img/eth_portrait.jpg"><b>🎯 Ethan Vance</b><small>Guest fighter · White Horizon rifle knight · Resolve / barrier / counters · Survival Mode burst</small></button></div><button id="hpDakAlt" onclick="setDakAlt(!DALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a2030;color:#ffe08a;font-size:15px">🎨 Dakota outfit ⇄</button><button id="hpEloAlt" onclick="eloNextAlt()" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e8c0ff;background:#22182e;color:#ffe8f0;font-size:15px">🎨 Elowen outfit ⇄</button><button id="hpAurAlt" onclick="setAurAlt(!AALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a1830;color:#ffe08a;font-size:15px">🎨 Aurelia outfit ⇄</button><button id="hpNoiAlt" onclick="setNoAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">🎨 Noire outfit ⇄</button><button id="hpNoiSer" onclick="setNoSer(!NSER)" style="margin:0 0 6px;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">💢 Serious Mode ⇄</button><button id="hpMnaAlt" onclick="setMnaAlt(!MALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #5eecc0;background:#102820;color:#c8ffe8;font-size:15px">🎨 Mana outfit: Armor ⇄</button><button id="hpNocAlt" onclick="setNocAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e23b4a;background:#2a1018;color:#ffd0d6;font-size:15px">🎨 Noctira outfit: Armor ⇄</button><button id="hpIsoAlt" onclick="setIsoAlt(!IALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #3c7ee0;background:#102038;color:#d4e6ff;font-size:15px">🎨 Isolde outfit: Armor ⇄</button><button id="hpStlKit" onclick="setStlKit(!SDAWN)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">⚔ Stellara kit: Onyx ⇄</button><button id="hpStlAlt" onclick="setStlAlt(!SALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">🎨 Stellara outfit: Armor ⇄</button><button id="hpEbnEdict" onclick="setEbnEdict(({'base':'rage','rage':'sov','sov':'base'})[EDICT]||'rage')" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c41e3a;background:#1a0a0c;color:#ffd0a8;font-size:15px">⛓ Ebonwing edict: Base Edict ⇄</button><button id="hpEbnAlt" onclick="setEbnAlt(!EALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c41e3a;background:#1a0a0c;color:#ffd0a8;font-size:15px">🎨 Ebonwing outfit: Armor ⇄</button><button class="big" id="hpBack">◀ Back</button></div><div class="screen" id="hsolo"><div class="esTop" style="display:flex;justify-content:space-between;width:100%;align-items:center;gap:4px;flex-wrap:wrap"><button id="hsQuit" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">◀ Title</button><div style="display:flex;gap:4px;align-items:center"><button id="btlSpdBtn" title="Battle speed" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#7fe0ff;font-size:13px">▶1x</button><button id="btlSkipBtn" title="Skip cut-in FX" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:12px;opacity:.75">Skip FX</button></div><button id="hsStatB" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">📊 Status</button></div><div id="hsFoes"></div><div id="hsPicWrap"><div id="hsPic"></div><div id="hsBqBadge" title="Bouquet Drain">💐</div></div><div class="name" id="hsName"></div><div style="width:100%"><div style="display:flex;justify-content:space-between;font-size:13px"><span>HP</span><span id="hsEhpT"></span></div><div class="esb"><i id="hsEhpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div id="hsEst"></div></div><div id="hsHero"><img id="hsImg"><div class="esI"><b></b> <span id="hsLv"></span><div class="lbl"><span>HP</span><span id="hsHpT"></span></div><div class="esb"><i id="hsHpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div class="lbl"><span>Ammo</span><span id="hsAmL" style="color:#ffb347"></span></div><div class="lbl"><span id="hsGN"></span><span id="hsGT"></span></div><div class="esb gseg"><i id="hsGB" style="background:#ffd27a"></i></div><div id="hsSt"></div></div></div><div id="hsPasW"><div id="hsPas" class="pasBar"></div><div id="hsPasTip"></div></div><button id="hsOSF" style="display:none"></button><div id="hsCmds"></div><div id="hsLog"></div></div><script>
+<div id="stScr"><div class="sth"><b>📊 Status</b><button class="stTab" data-st="sig">🛡 Sigrún</button><button class="stTab" data-st="eth">🎯 Ethan</button><button class="stTab" data-st="her">⚔ Heroines</button><button id="stClose">✕</button></div><div id="stBody"></div></div><div class="screen" id="hpick"><h1 style="font-size:28px;margin-top:30px">⚔ Heroines</h1><small id="hpIntro">Pick a heroine first. <b style="color:#7fe0ff">🏖 Summer Event</b> is the main path — or take the short Ember Dragon road.</small><div id="hsMode" style="display:none;width:100%;max-width:420px;margin:6px 0;padding:10px;border-radius:14px;border:2px solid #4ac0e0;background:#0a1f33;box-sizing:border-box"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><img id="hsModeImg" style="width:72px;height:72px;border-radius:10px;object-fit:cover;object-position:50% 20%;border:2px solid #c9a24a"><div><b id="hsModeName" style="color:#ffe08a;font-size:17px"></b><br><small id="hsModeSub" style="color:#bcd">Choose a path</small></div></div><div id="hsModeInfo"></div><div id="hsModePick" style="display:flex;flex-direction:column;gap:8px"><button id="hsModeSum" style="padding:12px;border-radius:12px;border:2px solid #4ac0e0;background:#0e2a3a;color:#dff;font-size:16px;text-align:left">🏖 Summer Event<small style="display:block;color:#9de;font-size:12px;margin-top:2px">Main path · beach festival → Dark Valkyrie · continues from your progress</small></button><button id="hsModeShort" style="padding:12px;border-radius:12px;border:1px solid #2d3a66;background:#121a33;color:#bcd;font-size:15px;text-align:left">🐉 Short road<small style="display:block;color:#89a;font-size:12px;margin-top:2px">Frost Wolf → … → Ember Dragon (4 fights)</small></button><button id="hsModeVs" style="padding:12px;border-radius:12px;border:2px solid #c98a4a;background:#2a1a0e;color:#ffe0b0;font-size:16px;text-align:left">⚔ VS Heroine<small style="display:block;color:#dcb;font-size:12px;margin-top:2px">1v1 exhibition · full kit · no festival progress</small></button><button id="hsModeBack" class="big">◀ Back to heroines</button></div><div id="hsModeVsPanel" style="display:none"><b style="color:#ffc070">⚔ VS — pick opponent</b><div id="vsRow" style="display:flex;flex-direction:column;gap:6px;width:100%;margin-top:6px"></div><div style="margin:8px 0;display:flex;gap:6px;flex-wrap:wrap;align-items:center"><small style="color:#bcd">Lv</small><button data-vslv="7" class="vsLv">7</button><button data-vslv="8" class="vsLv">8</button><button data-vslv="9" class="vsLv">9</button><button data-vslv="10" class="vsLv kon">10</button></div><small id="vsHint" style="color:#9ab"></small><button id="hsModeVsGo" class="big" style="margin-top:8px" disabled>▶ Fight</button><button id="hsModeVsBack" class="big">◀ Back</button></div><div id="hsModeSumStages" style="display:none"><b style="color:#7fe0ff">🏖 Summer — pick chapter</b><div id="sumRow"></div><small id="sumHint"></small><button id="hsModeGo" class="big" style="margin-top:8px" disabled>▶ Start Summer</button><button id="hsModeSumReset" style="margin-top:6px;padding:8px;border-radius:12px;border:1px solid #a44;background:#2a1218;color:#fca;font-size:13px;width:100%">↺ Reset this girl's Summer progress</button><button id="hsModeBack2" class="big">◀ Back</button></div></div><div id="hpList" class="hpc"><button id="hpDak"><img src="img/dakota.jpg"><b>🤠 Dakota Silverspur</b><small>Twin-Blade Gunslinger · Ammo, crits, Outlaw Star burst form</small></button><button id="hpNoi"><img src="img/noire.jpg"><b>🗡 Noire Ashblade</b><small>Twin-Katana Berserker · stronger as HP falls, lifesteal ultimate</small></button><button id="hpSky"><img src="img/skye.jpg"><b>⚡ Skye Vantor</b><small>Summer Speedster · Boost gauge, double actions, Sonic Valkyrie burst form</small></button><button id="hpSer"><img src="img/ser.jpg"><b>✨ Seraphine Vale</b><small>Holy Brawler · gold gauntlets, Faith gauge, Saint of the Tides burst form</small></button><button id="hpSig"><img src="img/sum_sigrun_select.jpg"><b>🪽 Sigrún</b><small>Valkyrie of Sword &amp; Shield · Aegis Guard &amp; ⚜ Retribution, Valor gauge, Ice Form burst</small></button><button id="hpHan"><img src="img/hana.jpg"><b>🌸 Hana Shirasagi</b><small>Sakura Swordswoman · iaido crits, Petals gauge, White Heron Bloom burst form</small></button><button id="hpMor"><img src="img/sum_morgana.jpg"><b>🌊 Morgana Tide</b><small>Tide Caller / Leviathan Binder · Depth gauge, Riptide, Leviathan Ascendant burst</small></button><button id="hpAur"><img src="img/sum_aurelia_select.jpg"><b>👑 Aurelia Crownsteel</b><small>Summer King of Knights · Mana / Pledge / Avalon · EXCALIBUR · King of Knights burst</small></button><button id="hpElo"><img src="img/sum_elowen_select.jpg"><b>🕊 Elowen Brightveil</b><small>Bridal-knight · Vow / Lace Barrier / Veil Waltz · Bridal Oath · White Procession burst</small></button><button id="hpCae"><img src="img/cae_idle.jpg"><b>☀ Caelia Solenne</b><small>Festival-stranded goddess · holy spells, Grace / Bloom, Jasmine Sanctuary · Heaven Unbound burst</small></button><button id="hpRos"><img src="img/ros_sum.jpg"><b>💗 Roselia Amorette</b><small>Matchmaking heart angel · holy spells, Heartmarks, swimsuit ⇄ armor · Celestial Heart burst</small></button><button id="hpFeth"><img src="img/feth_idle.jpg"><b>⏳ Future Ethan</b><small>Guest fighter · Temporal Operative · Time Fracture / Sync · Mission Override · Timeline Collapse</small></button><button id="hpKvex"><img src="img/kvex_idle.jpg"><b>🔥 Kaelyn Vex</b><small>Ash-Timeline Duelist · fire blade, Solar Burn / Ember · Suit ⇄ Swimsuit · Timeline Burn</small></button><button id="hpMna"><img src="img/mana_idle.jpg"><b>✨ Mana the Arcane</b><small>Magical Artillery / Hybrid Support · Emerald Resonance · Arcane Burst · Cataclysm Spell · Armor ⇄ Swimsuit</small></button><button id="hpNoc"><img src="img/noc_idle.jpg"><b>🩸 Noctira</b><small>Crimson Lance · High-ATK Physical Spear DPS / Hybrid Breaker · Cape of the Fallen · Crimson Awakening · Armor ⇄ Swimsuit</small></button><button id="hpIso"><img src="img/iso_idle.jpg"><b>🔷 Isolde Clairenne</b><small>Knight of the Sapphire Crown · Royal Greatsword / Stance Knight · Three Oaths · Coronation of the Dawn · Armor ⇄ Swimsuit</small></button><button id="hpStl"><img src="img/stl_idle.jpg"><b>⭐ Stellara</b><small>Starforged Blade · Star-Seal Sword DPS · Onyx ⇄ Dawnlight · Starforged Eclipse · Armor ⇄ Swimsuit</small></button><button id="hpEbn"><img src="img/ebn_idle.jpg?v=a0f22a69"><b>⛓ Ebonwing</b><small>The Self-Crowned · Chain-Whip Anti-Hero · Rage ⇄ Sovereign · Crimson Mandate · Armor ⇄ Swimsuit</small></button><button id="hpNyx"><img src="img/nyx_idle.jpg?v=2ec9ba14"><b>🦋 Nyxara</b><small>The Last Butterfly · Dual-Sword Rift Duelist · Vein Traces · Crimson Chrysalis</small></button><button id="hpEth"><img src="img/eth_portrait.jpg"><b>🎯 Ethan Vance</b><small>Guest fighter · White Horizon rifle knight · Resolve / barrier / counters · Survival Mode burst</small></button></div><button id="hpDakAlt" onclick="setDakAlt(!DALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a2030;color:#ffe08a;font-size:15px">🎨 Dakota outfit ⇄</button><button id="hpEloAlt" onclick="eloNextAlt()" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e8c0ff;background:#22182e;color:#ffe8f0;font-size:15px">🎨 Elowen outfit ⇄</button><button id="hpAurAlt" onclick="setAurAlt(!AALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c9a24a;background:#1a1830;color:#ffe08a;font-size:15px">🎨 Aurelia outfit ⇄</button><button id="hpNoiAlt" onclick="setNoAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">🎨 Noire outfit ⇄</button><button id="hpNoiSer" onclick="setNoSer(!NSER)" style="margin:0 0 6px;padding:8px 14px;border-radius:12px;border:1px solid #b48cff;background:#1a1030;color:#e0c8ff;font-size:15px">💢 Serious Mode ⇄</button><button id="hpMnaAlt" onclick="setMnaAlt(!MALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #5eecc0;background:#102820;color:#c8ffe8;font-size:15px">🎨 Mana outfit: Armor ⇄</button><button id="hpNocAlt" onclick="setNocAlt(!NALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #e23b4a;background:#2a1018;color:#ffd0d6;font-size:15px">🎨 Noctira outfit: Armor ⇄</button><button id="hpIsoAlt" onclick="setIsoAlt(!IALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #3c7ee0;background:#102038;color:#d4e6ff;font-size:15px">🎨 Isolde outfit: Armor ⇄</button><button id="hpStlKit" onclick="setStlKit(!SDAWN)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">⚔ Stellara kit: Onyx ⇄</button><button id="hpStlAlt" onclick="setStlAlt(!SALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #f0c44a;background:#2a1a08;color:#ffe9a8;font-size:15px">🎨 Stellara outfit: Armor ⇄</button><button id="hpEbnEdict" onclick="setEbnEdict(({'base':'rage','rage':'sov','sov':'base'})[EDICT]||'rage')" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c41e3a;background:#1a0a0c;color:#ffd0a8;font-size:15px">⛓ Ebonwing edict: Base Edict ⇄</button><button id="hpEbnAlt" onclick="setEbnAlt(!EALT)" style="margin:6px 0;padding:8px 14px;border-radius:12px;border:1px solid #c41e3a;background:#1a0a0c;color:#ffd0a8;font-size:15px">🎨 Ebonwing outfit: Armor ⇄</button><button class="big" id="hpBack">◀ Back</button></div><div class="screen" id="hsolo"><div class="esTop" style="display:flex;justify-content:space-between;width:100%;align-items:center;gap:4px;flex-wrap:wrap"><button id="hsQuit" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">◀ Title</button><div style="display:flex;gap:4px;align-items:center"><button id="btlSpdBtn" title="Battle speed" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#7fe0ff;font-size:13px">▶1x</button><button id="btlSkipBtn" title="Skip cut-in FX" style="padding:5px 8px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:12px;opacity:.75">Skip FX</button></div><button id="hsStatB" style="padding:6px 10px;border-radius:10px;border:1px solid #c9a24a;background:#1b2440;color:#ffe08a;font-size:14px">📊 Status</button></div><div id="hsFoes"></div><div id="hsPicWrap"><div id="hsPic"></div><div id="hsBqBadge" title="Bouquet Drain">💐</div></div><div class="name" id="hsName"></div><div style="width:100%"><div style="display:flex;justify-content:space-between;font-size:13px"><span>HP</span><span id="hsEhpT"></span></div><div class="esb"><i id="hsEhpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div id="hsEst"></div></div><div id="hsHero"><img id="hsImg"><div class="esI"><b></b> <span id="hsLv"></span><div class="lbl"><span>HP</span><span id="hsHpT"></span></div><div class="esb"><i id="hsHpB" style="background:linear-gradient(90deg,#e33,#f96)"></i></div><div class="lbl"><span>Ammo</span><span id="hsAmL" style="color:#ffb347"></span></div><div class="lbl"><span id="hsGN"></span><span id="hsGT"></span></div><div class="esb gseg"><i id="hsGB" style="background:#ffd27a"></i></div><div id="hsSt"></div></div></div><div id="hsPasW"><div id="hsPas" class="pasBar"></div><div id="hsPasTip"></div></div><button id="hsOSF" style="display:none"></button><div id="hsCmds"></div><div id="hsLog"></div></div><script>
 try{document.querySelector('.jsw').style.display='none'}catch(e){}
 // touch: fire click on touchend (no 300ms delay / works in webviews); preventDefault avoids double click
 document.addEventListener('touchend',e=>{const b=e.target.closest&&e.target.closest('button,.acard,.ev');if(b&&!b.disabled&&e.cancelable){e.preventDefault();b.click()}},{passive:false});
@@ -492,6 +492,21 @@ const GAL=[
  {n:'Summer Hooked Verdict',img:()=>EBNSHOOK,el:'dominion',r:'R',u:'Hooked Verdict in the festival swimsuit, including during Summer Mandate.',st:{'Hooked Verdict':'pierce ×2.40 · can stun'},ab:[['Festival hook','Same kit; only the picture changes']]},
  {n:'Summer Helix Scourge',img:()=>EBNSULT,el:'dominion',r:'L',u:'Helix Scourge in the festival swimsuit, including during Summer Mandate. Night-beach plate.',st:{Damage:'4 × ×0.90 + piercing finale ×2.60 + Fetter bonus'},ab:[['Night shoreline','Chains over dark water']]},
  {n:'Summer Burst Mode',img:()=>EBNSBURST,el:'dominion',r:'L',u:'Crimson Mandate entry and idle in the festival look — a sheer dark gown by the water.',st:{Duration:'3 actions +1 per extra 100% banked',Damage:'×1.65',Taken:'×0.55'},ab:[['Summer Mandate','The festival look stays. The fire is still hers.']]}]],
+ ['🦋 Nyxara',[
+ {n:'Nyxara',img:()=>NYXIDLE,el:'veinlight',r:'L',u:'Title → ⚔ Heroines → 🦋 Nyxara.',st:{HP:'330 + 40/Lv',ATK:'26 + 4.6/Lv',DEF:'11 + 1.8/Lv',Crit:'14% (×2) +3%/Trace',Gauge:'Veinlight (500)'},ab:[['The Last Butterfly','Long black hair, piercing red eyes, pale skin, and large translucent crimson crystalline butterfly wings'],['Vein Traces','Plant traces with her blades, then spend them to teleport — evade an attack and answer from behind']]},
+ {n:'Nyxara — Portrait',img:()=>NYXFACE,el:'veinlight',r:'R',u:'Battle portrait — used for status, introductions, and Burst speech.',st:{Role:'The Last Butterfly',Title:'Dual-Sword Rift Duelist'},ab:[['Battle portrait','Red eyes, black hair, and a vengeful, elegant look']]},
+ {n:'Scarlet Duet',img:()=>NYXSLASH,el:'veinlight',r:'R',u:'Basic, no cooldown. Two glowing dual-sword cuts that plant a Trace.',st:{Damage:'2 × ×1.05',Traces:'+1',Veinlight:'+22'},ab:[['No cooldown','The blades start every sentence']]},
+ {n:'Rift Step',img:()=>NYXRIFT,el:'veinlight',r:'E',u:'Skill 1, cooldown 2 (1 in Burst). A short-range portal teleport.',st:{Damage:'pierce ×1.85, or backstab pierce ×2.80 if a Trace is spent',Afterimage:'next enemy attack evaded',Cost:'30 Veinlight (free in Burst)'},ab:[['Signature','You reached for me. I am already behind you.']]},
+ {n:'Rift Leap',img:()=>NYXLEAP,el:'veinlight',r:'E',u:'Gallery plate — the leaping cut with the furry tail removed, as she has no animal features.',st:{Look:'Leap under a red moon, crystalline wings, dual swords, no tail'},ab:[['No animal features','The tail from the source image was edited out']]},
+ {n:'Crimson Cross',img:()=>NYXCROSS,el:'veinlight',r:'E',u:'Skill 2, cooldown 3 (2 in Burst). A crossed-sword heavy cut.',st:{Damage:'pierce ×2.50, +×1.40 backstab if Afterimage is still up',Traces:'+1',Veinlight:'+28'},ab:[['Crossed blades','Spend the Afterimage as a backstab instead of a dodge']]},
+ {n:"Kingdom's Wake",img:()=>NYXULT,el:'veinlight',r:'L',u:'Ultimate at 100 Veinlight. A ring of rifts, then a piercing finale.',st:{Damage:'4 × ×1.05 + piercing finale ×3.00, +×0.40 per Trace spent'},ab:[['Kingdom\'s Wake','A ring of rifts, then the cut']]},
+ {n:'Crimson Chrysalis',img:()=>NYXBURSTIN,el:'veinlight',r:'L',u:'Crimson Chrysalis — a free action at 100 Veinlight, once per fight. Leftover Veinlight is kept.',st:{Duration:'3 actions +1 per extra 100% banked',Damage:'×1.70',Taken:'×0.52',Crit:'+10%',SPD:'+6',Traces:'plants 2 immediately'},ab:[['Crimson Chrysalis','Wings open. This timeline still has a chance to bleed differently. The enemy does not get a turn when she awakens']]},
+ {n:'Burst Mode Standing',img:()=>NYXBURST,el:'veinlight',r:'L',u:'Battle portrait during Crimson Chrysalis — wings flared to full crystalline span, energy-edged swords.',st:{Portrait:'Awakened battle idle',Look:'Huge glowing wings, energy trails, energy-edged swords'},ab:[['Crimson Chrysalis','The light is hers. The debt stays.']]},
+ {n:'Burst Swords',img:()=>NYXBSLASH,el:'veinlight',r:'E',u:'Scarlet Duet and Crimson Cross while she is in Crimson Chrysalis.',st:{Basic:'2 × ×1.05 × 1.70',Cross:'also ×1.70 Burst'},ab:[['Chrysalis blades','Energy-edged dual swords']]},
+ {n:'Burst Rift Step',img:()=>NYXBRIFT,el:'veinlight',r:'E',u:'Rift Step while she is in Crimson Chrysalis — free, and it still grants Afterimage.',st:{Cost:'0 Veinlight in Burst',Damage:'pierce ×1.85 or backstab ×2.80, then ×1.70 Burst'},ab:[['Chrysalis rift','The portal is hers']]},
+ {n:"Burst Kingdom's Wake",img:()=>NYXBULT,el:'veinlight',r:'L',u:"Kingdom's Wake while she is in Crimson Chrysalis.",st:{Finale:'×3.00 + Trace bonus, then ×1.70 Burst'},ab:[['Chrysalis Wake','Rift rings under flared wings']]},
+ {n:'Victory',img:()=>NYXWIN,el:'veinlight',r:'R',u:'Victory portrait — castle night, tail removed, the fight already over.',st:{Portrait:'Victory',Look:'Base armor, castle, no animal features'},ab:[['One world survived this time','I will not apologize for making sure of it.']]},
+ {n:'Witchlight',img:()=>NYXHAT,el:'veinlight',r:'L',u:'Gallery look — a witch-hat variant. Not a combat mode and not a swimsuit.',st:{Look:'Witch hat and a glowing red sword, same face and wings'},ab:[['Gallery only','A look Martin sent; her battle kit stays the armor and dual swords']]}]],
  ['🎯 Ethan',[
  {n:'Ethan "Sureshot" Vance',img:()=>ETHI,el:'gun',r:'R',u:'Joins after the duel; leads in Ethan-led campaign mode, and is a playable heroine.',st:{HP:'110 + 22/Lv',ATK:'12 + 4/Lv (campaign ally)',DEF:'5 + 2/Lv',MP:'30 + 6/Lv (campaign ally)',Crit:'35% (×2)',Ammo:'5'},ab:[['Overwatch','Counter-shot ×1.2 when the enemy moves (1 ammo)'],['Cover','½ damage, 35% dodge for a turn'],['Reload','Refill 5 rounds, +6 MP']]},
  {n:'Ethan — White Horizon Armor',img:()=>ETHHZ,el:'guard',r:'L',u:'Title → ⚔ Heroines → 🎯 Ethan Vance (playable).',st:{HP:'200 + 24/Lv',ATK:'18 + 4/Lv',DEF:'8 + 1.6/Lv',Crit:'15% (×2)',Ammo:'5'},ab:[['Horizon Mend','All his hits heal 25% of damage dealt'],['White Barrier','Barrier up to 40% max HP']]},
@@ -2976,7 +2991,7 @@ const bk=$('hpStlKit');if(bk)bk.onclick=()=>setStlKit(!SDAWN);
 try{stlAltUI()}catch(e){}})();
 
 
-/*VSFIX: VS opponents for later heroines (cae/ros/kvex/mna/noc/iso/stl/ebn — ebn also self-registers in her module)*/
+/*VSFIX: VS opponents for later heroines (cae/ros/kvex/mna/noc/iso/stl/ebn/nyx — ebn and nyx also self-register in their modules)*/
 (function(){
   if(typeof VS_IDS==='undefined'||typeof VS_FOE==='undefined')return;
   const alt=k=>!!window[k];
@@ -3462,6 +3477,280 @@ try{ebnAltUI()}catch(e){}
     ]
   };
   if(typeof VS_TAUNT==='object')VS_TAUNT.ebn="I don't wear anyone's colors. I wear mine. Come prove you can hold a chain.";
+})();
+})();
+
+/*NYXARA (The Last Butterfly / Dual-Sword Rift Duelist). Code id is 'nyx'. Gauge is Veinlight. Does not alter any other heroine or the Fractured Timeline Violet Sovereign boss.*/
+const NYXFACE="img/nyx_face.jpg?v=e375e329",NYXIDLE="img/nyx_idle.jpg?v=2ec9ba14",NYXSLASH="img/nyx_slash.jpg?v=a8455d8d",NYXRIFT="img/nyx_rift.jpg?v=6e3eee7b",NYXCROSS="img/nyx_cross.jpg?v=c90df675",NYXULT="img/nyx_ult.jpg?v=fc69f24b",NYXBURST="img/nyx_burst.jpg?v=6ba9de76",NYXBURSTIN="img/nyx_burstin.jpg?v=b08023b8",NYXBSLASH="img/nyx_bslash.jpg?v=09d5774a",NYXBRIFT="img/nyx_brift.jpg?v=90200f7c",NYXBULT="img/nyx_bult.jpg?v=3d4997a3",NYXWIN="img/nyx_win.jpg?v=373b7f67",NYXHAT="img/nyx_hat.jpg?v=12073eba",NYXLEAP="img/nyx_leap.jpg?v=add33f5c";
+window.NYXIMG={face:NYXFACE,idle:NYXIDLE,slash:NYXSLASH,rift:NYXRIFT,cross:NYXCROSS,ult:NYXULT,burst:NYXBURST,burstin:NYXBURSTIN,bslash:NYXBSLASH,brift:NYXBRIFT,bult:NYXBULT,win:NYXWIN,hat:NYXHAT,leap:NYXLEAP};
+GEL.veinlight=GEL.veinlight||['#e02040','#1a0508','🦋 Veinlight'];
+(function(){
+const K=window.NYXK=Object.assign({
+  hp0:330,hpL:40,atk0:26,atkL:4.6,def0:11,defL:1.8,crit:.14,spd0:16,
+  duet:1.05,duetHits:2,basicG:22,trBasic:1,maxTr:3,trCrit:.03,
+  rift:1.85,riftBack:2.80,riftCD:2,riftCost:30,riftG:20,
+  cross:2.50,crossBack:1.40,crossCD:3,crossG:28,crossTr:1,
+  ultN:4,ult:1.05,ultFin:3.00,ultFinTr:.40,ultBack:1.15,ultCost:100,
+  abDmg:1.70,abCrit:.10,abSpd:6,abCost:100,abCD:1,abTaken:.52,abG:1.6,abFet:2,
+  hitG:14,backHeal:.12
+},window.NYXKOVR||{});
+
+function AB(){return !!(HS&&HS.nyx&&HS.nyx.ab)}
+function pose(kind){
+  const ab=AB();
+  if(ab){
+    if(kind=='face')return NYXFACE;
+    if(kind=='idle'||kind=='burst'||kind=='win')return NYXBURST;
+    if(kind=='burstin')return NYXBURSTIN;
+    if(kind=='slash'||kind=='cross'||kind=='bslash')return NYXBSLASH;
+    if(kind=='rift'||kind=='brift')return NYXBRIFT;
+    if(kind=='ult'||kind=='bult')return NYXBULT;
+  }
+  if(kind=='face')return NYXFACE;
+  if(kind=='idle')return NYXIDLE;
+  if(kind=='slash')return NYXSLASH;
+  if(kind=='rift')return NYXRIFT;
+  if(kind=='cross')return NYXCROSS;
+  if(kind=='ult')return NYXULT;
+  if(kind=='win')return NYXWIN;
+  if(kind=='burst')return NYXBURST;
+  if(kind=='burstin')return NYXBURSTIN;
+  if(kind=='bslash')return NYXBSLASH;
+  if(kind=='brift')return NYXBRIFT;
+  if(kind=='bult')return NYXBULT;
+  if(kind=='hat')return NYXHAT;
+  if(kind=='leap')return NYXLEAP;
+  return NYXIDLE;
+}
+window.nyxPose=pose;
+
+const CMDS=()=>{
+  const cut=AB()?K.abCD:0;
+  const rCD=Math.max(1,K.riftCD-cut),xCD=Math.max(1,K.crossCD-cut);
+  const riftCost=AB()?0:K.riftCost;
+  return [
+    ['nsd','Scarlet Duet',`2 sword hits ×${K.duet}${AB()?` (×${K.abDmg} in Burst)`:''} · plants 1 🦋 Trace · +${K.basicG} Veinlight · no CD`],
+    ['nrs','Rift Step',`portal teleport, pierce ×${K.rift} or backstab pierce ×${K.riftBack} if a Trace is spent · grants Afterimage (next hit evaded) · +${K.riftG} Veinlight · ${riftCost?riftCost+' Veinlight':'FREE in Burst'} · CD ${rCD}`],
+    ['nxx','Crimson Cross',`pierce ×${K.cross}${AB()?` (×${K.abDmg} in Burst)`:''} · if Afterimage is up, also a backstab (+×${K.crossBack}) and the dodge is spent · plants 1 🦋 Trace · +${K.crossG} Veinlight · CD ${xCD}`],
+    ['nxb','Crimson Chrysalis',`FREE Burst: spend ${K.abCost} Veinlight, leftover kept, once per fight. 3 actions +1 per extra 100%. Dmg ×${K.abDmg}, taken ×${K.abTaken}, +${Math.round(K.abCrit*100)}% crit, +${K.abSpd} SPD, CDs −${K.abCD}, Veinlight ×${K.abG}, plants ${K.abFet} Traces. Rift Step is free.`],
+    ['ult',"Kingdom's Wake",`4× ×${K.ult} + piercing finale ×${K.ultFin} (+×${K.ultFinTr}/Trace spent)${AB()?' · Burst amp':''} · Charge Break at 3 Traces or in Burst · Afterimage makes the finale a backstab (×${K.ultBack}) · ${K.ultCost} Veinlight`]
+  ];
+};
+HEROS.nyx={n:'Nyxara',t:'The Last Butterfly',buffImg:()=>!HS||!HS.nyx?null:(HS.nyx.ab?pose('burst'):null),img:()=>HS&&HS.nyx&&HS.nyx.won?pose('win'):(HEROS.nyx.buffImg()||pose('idle')),face:()=>pose('face'),gauge:'Veinlight',crit:K.crit,
+ intro:[['Nyxara',()=>pose('face'),"Nyxara. Butterfly Kingdom Clan. Your Valkyries already ended my world. Don't ask me to smile about this one."],
+  ['Nyxara',()=>pose('face'),"I open a rift, I cut what comes through. Keep your distance, or don't."]],
+ cmds:CMDS()};
+function rebuildCmds(){
+  const D=HEROS.nyx; if(!D)return;
+  D.cmds=CMDS();
+  const box=$('hsCmds'); if(!box||!HS||HS.id!='nyx')return;
+  box.innerHTML=D.cmds.map(([k,n,d])=>`<button data-hs="${k}">${n}<small>${d}</small></button>`).join('');
+  box.querySelectorAll('[data-hs]').forEach(b=>b.onclick=()=>hsAct(b.dataset.hs));
+}
+CRIT_KIT.nyx={cc:0,cm:2.0};
+const _st=hsStats;hsStats=function(){if(HS&&HS.id=='nyx'){const L=HS.lvl,T=HS.nyx;const spdB=T&&T.ab?K.abSpd:0;return {mhp:K.hp0+K.hpL*L,atk:Math.round(K.atk0+K.atkL*L),def:Math.round(K.def0+K.defL*L),spd:K.spd0+L+spdB}}return _st.apply(this,arguments)};
+const s0=()=>hsStats();
+const gain=n=>{const T=HS.nyx;const mul=T&&T.ab?K.abG:1;HS.g=Math.min(GMAX,HS.g+Math.round(n*mul))};
+function dmgMul(){const T=HS.nyx;return T&&T.ab?K.abDmg:1}
+function trOf(f){return (f&&f.ntr)||0}
+function plantTr(f,n){if(!f||f.hp<=0||!n)return 0;const was=trOf(f);f.ntr=Math.min(K.maxTr,was+n);return f.ntr-was}
+function spendTr(f,n){if(!f)return 0;const have=trOf(f);const use=Math.min(have,n);f.ntr=have-use;return use}
+function spendAll(f){return spendTr(f,trOf(f))}
+function nHit(f,m,o){
+  if(!f||f.hp<=0)return 0;
+  const cur=E; if(f&&f!==E) E=f;
+  const r=hsHit(m,Object.assign({col:'#c41e3a'},o||{}));
+  if(f&&f!==cur) E=cur;
+  return r;
+}
+function foes(){return (HS.foes&&HS.foes.length)?HS.foes:[E]}
+function alive(){return foes().filter(f=>f.hp>0)}
+function retarget(){if(E&&E.hp>0)return E;const n=alive()[0];if(n)E=n;return E}
+function syncCrit(){const T=HS&&HS.nyx;if(!T)return;HEROS.nyx.crit=K.crit+(T.ab?K.abCrit:0)+(trOf(E)*K.trCrit)}
+window.nyxOk=k=>{const T=HS&&HS.nyx;if(!T||HS.busy||E.hp<=0||HS.hp<=0)return false;
+ if(k=='nrs')return T.cd.rs<=0&&(T.ab||HS.g>=K.riftCost);
+ if(k=='nxx')return T.cd.xx<=0;
+ if(k=='nxb')return !T.abU&&!T.ab&&HS.g>=K.abCost;
+ if(k=='ult')return HS.g>=K.ultCost;return true};
+const cdVals=()=>{const T=HS.nyx,cut=T.ab?K.abCD:0;return {rs:Math.max(1,K.riftCD-cut),xx:Math.max(1,K.crossCD-cut)}};
+const tickCD=()=>{const T=HS.nyx;['rs','xx'].forEach(x=>{if(T.cd[x]>0)T.cd[x]--})};
+const tickAb=()=>{const T=HS.nyx;if(T.ab&&--T.abT<=0){T.ab=0;syncCrit();rebuildCmds();hsLog('🦋 Crimson Chrysalis folds — the light recedes. The debt does not.','s');try{speak('Nyxara',pose('face'),'The light folds back. The debt does not.')}catch(e){}}};
+
+async function nyxAct(k){if(!HS||HS.busy||E.hp<=0||HS.hp<=0||!nyxOk(k))return;HS.busy=1;const T=HS.nyx;let free=0;HS.nyxA++;
+ const sp=(im,t,f)=>{try{adSplash(im,t,f)}catch(e){}};
+ const mul=dmgMul();
+ if(k=='nxb'){
+  const extra=Math.max(0,Math.floor(HS.g/100)-1);
+  T.abT=3+extra;T.ab=1;T.abU=1;HS.g=Math.max(0,HS.g-K.abCost);
+  syncCrit();rebuildCmds();
+  if(T.cd.rs>0)T.cd.rs=Math.max(0,T.cd.rs-1);if(T.cd.xx>0)T.cd.xx=Math.max(0,T.cd.xx-1);
+  plantTr(E,K.abFet);
+  hsLog(`🦋 <b>CRIMSON CHRYSALIS</b> — ${T.abT} actions. Wings open. Leftover Veinlight ${HS.g}. 🦋 Traces ${trOf(E)}.`,'h');
+  try{speak('Nyxara',pose('face'),'Wings open. This timeline still has a chance to bleed differently.')}catch(e){}
+  sp(pose('burstin'),'Crimson Chrysalis',1);
+  await wait(450);try{await splashWait()}catch(e){}
+  hsUpd();HS.busy=0;hsUpd();return;
+ }
+ if(k=='nsd'){
+  sp(pose('slash'),'Scarlet Duet');
+  nHit(E,K.duet*mul,{name:'Scarlet Duet'});
+  if(E&&E.hp>0)nHit(E,K.duet*mul,{name:'Scarlet Duet'});
+  const add=plantTr(E,K.trBasic);
+  gain(K.basicG);syncCrit();
+  hsLog(`Nyxara cuts a Scarlet Duet${add?` — 🦋 Traces ${trOf(E)}`:''}.`,'h');
+ }
+ if(k=='nrs'){
+  if(!T.ab)HS.g=Math.max(0,HS.g-K.riftCost);
+  const used=spendTr(E,1);
+  const back=used>0;
+  sp(pose('rift'),'Rift Step'+(back?' — Backstab':''));
+  const r0=E&&E.hp||0;
+  nHit(E,(back?K.riftBack:K.rift)*mul,{name:back?'Rift Step Backstab':'Rift Step',pierce:1});
+  if(back&&K.backHeal){const dealt=Math.max(0,r0-(E.hp||0));const h=Math.max(0,Math.round(dealt*K.backHeal));if(h){HS.hp=Math.min(s0().mhp,HS.hp+h);hsLog('🦋 Backstab drinks '+h+' HP','h')}}
+  T.veil=1;T.back=1;
+  gain(K.riftG);syncCrit();
+  T.cd.rs=cdVals().rs+1;
+  hsLog(`🦋 Rift Step — ${back?'a Trace buys a backstab. ':'the portal opens. '}Afterimage shimmers.`,'h');
+  try{speak('Nyxara',pose('face'),"You reached for me. I'm already behind you.")}catch(e){}
+ }
+ if(k=='nxx'){
+  const back=!!(T.back||T.veil); if(back){T.back=0;T.veil=0}
+  sp(pose('cross'),'Crimson Cross'+(back?' — Backstab':''));
+  const x0=E&&E.hp||0;
+  nHit(E,(K.cross+(back?K.crossBack:0))*mul,{name:back?'Crimson Cross Backstab':'Crimson Cross',pierce:1});
+  if(back&&K.backHeal){const dealt=Math.max(0,x0-(E.hp||0));const h=Math.max(0,Math.round(dealt*K.backHeal));if(h){HS.hp=Math.min(s0().mhp,HS.hp+h);hsLog('🦋 Backstab drinks '+h+' HP','h')}}
+  const add=plantTr(E,K.crossTr);
+  gain(K.crossG);syncCrit();
+  T.cd.xx=cdVals().xx+1;
+  hsLog(`Nyxara crosses both blades${back?' — Afterimage spent as a backstab':''}${add?` — 🦋 Traces ${trOf(E)}`:''}.`,'h');
+ }
+ if(k=='ult'){
+  HS.g=Math.max(0,HS.g-K.ultCost);
+  sp(pose('ult'),"Kingdom's Wake",1);
+  let e0=(HS.foes||[E]).reduce((a,f)=>a+(f.hp||0),0);
+  for(let i=0;i<K.ultN;i++){
+    if(E.hp<=0)retarget();
+    if(!E||E.hp<=0)break;
+    nHit(E,K.ult*mul,{name:"Kingdom's Wake"});
+    await wait(160);
+  }
+  alive().forEach(f=>{
+    const used=spendAll(f);
+    const back=!!(T.back||T.veil); if(back){T.back=0;T.veil=0}
+    const fin=(K.ultFin+K.ultFinTr*used)*(back?K.ultBack:1);
+    nHit(f,fin*mul,{name:"Kingdom's Wake Finale",pierce:1});
+    if(T.ab||used>=3){try{hsBreak(f,"Kingdom's Wake")}catch(e){}}
+  });
+  syncCrit();
+  const e1=(HS.foes||[E]).reduce((a,f)=>a+(f.hp||0),0);
+  hsLog(`🦋 Kingdom's Wake — a ring of rifts, then the cut. Dealt ${Math.max(0,e0-e1)}.`,'h');
+  retarget();
+ }
+ await wait(450);try{await splashWait()}catch(e){}
+ hsFoeCheck();if((HS.foes||[E]).every(f=>f.hp<=0))return hsWin();
+ if(E&&E.hp<=0){if(E)E.ntr=0;retarget();syncCrit()}
+ hsChkBreak&&hsChkBreak();
+ if(free){HS.busy=0;hsUpd();return}
+ tickCD();tickAb();
+ await wait(900);await hsEnemy(0);
+ if(HS.hp<=0)return hsLose();
+ HS.busy=0;hsUpd();
+}
+window.nyxAct=nyxAct;
+
+const _act=hsAct;hsAct=function(k){if(HS&&HS.id=='nyx')return nyxAct(k);return _act.apply(this,arguments)};
+
+const _core=hsEnemyCore;hsEnemyCore=async function(){if(!HS||HS.id!='nyx')return _core.apply(this,arguments);
+ const T=HS.nyx,hp0=HS.hp,g0=HS.g,BIG=1e6;
+ HS.hp=hp0+BIG;let mv=null,dr=[];
+ const L=[...(E.moves||[]),...(E.moves2||[])];const _l=hsLog;
+ hsLog=function(t,c){const x=String(t);let m=x.match(/^⚔ .+? (?:attacks with|uses) (.+)!$/);if(m)mv=L.find(z=>z.n==m[1])||mv;if((m=x.match(/^It drains (\d+) HP\./)))dr.push(['d',+m[1]]);if((m=x.match(/^🪽 .+ drains (\d+) HP\./)))dr.push(['l',+m[1]]);return _l.apply(this,arguments)};
+ try{await _core.apply(this,arguments)}finally{hsLog=_l}
+ const raw=Math.max(0,hp0+BIG-HS.hp);HS.hp=hp0;HS.g=g0;
+ if(raw>0&&T.veil){
+  T.veil=0;
+  for(const [t,h] of dr){E.hp=Math.max(1,E.hp+h)}
+  hsLog('🦋 Afterimage — the rift takes the blow. She is already gone.','h');
+  hsUpd();return;
+ }
+ if(raw>0){
+  let f=T.ab?K.abTaken:1;
+  let d=Math.max(0,Math.round(raw*f));
+  if(d===0&&raw>0)d=1;
+  for(const [t,h] of dr){const nh=t=='d'?Math.round(d/2):Math.round(d*.15);E.hp=Math.max(1,E.hp-Math.max(0,h-nh))}
+  HS.hp=Math.max(0,HS.hp-d);
+  gain(K.hitG);
+  if(d!=raw)hsLog(`🦋 Chrysalis ward: ${raw} → <b>${d}</b>`,'h');
+ }
+ hsUpd()};
+
+const _u=hsUpd;hsUpd=function(){const r=_u.apply(this,arguments);if(HS&&HS.id=='nyx'&&HS.nyx&&E){const T=HS.nyx;syncCrit();HEROS.nyx.cmds=CMDS();
+ document.querySelectorAll('#hsCmds [data-hs]').forEach(b=>{const k=b.dataset.hs;b.disabled=!nyxOk(k)});
+ const st=$('hsSt');if(st)st.textContent=[`🦋 Veinlight ${HS.g}/${GMAX}`,T.ab?`🦋 CHRYSALIS ${T.abT}`:'',trOf(E)?`🦋 Traces ${trOf(E)}`:'',(T.veil||T.back)?'🦋 Afterimage':''].filter(Boolean).join(' · ');
+ const gt=$('hsGT');if(gt)gt.textContent=`${HS.g} / ${GMAX}`;
+ const gb=$('hsGB');if(gb){gb.style.width=Math.min(100,HS.g/(GMAX/100))+'%';gb.style.background='linear-gradient(90deg,#1a0508,#8b0a1a 40%,#e02040)'}
+ const im=$('hsImg');if(im){const src=HEROS.nyx.img();if(im.src!==src)im.src=src}
+ }return r};
+
+const _hb=hsBattle;hsBattle=function(){const r=_hb.apply(this,arguments);if(HS&&HS.id=='nyx'){HS.g=0;HS.nyx={ab:0,abU:0,abT:0,won:0,veil:0,back:0,cd:{rs:0,xx:0},st:{}};HS.nyxA=0;(HS.foes||[E]).forEach(f=>{f.ntr=0});syncCrit();rebuildCmds();hsUpd()}return r};
+const _w=hsWin;hsWin=function(){if(HS&&HS.id=='nyx'&&HS.nyx)HS.nyx.won=1;return _w.apply(this,arguments)};
+
+PASS.nyx={play:"Scarlet Duet is her no-CD basic and plants 🦋 Traces. Rift Step spends a Trace (if she has one) to backstab and leaves an Afterimage that evades the next hit. Crimson Cross is a heavy crossed cut — and a backstab if she rifts first. Bank 100 Veinlight for Kingdom's Wake or spend it on a free Crimson Chrysalis (once per fight, leftover kept).",
+ p:[{i:"🦋",n:"Vein Traces",k:"on",t:`Sword hits plant 🦋 Traces on the current foe (max ${K.maxTr}, +${Math.round(K.trCrit*100)}% crit each). Traces fall when the foe does. Rift Step spends 1 Trace to upgrade the cut into a backstab. When she is hit: +${K.hitG} Veinlight.`},
+    {i:"🦋",n:"Afterimage",k:"cond",t:`After Rift Step, the next enemy attack is evaded (0 damage, no on-hit). If she uses Crimson Cross or Kingdom's Wake first, the Afterimage is spent as a backstab instead.`,off:()=>!(HS&&HS.nyx&&HS.nyx.veil)},
+    {i:"🦋",n:"Crimson Chrysalis",k:"once",t:`Spend ${K.abCost} Veinlight to enter Crimson Chrysalis once per fight (leftover gauge is kept): damage ×${K.abDmg}, taken ×${K.abTaken}, Veinlight gain ×${K.abG}, +${Math.round(K.abCrit*100)}% crit, +${K.abSpd} SPD, CDs −${K.abCD}, plants ${K.abFet} Traces, and Rift Step costs 0 Veinlight. Lasts 3 actions +1 per extra 100% banked. Free action — the enemy does not get a turn. No auto-revive.`,used:()=>HS&&HS.nyx&&HS.nyx.abU}],
+ off:[]};
+CLEARS.nyx=()=>[['Nyxara',()=>pose('win'),"One world survived this time. I will not apologize for making sure of it."],['Narrator',()=>pose('win'),"🏆 Nyxara of the Butterfly Kingdom Clan stands in the afterimage of a fight she refused to lose twice."]];
+VS_TALK['nyx:dk']=(D,F)=>[['Narrator',F.img(),`⚔ VS — Nyxara vs ${F.n}`],[F.n,F.img(),"A winged leftover from a world I already ended. Come die quieter this time."],['Nyxara',()=>pose('face'),"I watched you win. I watched you finish everyone I loved. This is not a rematch. This is a correction."],['Narrator',F.img(),`🖤 ${F.n} — ${VS_DK_TIER[VS_DK_T].n} tier. ${F.tip}`]];
+VS_TALK['nyx:sig']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Nyxara vs Sigrún'],[F.n,F.img(),"An oath is not nothing, wanderer."],['Nyxara',()=>pose('face'),"Your oath saved no one in my world. Draw anyway."]];
+VS_TALK['nyx:iso']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Nyxara vs Isolde Clairenne'],[F.n,F.img(),"A crown is a duty. Yours looks like a grudge."],['Nyxara',()=>pose('face'),"A crown didn't stop her in my timeline. Let's see if yours is heavier."]];
+VS_TALK['nyx:stl']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Nyxara vs Stellara'],[F.n,F.img(),"The star I carry was not stolen."],['Nyxara',()=>pose('face'),"You borrowed a star. I outran a dying one."]];
+VS_TALK['nyx:ebn']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Nyxara vs Ebonwing'],[F.n,F.img(),"I don't wear anyone's colors. Don't hang your war on me."],['Nyxara',()=>pose('face'),"You wear no banner. Lucky. Banners were what burned my house."]];
+VS_TALK['nyx:noc']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Nyxara vs Noctira'],[F.n,F.img(),"I don't kneel to wings or to a red sword."],['Nyxara',()=>pose('face'),"Red wings, red steel. You at least look like you remember a dark sky."]];
+VS_TALK['nyx:kvex']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Nyxara vs Kaelyn Vex'],[F.n,F.img(),"Don't you dare spend my grief like coin."],['Nyxara',()=>pose('face'),"You lost an Ethan too. Don't confuse your grief with mine."]];
+VS_TALK['sig:nyx']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Sigrún vs Nyxara'],['Nyxara',F.img(),"Your oath saved no one in my world. Draw anyway."],[D.n,()=>D.face(),"Then I will draw for this one."]];
+VS_TALK['iso:nyx']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Isolde Clairenne vs Nyxara'],['Nyxara',F.img(),"A crown didn't stop her in my timeline. Let's see if yours is heavier."],[D.n,()=>D.face(),"Then I'll prove the weight. Come on."]];
+VS_TALK['stl:nyx']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Stellara vs Nyxara'],['Nyxara',F.img(),"You borrowed a star. I outran a dying one."],[D.n,()=>D.face(),"Then I'll keep this one lit."]];
+VS_TALK['ebn:nyx']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Ebonwing vs Nyxara'],['Nyxara',F.img(),"You wear no banner. Lucky. Banners were what burned my house."],[D.n,()=>D.face(),"Lucky, then. I still don't wear yours."]];
+VS_TALK['noc:nyx']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Noctira vs Nyxara'],['Nyxara',F.img(),"Red wings, red steel. You at least look like you remember a dark sky."],[D.n,()=>D.face(),"I remember it. I just refuse to live in it."]];
+VS_TALK['kvex:nyx']=(D,F)=>[['Narrator',F.img(),'⚔ VS — Kaelyn Vex vs Nyxara'],['Nyxara',F.img(),"You lost an Ethan too. Don't confuse your grief with mine."],[D.n,()=>D.face(),"I wouldn't. Mine is mine. Yours can stay sharp."]];
+
+const _sr=stHeroRaw;stHeroRaw=function(id){if(id!='nyx')return _sr.apply(this,arguments);const D=HEROS.nyx,live=HS&&HS.id=='nyx'&&STCTX=='hsolo',L=live?HS.lvl:3,mh=K.hp0+K.hpL*L,at=Math.round(K.atk0+K.atkL*L),df=Math.round(K.def0+K.defL*L),T=live?HS.nyx:null;
+ return `<div class="stTop"><img src="${live?D.img():D.face()}"><div class="stId"><b style="font-size:16px">${D.n}</b><br><small>${D.t}</small><br>Lv <b>${L}</b>${live?` · Fight ${HS.stage+1}/${hsF().length}`:' (start)'}<br>HP ${live?HS.hp:mh}/${mh}${stBar(live?HS.hp:mh,mh,'linear-gradient(90deg,#e33,#f96)')}Veinlight ${live?HS.g:0} / 500${stBar(live?HS.g:0,500,'#c41e3a')}</div></div>
+<div class="stSec"><h4>📈 Stats${live?' (live)':''}</h4><table><tr><th>HP</th><td>${K.hp0} + ${K.hpL}/Lv</td></tr><tr><th>ATK</th><td>${at} (${K.atk0} + ${K.atkL}/Lv)</td></tr><tr><th>DEF</th><td>${df} (${K.def0} + ${K.defL}/Lv)</td></tr><tr><th>SPD</th><td>${K.spd0+L+(T&&T.ab?K.abSpd:0)} (${K.spd0}+Lv${T&&T.ab?` + ${K.abSpd} Chrysalis`:''})</td></tr><tr><th>Crit</th><td>${Math.round(K.crit*100)}% (×2)${T&&T.ab?` · +${Math.round(K.abCrit*100)}% in Chrysalis`:''} · +${Math.round(K.trCrit*100)}%/Trace</td></tr><tr><th>Passive</th><td>${PASS.nyx.p.map(x=>x.n+': '+x.t).join('<br>')}</td></tr><tr><th>Veinlight</th><td>+${K.basicG} Scarlet Duet, +${K.riftG} Rift Step, +${K.crossG} Crimson Cross, +${K.hitG} when hit · 100 → Kingdom's Wake or Crimson Chrysalis</td></tr>${T?`<tr><th>Now</th><td>${[T.ab?`🦋 CHRYSALIS ${T.abT}`:'',T.abU?'':'🦋 Chrysalis ready',E&&trOf(E)?`🦋 Traces ${trOf(E)}`:'',(T.veil||T.back)?'🦋 Afterimage':''].filter(Boolean).join(' · ')||'—'}</td></tr>`:''}<tr><th>Story</th><td>Nyxara is a swordswoman of the Butterfly Kingdom Clan, from a dark timeline where Dark Valkyrie won. In that world the Valkyries destroyed her clan and killed everyone she would have stood beside — Ethan, the allies, the kingdom itself. She is not wrong about what happened there. She crossed into this Frozen Dawn with that memory like a blade: long black hair, piercing red eyes, pale skin, and large translucent crimson crystalline butterfly wings. She fights with dual ornate swords that glow the same red as her wings, and she tears short-range portals to cut from behind. She is not here to swear an oath to this timeline's Valkyries. She is here because the ones who burned her world still wear those colors.</td></tr></table></div>
+<div class="stSec"><h4>⚔ Moves</h4>${D.cmds.map(([k,n,d])=>`<div><b>${n}</b> — ${d}</div>`).join('')}</div>`};
+const _rs=renderStatus;renderStatus=function(){_rs.apply(this,arguments);if(STW=='her'&&!(HS&&STCTX=='hsolo')){$('stBody').insertAdjacentHTML('beforeend','<hr style="border-color:#2d3a66">'+stHero('nyx'))}};
+const b=$('hpNyx');if(b)b.onclick=()=>hsModeOpen('nyx');
+
+// VS opponent — added here so every new girl ships as an opponent. Inserted just before Dark Valkyrie (after Ebonwing).
+(function(){
+  if(typeof VS_IDS==='undefined'||typeof VS_FOE==='undefined')return;
+  if(!VS_IDS.includes('nyx')){
+    const i=VS_IDS.indexOf('dk');
+    VS_IDS.splice(i>=0?i:VS_IDS.length,0,'nyx');
+  }
+  VS_FOE.nyx={
+    n:'Nyxara',k:'vnyx',rv:'nyx',
+    img:()=>NYXIDLE,
+    img2:()=>NYXBURST,
+    hp:940,atk:60,def:9,boss:1,asc:.5,
+    ascN:'CRIMSON CHRYSALIS',ascE:'🦋',
+    ascS:'🦋 CRIMSON CHRYSALIS (×1.2, rift afterimage)',
+    tip:'The last sword of the Butterfly Kingdom Clan. Rift Step leaves an Afterimage that can evade a hit; Kingdom\'s Wake is a charged rift-ring — break it (15% of her HP). At ≤50% HP: CRIMSON CHRYSALIS.',
+    moves:[
+      {n:'Scarlet Duet',p:.90,hits:2,w:5,im:()=>NYXSLASH,msg:'cuts a Scarlet Duet'},
+      {n:'Rift Step',p:1.70,w:3,im:()=>NYXRIFT,msg:'tears a Rift Step and cuts from behind'},
+      {n:'Crimson Cross',p:2.20,w:3,im:()=>NYXCROSS,msg:'crosses both blades in a Crimson Cross'},
+      {n:"Kingdom's Wake",charge:1,p:2.6,brk:.15,w:2,im:()=>NYXULT,cmsg:'rifts bloom in a ring — Kingdom\'s Wake is coming!',msg:'unleashes KINGDOM\'S WAKE'}
+    ],
+    moves2:[
+      {n:'Scarlet Duet',p:1.05,hits:2,w:5,im:()=>NYXBSLASH,msg:'cuts a Scarlet Duet under the Chrysalis'},
+      {n:'Rift Step',p:2.00,w:3,im:()=>NYXBRIFT,msg:'tears a Rift Step under the Chrysalis'},
+      {n:'Crimson Cross',p:2.45,w:3,im:()=>NYXBSLASH,msg:'crosses both blades under the Chrysalis'},
+      {n:"Kingdom's Wake",charge:1,p:2.8,brk:.15,w:2,im:()=>NYXBULT,cmsg:'the Chrysalis flares — Kingdom\'s Wake is coming!',msg:'unleashes KINGDOM\'S WAKE'}
+    ]
+  };
+  if(typeof VS_TAUNT==='object')VS_TAUNT.nyx="Your Valkyries already ended my world. Don't ask me to smile about this one.";
 })();
 })();
 
