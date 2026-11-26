@@ -487,7 +487,9 @@ const GAL=[
  ['🏖 Ebonwing — Summer',[
  {n:'Ebonwing — Summer Portrait',img:()=>EBNSFACE,el:'dominion',r:'R',u:'Battle portrait — status and introductions in the festival swimsuit.',st:{Role:'The Self-Crowned',Title:'Chain-Whip Anti-Hero'},ab:[['Summer portrait','Hands at her face on the beach, horns and red-streaked hair still hers']]},
  {n:'Ebonwing — Summer Swimsuit',img:()=>EBNSUM,el:'dominion',r:'L',u:'Character select and default swimsuit battle portrait. Toggle Armor ⇄ Swimsuit on the select screen or mid-fight (free, once per turn, same kit).',st:{HP:'310 + 38/Lv',ATK:'24 + 4.3/Lv',DEF:'10 + 1.8/Lv',Crit:'13% (×2) +3%/Fetter',Gauge:'Dominion (500)'},ab:[['Festival outfit','A beach swimsuit variant — the whip and the agenda stay'],['Same kit','The switch is only the picture — her numbers never change']]},
- {n:'Summer Whip / Claws / Hook',img:()=>EBNSSLASH,el:'dominion',r:'R',u:'Whip Lash, Twin Cleave, and Hooked Verdict in the festival swimsuit, including during Summer Mandate.',st:{'Whip Lash':'×1.85 basic','Twin Cleave':'2 × ×1.05 + Edict payoff'},ab:[['Festival chains','Same kit; only the picture changes']]},
+ {n:'Summer Whip Lash',img:()=>EBNSSLASH,el:'dominion',r:'R',u:'Whip Lash in the festival swimsuit, including during Summer Mandate.',st:{'Whip Lash':'×1.85 basic'},ab:[['Festival chains','Same kit; only the picture changes']]},
+ {n:'Summer Twin Cleave',img:()=>EBNSCLAW,el:'dominion',r:'L',u:'Twin Cleave in the festival swimsuit, including during Summer Mandate.',st:{'Twin Cleave':'2 × ×1.05 + Edict payoff'},ab:[['Festival claws','Same kit; only the picture changes']]},
+ {n:'Summer Hooked Verdict',img:()=>EBNSHOOK,el:'dominion',r:'R',u:'Hooked Verdict in the festival swimsuit, including during Summer Mandate.',st:{'Hooked Verdict':'pierce ×2.40 · can stun'},ab:[['Festival hook','Same kit; only the picture changes']]},
  {n:'Summer Helix Scourge',img:()=>EBNSULT,el:'dominion',r:'L',u:'Helix Scourge in the festival swimsuit, including during Summer Mandate. Night-beach plate.',st:{Damage:'4 × ×0.90 + piercing finale ×2.60 + Fetter bonus'},ab:[['Night shoreline','Chains over dark water']]},
  {n:'Summer Burst Mode',img:()=>EBNSBURST,el:'dominion',r:'L',u:'Crimson Mandate entry and idle in the festival look — a sheer dark gown by the water.',st:{Duration:'3 actions +1 per extra 100% banked',Damage:'×1.65',Taken:'×0.55'},ab:[['Summer Mandate','The festival look stays. The fire is still hers.']]}]],
  ['🎯 Ethan',[
@@ -3125,10 +3127,10 @@ try{stlAltUI()}catch(e){}})();
   },"A dark sky still has stars. I'll put them in you.");
 })();
 /*EBONWING (The Self-Crowned / Chain-Whip Anti-Hero). Code id is 'ebn'. Gauge is Dominion. Does not alter any other heroine.*/
-const EBNFACE="img/ebn_face.jpg?v=8c6dc897",EBNIDLE="img/ebn_idle.jpg?v=a0f22a69",EBNRAGE="img/ebn_rage.jpg?v=fc8dd5c0",EBNSOV="img/ebn_sov.jpg?v=a6bc9260",EBNLASH="img/ebn_lash.jpg?v=a0f22a69",EBNCLAW="img/ebn_claw.jpg?v=a0f22a69",EBNHOOK="img/ebn_hook.jpg?v=a0f22a69",EBNULT="img/ebn_ult.jpg?v=a0f22a69",EBNBURST="img/ebn_burst.jpg?v=f17eea86",EBNBURSTIN="img/ebn_burstin.jpg?v=5728850f",EBNBLASH="img/ebn_blash.jpg?v=f17eea86",EBNBULT="img/ebn_bult.jpg?v=f17eea86",EBNWIN="img/ebn_win.jpg?v=a0f22a69";
-const EBNSFACE="img/ebn_sface.jpg?v=1ece432e",EBNSUM="img/ebn_sum.jpg?v=b17a1ee4",EBNSSLASH="img/ebn_sslash.jpg?v=60b0fe9b",EBNSULT="img/ebn_sult.jpg?v=bbd26895",EBNSBURST="img/ebn_sburst.jpg?v=44299530";
+const EBNFACE="img/ebn_face.jpg?v=8c6dc897",EBNIDLE="img/ebn_idle.jpg?v=a0f22a69",EBNRAGE="img/ebn_rage.jpg?v=fc8dd5c0",EBNSOV="img/ebn_sov.jpg?v=a6bc9260",EBNLASH="img/ebn_lash.jpg?v=4613bb81",EBNCLAW="img/ebn_claw.jpg?v=844b1cd3",EBNHOOK="img/ebn_hook.jpg?v=628f42ff",EBNULT="img/ebn_ult.jpg?v=24175440",EBNBURST="img/ebn_burst.jpg?v=f17eea86",EBNBURSTIN="img/ebn_burstin.jpg?v=be81344d",EBNBLASH="img/ebn_blash.jpg?v=221115f6",EBNBULT="img/ebn_bult.jpg?v=0c359dc2",EBNWIN="img/ebn_win.jpg?v=a0f22a69";
+const EBNSFACE="img/ebn_sface.jpg?v=1ece432e",EBNSUM="img/ebn_sum.jpg?v=b17a1ee4",EBNSSLASH="img/ebn_sslash.jpg?v=60b0fe9b",EBNSCLAW="img/ebn_sclaw.jpg?v=f11c956c",EBNSHOOK="img/ebn_shook.jpg?v=6d3ec772",EBNSULT="img/ebn_sult.jpg?v=d70fa9c6",EBNSBURST="img/ebn_sburst.jpg?v=44299530";
 window.EBNIMG={face:EBNFACE,idle:EBNIDLE,rage:EBNRAGE,sov:EBNSOV,lash:EBNLASH,claw:EBNCLAW,hook:EBNHOOK,ult:EBNULT,burst:EBNBURST,burstin:EBNBURSTIN,blash:EBNBLASH,bult:EBNBULT,win:EBNWIN};
-window.EBNSIMG={face:EBNSFACE,idle:EBNSUM,slash:EBNSSLASH,ult:EBNSULT,burst:EBNSBURST,sum:EBNSUM};
+window.EBNSIMG={face:EBNSFACE,idle:EBNSUM,slash:EBNSSLASH,claw:EBNSCLAW,hook:EBNSHOOK,ult:EBNSULT,burst:EBNSBURST,sum:EBNSUM};
 GEL.dominion=GEL.dominion||['#c41e3a','#1a0a0c','⛓ Dominion'];
 (function(){
 const K=window.EBNK=Object.assign({
@@ -3169,13 +3171,17 @@ function pose(kind){
   if(swim&&ab){
     if(kind=='face')return EBNSFACE;
     if(kind=='idle'||kind=='burst'||kind=='burstin'||kind=='win'||kind=='rage'||kind=='sov')return EBNSBURST;
-    if(kind=='lash'||kind=='claw'||kind=='hook'||kind=='blash')return EBNSSLASH;
+    if(kind=='lash'||kind=='blash')return EBNSSLASH;
+    if(kind=='claw')return EBNSCLAW;
+    if(kind=='hook')return EBNSHOOK;
     if(kind=='ult'||kind=='bult')return EBNSULT;
   }
   if(swim){
     if(kind=='face')return EBNSFACE;
     if(kind=='idle'||kind=='win'||kind=='rage'||kind=='sov')return EBNSUM;
-    if(kind=='lash'||kind=='claw'||kind=='hook'||kind=='blash')return EBNSSLASH;
+    if(kind=='lash'||kind=='blash')return EBNSSLASH;
+    if(kind=='claw')return EBNSCLAW;
+    if(kind=='hook')return EBNSHOOK;
     if(kind=='ult'||kind=='bult')return EBNSULT;
     if(kind=='burst'||kind=='burstin')return EBNSBURST;
   }
@@ -3445,7 +3451,7 @@ try{ebnAltUI()}catch(e){}
     tip:'A self-crowned chain-whip anti-hero. Sovereign Edict cuts your damage; Helix Scourge is a charged chain storm — break it (15% of her HP). At ≤50% HP: CRIMSON MANDATE.',
     moves:[
       {n:'Whip Lash',p:1.15,w:5,im:()=>alt('EALT')?EBNSSLASH:EBNLASH,msg:'cracks a Whip Lash'},
-      {n:'Twin Cleave',p:.55,hits:2,w:3,im:()=>alt('EALT')?EBNSSLASH:EBNCLAW,msg:'cuts a Twin Cleave'},
+      {n:'Twin Cleave',p:.55,hits:2,w:3,im:()=>alt('EALT')?EBNSCLAW:EBNCLAW,msg:'cuts a Twin Cleave'},
       {n:'Sovereign Edict',cover:.40,heal:.06,w:2,im:()=>EBNSOV},
       {n:'Helix Scourge',charge:1,p:2.5,brk:.15,w:2,im:()=>alt('EALT')?EBNSULT:EBNULT,cmsg:'the chains tighten — Helix Scourge is coming!',msg:'unleashes HELIX SCOURGE'}
     ],
