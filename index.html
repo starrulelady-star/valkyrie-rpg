@@ -3127,9 +3127,9 @@ try{stlAltUI()}catch(e){}})();
   },"A dark sky still has stars. I'll put them in you.");
 })();
 /*EBONWING (The Self-Crowned / Chain-Whip Anti-Hero). Code id is 'ebn'. Gauge is Dominion. Does not alter any other heroine.*/
-const EBNFACE="img/ebn_face.jpg?v=8c6dc897",EBNIDLE="img/ebn_idle.jpg?v=a0f22a69",EBNRAGE="img/ebn_rage.jpg?v=fc8dd5c0",EBNSOV="img/ebn_sov.jpg?v=a6bc9260",EBNLASH="img/ebn_lash.jpg?v=4613bb81",EBNCLAW="img/ebn_claw.jpg?v=844b1cd3",EBNHOOK="img/ebn_hook.jpg?v=628f42ff",EBNULT="img/ebn_ult.jpg?v=24175440",EBNBURST="img/ebn_burst.jpg?v=f17eea86",EBNBURSTIN="img/ebn_burstin.jpg?v=be81344d",EBNBLASH="img/ebn_blash.jpg?v=221115f6",EBNBULT="img/ebn_bult.jpg?v=0c359dc2",EBNWIN="img/ebn_win.jpg?v=a0f22a69";
+const EBNFACE="img/ebn_face.jpg?v=8c6dc897",EBNIDLE="img/ebn_idle.jpg?v=a0f22a69",EBNRAGE="img/ebn_rage.jpg?v=fc8dd5c0",EBNSOV="img/ebn_sov.jpg?v=a6bc9260",EBNLASH="img/ebn_lash.jpg?v=4613bb81",EBNCLAW="img/ebn_claw.jpg?v=844b1cd3",EBNHOOK="img/ebn_hook.jpg?v=628f42ff",EBNULT="img/ebn_ult.jpg?v=24175440",EBNRLASH="img/ebn_rlash.jpg?v=9e148141",EBNRCLAW="img/ebn_rclaw.jpg?v=39e4ad82",EBNRHOOK="img/ebn_rhook.jpg?v=1b8c099a",EBNRULT="img/ebn_rult.jpg?v=75b3d279",EBNVLASH="img/ebn_vlash.jpg?v=c9502866",EBNVCLAW="img/ebn_vclaw.jpg?v=d30b7211",EBNVHOOK="img/ebn_vhook.jpg?v=db778e34",EBNVULT="img/ebn_vult.jpg?v=a86a4eef",EBNBURST="img/ebn_burst.jpg?v=f17eea86",EBNBURSTIN="img/ebn_burstin.jpg?v=be81344d",EBNBLASH="img/ebn_blash.jpg?v=221115f6",EBNBULT="img/ebn_bult.jpg?v=0c359dc2",EBNWIN="img/ebn_win.jpg?v=a0f22a69";
 const EBNSFACE="img/ebn_sface.jpg?v=1ece432e",EBNSUM="img/ebn_sum.jpg?v=b17a1ee4",EBNSSLASH="img/ebn_sslash.jpg?v=7324a45f",EBNSCLAW="img/ebn_sclaw.jpg?v=f11c956c",EBNSHOOK="img/ebn_shook.jpg?v=6d3ec772",EBNSULT="img/ebn_sult.jpg?v=d70fa9c6",EBNSBURST="img/ebn_sburst.jpg?v=44299530";
-window.EBNIMG={face:EBNFACE,idle:EBNIDLE,rage:EBNRAGE,sov:EBNSOV,lash:EBNLASH,claw:EBNCLAW,hook:EBNHOOK,ult:EBNULT,burst:EBNBURST,burstin:EBNBURSTIN,blash:EBNBLASH,bult:EBNBULT,win:EBNWIN};
+window.EBNIMG={face:EBNFACE,idle:EBNIDLE,rage:EBNRAGE,sov:EBNSOV,lash:EBNLASH,claw:EBNCLAW,hook:EBNHOOK,ult:EBNULT,rlash:EBNRLASH,rclaw:EBNRCLAW,rhook:EBNRHOOK,rult:EBNRULT,vlash:EBNVLASH,vclaw:EBNVCLAW,vhook:EBNVHOOK,vult:EBNVULT,burst:EBNBURST,burstin:EBNBURSTIN,blash:EBNBLASH,bult:EBNBULT,win:EBNWIN};
 window.EBNSIMG={face:EBNSFACE,idle:EBNSUM,slash:EBNSSLASH,claw:EBNSCLAW,hook:EBNSHOOK,ult:EBNSULT,burst:EBNSBURST,sum:EBNSUM};
 GEL.dominion=GEL.dominion||['#c41e3a','#1a0a0c','⛓ Dominion'];
 (function(){
@@ -3196,10 +3196,10 @@ function pose(kind){
   if(kind=='idle')return ed==='rage'?EBNRAGE:ed==='sov'?EBNSOV:EBNIDLE;
   if(kind=='rage')return EBNRAGE;
   if(kind=='sov')return EBNSOV;
-  if(kind=='lash')return EBNLASH;
-  if(kind=='claw')return EBNCLAW;
-  if(kind=='hook')return EBNHOOK;
-  if(kind=='ult')return EBNULT;
+  if(kind=='lash')return ed==='rage'?EBNRLASH:ed==='sov'?EBNVLASH:EBNLASH;
+  if(kind=='claw')return ed==='rage'?EBNRCLAW:ed==='sov'?EBNVCLAW:EBNCLAW;
+  if(kind=='hook')return ed==='rage'?EBNRHOOK:ed==='sov'?EBNVHOOK:EBNHOOK;
+  if(kind=='ult')return ed==='rage'?EBNRULT:ed==='sov'?EBNVULT:EBNULT;
   if(kind=='win')return EBNWIN;
   if(kind=='burst')return EBNBURST;
   if(kind=='burstin')return EBNBURSTIN;
